@@ -1,0 +1,67 @@
+/******************************
+COLORS
+   pink
+      cc4ff1
+   blue
+      3b94e3
+   grey light
+      e2e2e2
+   grey medium
+      b5b5b5
+   yellow
+      ffb817
+   orange
+      ff7a30
+*******************************
+GENERAL
+******************************/
+body {
+   background-color: #202022;
+   font-family: 'Inconsolata', monospace;
+   height: 100%;
+}
+.wrapper {
+   width: 60%;
+}
+
+/*******************************
+CONTENT
+******************************/
+h1 {
+   font-size: 1.6em;
+   font-weight: normal;
+   color: #cc4ff1;
+}
+h2 {
+   font-size: 1.1em;
+   font-weight: normal;
+   color: #3b94e3;
+   margin-left: 1.2em;
+}
+h3 {
+   font-size: 1.1em;
+   font-weight: normal;
+   color: #ff7a30;
+   margin-left: 1.2em;
+}
+p {
+   font-size: 1.1em;
+   color: #e2e2e2;
+   margin-left: 2em;
+}
+p.update {
+   color: #b5b5b5;
+   margin-left: 2em;
+}
+
+/*******************************
+FOOTER
+******************************/
+.footer {
+   margin-left: 1.2em;
+   color: #ffb817;
+}
+.github {
+   width:2.5em;
+   height:2.5em;
+}

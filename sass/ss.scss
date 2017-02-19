@@ -1,0 +1,107 @@
+/******************************
+COLORS AND FONTS
+******************************/
+   $background: #1D1D20;
+   $pink: #cc4ff1;
+   $blue: #3b94e3;
+   $grey_light: #e2e2e2;
+   $grey_medium: darken($grey_light, 40%);
+   $grey_dark: darken($grey_light, 60%);
+   $yellow: #ffb817;
+   $yellow_dark: darken($yellow, 25%);
+   $orange: #ff7a30;
+
+   .pink {
+      color: $pink;
+   }
+   .blue {
+      color: $blue;
+   }
+   .yellow {
+      color: $yellow;
+   }
+   .yellow_dark {
+      color: $yellow_dark;
+   }
+   .orange {
+      color: $orange;
+   }
+   .grey_medium {
+      color: $grey_medium;
+   }
+   .grey_dark {
+      color: $grey_dark;
+   }
+
+/******************************
+GENERAL
+******************************/
+body {
+   background-color: $background;
+   font-family: 'Inconsolata', monospace;
+   color: $grey_light;
+   height: 100%;
+   text-shadow: 1px 1px 2px rgba(0, 0, 0, .5);
+}
+a, a:visited {
+	color: darken($pink, 20%);
+	text-decoration: underline;;
+}
+a:hover {
+	text-decoration: lighten($pink, 15%);
+}
+.wrapper {
+   width: 80%;
+   margin: 0, 0, 0, 0;
+}
+
+/*******************************
+HEADER
+******************************/
+header {
+   margin-left: 1%;
+   background-color: darken($background, 5%);
+   margin: 0, 0, 0, 0;
+}
+
+/*******************************
+CONTENT
+******************************/
+h1 {
+   font-size: 1.6em;
+   font-weight: normal;
+}
+h2 {
+   font-size: 1.1em;
+   font-weight: normal;
+   margin-left: 6%;
+}
+h3 {
+   font-size: 1.1em;
+   font-weight: normal;
+   margin-left: 6%;
+}
+p {
+   font-size: 1.1em;
+   margin-left: 12%;
+}
+p.update {
+   border:0;
+}
+
+/*******************************
+FOOTER
+******************************/
+footer {
+   p {
+      margin: 0;
+   }
+}
+.footer {
+   margin-left: 1.2em;
+   color: $orange;
+}
+.github {
+   width:2.5em;
+   height:2.5em;
+}

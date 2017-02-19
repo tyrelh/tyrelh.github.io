@@ -68,8 +68,11 @@ header {
 CONTENT
 ******************************/
 h1 {
-   font-size: 1.6em;
+   font-size: 2.6em;
    font-weight: normal;
+   @media screen and (min-width: 800px) {
+      font-size: 1.6em;
+   }
 }
 h2 {
    font-size: 1.1em;

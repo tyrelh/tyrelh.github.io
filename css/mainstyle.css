@@ -1,5 +1,5 @@
 /******************************
-COLORS
+COLORS & FONTS
 $background: #1C1C1D;
 $pink: #cc4ff1;
 $blue: #3b94e3;
@@ -9,8 +9,9 @@ $grey_dark: darken($grey_light, 60%);
 $yellow: #ffb817;
 $orange: #ff7a30;
 
-    font-family: 'Slabo 27px', serif;
+font-family: 'Slabo 27px', serif;
 font-family: 'Khula', sans-serif;
+
 *******************************
 GENERAL
 ******************************/
@@ -23,6 +24,12 @@ body {
 }
 a {
   text-decoration:none;
+}
+a, a:visited {
+  color:#3b94e3;
+}
+a:hover {
+  color:#cc4ff1;
 }
 #wrapper {
   position:relative;
@@ -60,8 +67,7 @@ h1 {
 h2 {
    font-family: 'Khula', sans-serif;
    font-weight: bold;
-   font-size: 1.8em;
-   color: #3b94e3;
+   font-size: 2.2em;
    margin:0;
 }
 nav {
@@ -78,21 +84,16 @@ nav li {
 }
 
 /******************************
-FOOTER
-******************************/
-footer {
-  position:relative;
-  width:100%;
-  bottom:0px;
-  background:#033649;
-  font-size:0.9em;
-  text-align:center;
-  padding:10px 0 1px 0;
-}
-
-/******************************
 CONTENT
 ******************************/
+h3 {
+    font-family: 'Khula', sans-serif;
+    font-weight: bold;
+    font-size: 1.8em;
+    color: #fff;
+    margin:0;
+    padding: 0;
+}
 section {
   clear:both;
   z-index: auto;
@@ -101,14 +102,27 @@ section {
   margin:0 auto;
   padding:0%;
   font-family: 'Slabo 27px', serif;
-  font-size: 1.2em;
+  font-size: 1.3em;
   /*border-radius:3px;
   border:1px solid #e4e4e4;
   border-bottom:2px solid #c8c8c8;*/
 }
-section a, section a:visited {
-  color:#036564;
+.profilePic {
+  border-radius:100%;
+  width:15em;
+  height:15em;
+  margin:0 auto 10px;
+  display:block;
 }
-section a:hover {
-  color:#CC8800;
+
+/******************************
+FOOTER
+******************************/
+footer {
+  position:relative;
+  width:100%;
+  /*background:#033649;*/
+  font-size:0.9em;
+  text-align:center;
+  padding:10px 0 0 0;
 }

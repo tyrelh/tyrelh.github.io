@@ -1,0 +1,285 @@
+/******************************
+COLORS
+  yellow
+    #CC8800
+  light blue
+    #036564 #016362 #005251
+  medium blue
+    #033649
+  dark blue
+    #031634
+  light gray
+    #e9e9e9
+*******************************
+GENERAL
+******************************/
+*{margin:0;padding:0;}
+html{height:100%;}
+body {
+  background-color:#e9e9e9;
+  color:#666;
+  font-family:'Ubuntu Condensed', 'sans-serif';
+  font-weight:300;
+  min-height: 100%;
+}
+#wrapper {
+  position:relative;
+  height:100%;
+  width: 100%;
+
+}
+a {
+  text-decoration:none;
+}
+img {
+  max-width:100%;
+}
+/* CLEARFIX */
+.floatFix:before,
+.floatFix:after {
+  content:"";
+  display:table;
+}
+.floatFix:after {
+  clear:both;
+}
+
+/******************************
+HEADER
+******************************/
+header{
+  float:left;
+  margin:0 0 3% 0;
+  padding:0;
+  width:100%;
+  background:#033649;
+  position:relative;
+  z-index:2;
+}
+#topColor {
+  background:#CC8800;
+  height:2px;
+}
+#logo {
+  text-align:center;
+  margin:0;
+}
+h1 {
+  font-family:'Lobster', sans-serif;
+  margin:10px 0 12px 0;
+  font-size:2em;
+  font-weight:normal;
+  line-height:0.8em;
+  color:#fff;
+  text-shadow:1px 1px 1px #001649;
+}
+h2{
+  font-size:0.9em;
+  margin:-6px 0 0 0;
+  padding-bottom:5px;
+  font-weight:300;
+  color:#fff;
+  text-shadow:1px 1px 1px #001649;
+}
+
+/******************************
+NAVIGATION
+******************************/
+nav {
+  text-align:center;
+  font-size:1em;
+  padding:7px 0;
+  margin:0 0 0 0;
+  background:#036564;
+  display:block;
+  clear:both;
+}
+nav ul {
+  list-style:none;
+  margin:0 10px;
+  padding:0;
+}
+nav li {
+  display:inline-block;
+}
+nav a, nav a:visited {
+  padding:10px 10px;
+  color:#fff;
+  text-shadow: 1px 1px 1px #004342;
+  transition-duration:.5s;
+}
+nav a.selected, nav a:hover {
+  color:#CC8800;
+
+}
+#bottomColor {
+  background:#005251;
+  height:2px;
+  clear:both;
+}
+
+/******************************
+FOOTER
+******************************/
+footer {
+  position:relative;
+  width:100%;
+  bottom:0px;
+  background:#033649;
+  font-size:0.9em;
+  text-align:center;
+  padding:10px 0 1px 0;
+
+}
+.socialIcon {
+  width:25px;
+  height:25px;
+  margin:0 4px;
+}
+footer h2 {
+  margin:0;
+  padding:5px 0;
+}
+.backToTop {
+  width:25px;
+  margin:0;
+}
+
+/******************************
+CONTENT
+******************************/
+section {
+  clear:both;
+  z-index: auto;
+  margin:3% auto;
+  width:89%;
+  max-width:800px;
+  padding:3%;
+  background:#fff;
+  /*border-radius:3px;
+  border:1px solid #e4e4e4;
+  border-bottom:2px solid #c8c8c8;*/
+}
+section a, section a:visited {
+  color:#036564;
+}
+section a:hover {
+  color:#CC8800;
+}
+#profileImage {
+  height:150px;
+  width:150px;
+  border-radius:50%;
+  background:-webkit-radial-gradient(rgba(255,255,255,0),rgba(255,255,255,0), rgba(0,0,0,255) 90%), url(/tyrelhiebertphoto/images/profilePic2.jpg) no-repeat;
+  background-size:contain;
+}
+.profilePic {
+  border-radius:100%;
+  max-width:150px;
+  margin:0 auto 10px;
+  display:block;
+}
+h3 {
+  margin:0;
+  font-weight:500;
+  font-size:1.3em;
+  color:#444;
+}
+#whatIDo {
+  clear:both;
+}
+#codeBadge {
+  width:100%;
+  text-align: center
+}
+.codeBadge {
+  max-width: 100px;
+  margin:0 auto 0 auto;
+}
+#contactLink {
+  position:absolute;
+  float:left;
+  margin-top:100px;
+}
+#contactSection input[type="text"], #contactSection input[type="email"], #contactSection textarea {
+  margin:0.6%;
+  border:none;
+  border-bottom:2px solid #c8c8c8;
+  font-family:'Ubuntu Condensed', 'sans-serif';
+  font-size:1em;
+  color:#c8c8c8;
+  width:300px
+}
+#contactSection input[type="submit"]{
+  margin:0.5%;
+  background-color:#036564;
+  border-radius:2px;
+  border:1px solid #005251;
+  border-bottom:2px solid #004241;
+  font-family:'Ubuntu Condensed', 'sans-serif';
+  font-size:1em;
+  color:#fff;
+  width:300px;
+  height:25px;
+}
+
+/******************************
+PLAY ###
+******************************/
+
+
+
+
+/******************************
+RESPONSIVE
+******************************/
+@media screen and (min-width: 480px) {
+  .profilePic {
+    float:left;
+    margin:1% 5% 3% 1%;
+  }
+  .codeBadge {
+    float:right;
+    display:inline-block;
+    max-width: 100px;
+    margin:0 2px 0 3px;
+  }
+}
+@media screen and (min-width: 660px) {
+  /********************
+HEADER
+  ********************/
+  header {
+    position:fixed;
+    z-index:1;
+    top:0px;
+  }
+  #logo {
+    text-align:left;
+    float:left;
+    width:40%;
+    margin:0 0 0 2%;
+  }
+  h2 {
+    font-size:1em;
+  }
+  nav {
+    background:none;
+    float:right;
+    font-size:1.2em;
+    margin-right:2%;
+    text-align:right;
+    width:44%;
+    clear:none;
+  }
+  #bottomColor{
+    background:#031634;
+  }
+  /********************
+CONTENT
+  ********************/
+  #wrapper {
+    margin-top: 66px;
+    padding-top:1%
+  }
+}

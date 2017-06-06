@@ -59,15 +59,15 @@ header {
 }
 h1 {
     font-family: 'Khula', sans-serif;
-    font-weight: bold;
-    font-size: 5em;
+    font-weight: 800;
+    font-size: 5.2em;
     line-height: 1em;
     margin: 1em 0 0 0;
 }
 h2 {
    font-family: 'Khula', sans-serif;
-   font-weight: bold;
-   font-size: 1.8em;
+   font-weight: 800;
+   font-size: 1.7em;
    margin:0;
 }
 nav {
@@ -88,7 +88,7 @@ CONTENT
 ******************************/
 h3 {
     font-family: 'Khula', sans-serif;
-    font-weight: bold;
+    font-weight: 800;
     font-size: 1.7em;
     color: #fff;
     margin:0;

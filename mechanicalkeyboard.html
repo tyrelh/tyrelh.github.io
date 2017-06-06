@@ -12,7 +12,7 @@
     <header>
         <h1>TYREL HIEBERT</h1>
         <nav><ul>
-            <li><a href="index.html"><h2>PROJECTS</h2></a></li>
+            <li><a href="index.html"><h2>HOME</h2></a></li>
             <li><a href="https://github.com/tyrelh"><h2>GITHUB</h2></a></li>
         </ul></nav>
     </header>
@@ -20,16 +20,16 @@
         <section>
             <h3>MECHANICAL KEYBOARD</h3>
             <ol>
-                <li>Backstory</li>
-                <li>Design</li>
-                <li>Construction</li>
-                <li>Programming</li>
-                <li>Code</li>
-                <li>Future of Project</li>
-                <li>Resources</li>
-                <li>Update 1 - Acrylic Case & RGB LEDs</li>
+                <li><a href="#backstory">Backstory</a></li>
+                <li><a href="#design">Design</a></li>
+                <li><a href="#construction">Construction</a></li>
+                <li><a href="#programming">Programming</a></li>
+                <li><a href="#code">Code</a></li>
+                <li><a href="#future">Future of Project</a></li>
+                <li><a href="#resources">Resources</a></li>
+                <li><a href="#update1">Update 1</a> - Acrylic Case & RGB LEDs</li>
             </ol>
-            <h3>BACKSTORY</h3>
+            <h3 id="backstory">BACKSTORY</h3>
             <p>This project began when I discovered the wonderful world of mechanical keyboards.</p>
 
             <p>I started looking into some 60% keyboards such as the Poker3, but the singular product that really caught my interest and brought me down this rabbit hole was the WhiteFox mechanical 65% keyboard created by <a href="http://matt3o.com/whitefox-the-making-of/">matt3o</a>. This keyboard was just what I was looking for, clean style and minimal design. I started looking into purchasing it which lead me to learn about MassDrop and the mechanical keyboard subreddit. This keyboard is a bit elusive, due to its limited production runs.</p>
@@ -44,7 +44,7 @@
 
             <p>So I decided to build my own keyboard from scratch using Cherry key switches and an Arduino (actually ended up using a Teensy, an Arduino compatible) as the controller. I figured that I understand switches and debounce, I understand the theory of a switch matrix although I have never implemented one, and all I would really need to figure out is the HID communication over USB. So I began. I wanted to do this partly to have a custom mechanical keyboard in the end, and partly as a hardware and software learning experience.</p>
 
-            <h3>DESIGN</h3>
+            <h3 id="design">DESIGN</h3>
 
             <p>The first thing I did was order a cheap key switch tester from Banggood.com (Banggood is a Chinese online retailer similar in style to Alibaba). The one I got had Cherry MX Blue, Brown, Red, and Black switches. I already thought I would go with Blue switches as I like that clicky feel, but I wanted to compare the blues to a few others just to see. Out of those 4, Blue were by far the best for me.</p>
 
@@ -70,7 +70,7 @@
 
             <p>After that success I ordered everything else. PCB’s and diodes from Sparkfun, keycaps and switches from WASD Keyboards, and the Teensy 3.2 that I already had.</p>
 
-            <h3>CONSTRUCTION</h3>
+            <h3 id="construction">CONSTRUCTION</h3>
 
             <p>First thing to do was to lay out the PCB’s. This <a href="https://learn.sparkfun.com/tutorials/cherry-mx-switch-breakout-hookup-guide?_ga=1.225458201.2098460655.1477285277">guide from Sparkfun</a> was very helpful. I started by simply gluing them together in the desired layout before doing any soldering. This was so that the whole board will remain flat while aligning the boards. I also used a metal ruler to keep the rows straight. If you are using these same boards, do not rely on them being square, they are not. The first row I put together on the table but without the ruler and it came out as a big frown shape (or smiley shape, but I wasn't very happy about it). So make sure to use a straight edge and take your time. The difficult part was setting up the modifier keys. Since these boards only come in one size, any key that has a larger footprint needs to be spaced out from the rest. There aren't really any guides on the boards for you to do this accurately so I recommend just doing the math and taking accurate measurements. Any error that happens here will directly affect the key position and the final look and fit of the keys.</p>
 
@@ -106,7 +106,7 @@
                 <img src="img/mechanicalkeyboard/programming2.jpg" class="postImg" />
             </div>
 
-            <h3>PROGRAMMING</h3>
+            <h3 id="programming">PROGRAMMING</h3>
 
             <p>Now comes the software part. If you are comfortable compiling and flashing firmware you should follow the advice at the bottom of <a href="http://gizmodo.com/i-built-a-keyboard-from-scratch-1649325860">Dave Cooper’s post</a> but I really wanted to try to do this myself from scratch using the Arduino IDE. I made a bit of progress on my own scanner (the part that scans all the keys to check their state, hopefully many many times per second) but eventually I settled on using some libraries. As usual they made things a lot simpler, and the Teensy 3.2 is so fast for this project that speed is not really an issue. I would still like to try to finish my own scanner eventually, but for now I used the USB Keyboard setting from Tools > USB Type within the Arduino IDE with the Teensyduino software installed. This, I believe, auto imports the common Keyboard.h library as well as the HID library as it allows you to use these keyboard functions and definitions without including those libraries in your code (similar to how the Arduino IDE auto imports the Arduino library giving you functions like digitalRead() and such). As well it alters the firmware on the Teensy upon upload so it appears to the computer as a HID device.</p>
 
@@ -116,11 +116,11 @@
 
             <p><a href="https://www.pjrc.com/teensy/td_keyboard.html">This page from PJRC</a>, the makers of the Teensy, is a great reference to get started with sending keystrokes to your computer. I was going to use this and build my own scanner around it, but I later opted to use the Keypad.h library as the scanner. This guide written by <a href="http://www.instructables.com/id/Make-Any-Vintage-Keyboard-Work-With-a-Modern-PC/step4/Setting-up-Teensyduino-and-modifying-the-Sketch/">alpinedelta on Instructables</a> was alot of help, especially his example code he gives for his T1000 vintage computer project. With these resources I created a map of all my keys, and a simple algorithm to differentiate the functionality of the modifier keys. It works almost perfectly now! All of the labeled keys work as they should as well as Shift, Ctrl, and Alt functionality. I am still working on building my own function layers that will give me access to the F keys as well as Insert, Pg Up, etc. I have temporarily assigned volume up and down commands to the Super and Hyper keys until I can work them into a function layer. It took quite a bit of google searching to figure out the commands for media keys, but <a href="https://forum.pjrc.com/threads/34074-Keyboard-Media-Keys-now-(hopefully)-Windows-compatible">this post on the PJRC forum</a> lays it out, it seems to work just fine with the current version of Teensyduino (1.35) by using the Keyboard.press() command, no other libraries required.</p>
 
-            <h3>CODE</h3>
+            <h3 id="code">CODE</h3>
 
             <p>The code is <a href="https://github.com/tyrelh/mechanicalkeyboard/tree/master/keypad_scanner">available on GitHub</a> and it requires you have <a href="https://www.pjrc.com/teensy/td_download.html">Teensyduino</a> installed as well as the <a href="http://playground.arduino.cc/Code/Keypad">Keypad library</a>. Simply figure out your matrix layout, change the number of rows and columns, the pins used by the rows and columns, as well as the key map.</p>
 
-            <h3>FUTURE OF THE PROJECT</h3>
+            <h3 id="future">FUTURE OF THE PROJECT</h3>
 
             <p>After using it for a while I wasn’t satisfied with the performance of the space bar using 2 switches and no stabilizers. It teters and presses one switch or the other depending on which thumb you use, but occasionally I would hit both switches giving me a double-space. The space bar is 6.25u long, so using the keycaps I already had, I used both the regular shift keys, one being 2.75u and the other 2.25u, as well as one of the unused bottom row modifier keys at 1.25u. I took the two switches out from the space and replaced them with 3 switches correctly spaced out for the key sizes. The split space bar works great now! The two larger keys making up the slit space and the other 1.25u key giving me another function key.</p>
 
@@ -131,8 +131,9 @@
                 <li>Setting up some RGB LEDs underneath to shine through the acrylic case</li>
             </ol>
 
-            <h3>RESOURCES</h3>
-            <h3>UPDATE 1 | ACRYLIC CASE & RGB LEDS</h3>
+            <h3 id="resources">RESOURCES</h3>
+            <p>Coming soon.</p>
+            <h3 id="update1">UPDATE 1 | ACRYLIC CASE & RGB LEDS</h3>
             <p>From eBay seller <a href="http://www.ebay.ca/usr/sennin32?_trksid=p2057872.m2749.l2754">sennin32</a> I purchased a <a href="http://www.ebay.ca/itm/272482123610?_trksid=p2060353.m1438.l2649&ssPageName=STRK%3AMEBIDX%3AIT">generic 60% frosted acrylic case</a> made for the Pok3r and other equivalent keyboards. I repositioned the Teensy controller so it aligned with the USB port hole on the case. I had to Dremel one of the standoffs off of the case for the controller to fit. I need to figure out a way to properly affix the board to the case as none of the mounting holes line up. I also took this opportunity to add some RGB LEDs to the bottom that I had around the house. The LEDs are strips of 16 from Adafruit (I have some strange rounded ones but I would recommend something </a href="https://www.adafruit.com/product/1426">like this</a>, or a cheap equivalent from China). The LEDs are designed to run off 5v logic but i thought i would give them a try with the Teensy’s 3.3v and they seem to work fine. I haven’t tried and animations just solid colours. The acrylic case diffuses the light very well.</p>
 
             <div class="postImgWrapper">
@@ -151,27 +152,33 @@
             </ol>
 
             <div id="disqus_thread"></div>
-<script>
-
-/**
-*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
-var disqus_config = function () {
-this.page.url = https://tyrelh.github.io/mechanicalkeyboard.html;  // Replace PAGE_URL with your page's canonical URL variable
-this.page.identifier = tyrelh; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-};
-(function() { // DON'T EDIT BELOW THIS LINE
-var d = document, s = d.createElement('script');
-s.src = 'https://tyrelh.disqus.com/embed.js';
-s.setAttribute('data-timestamp', +new Date());
-(d.head || d.body).appendChild(s);
-})();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+      <script>
+      /**
+      *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+      *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+      var disqus_config = function () {
+      this.page.url = https://tyrelh.github.io/mechanicalkeyboard.html;  // Replace PAGE_URL with your page's canonical URL variable
+      this.page.identifier = tyrelh; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+      };
+      (function() { // DON'T EDIT BELOW THIS LINE
+      var d = document, s = d.createElement('script');
+      s.src = 'https://tyrelh.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+      })();
+      </script>
+      <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 
         </section>
     </div>
     <footer>
     </footer>
+   <script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+   })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+   ga('create', 'UA-100582262-1', 'auto');
+   ga('send', 'pageview');
+   </script>
 </body>
 </html>

@@ -40,6 +40,7 @@ a:hover {
   padding-left: 5%;
   padding-right: 5%;
   min-height:100%;
+  margin-bottom:7em;
 }
 /* CLEARFIX */
 .floatFix:before,
@@ -129,7 +130,7 @@ section {
     align-self: center;
 }
 .comments {
-    padding-bottom:4em;
+    /*padding-bottom:4em;*/
 }
 
 
@@ -143,7 +144,7 @@ footer {
     bottom: 0;
     left: 0;
     width:100%;
-    height:50px;
+    height:4.5em;
     font-size:0.9em;
     text-align:center;
 }

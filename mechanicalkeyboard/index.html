@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <title>Tyrel Hiebert</title>
-    <link rel="stylesheet" href="../css/normalizeSmall.css">
+    <!--<link rel="stylesheet" href="../css/normalizeSmall.css">-->
     <link rel="stylesheet" href="../css/mainstyle.css">
     <link href="https://fonts.googleapis.com/css?family=Khula:800|Slabo+27px" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,21 +12,21 @@
     <header>
         <h1>TYREL HIEBERT</h1>
         <nav><ul>
-            <li><a href="index.html"><h2>HOME</h2></a></li>
-            <li><a href="https://github.com/tyrelh"><h2>GITHUB</h2></a></li>
+            <li><a href="../index.html"><h2>HOME</h2></a></li>
         </ul></nav>
     </header>
     <div id="wrapper">
         <section>
-            <h3>MECHANICAL KEYBOARD</h3>
+            <h3 class="articleTitle">MECHANICAL KEYBOARD</h3>
+            <h2>TL;DR</h2>
             <ol>
-                <li><a href="#backstory">Backstory</a></li>
-                <li><a href="#design">Design</a></li>
-                <li><a href="#construction">Construction</a></li>
-                <li><a href="#programming">Programming</a></li>
-                <li><a href="#code">Code</a></li>
-                <li><a href="#future">Future of Project</a></li>
-                <li><a href="#resources">Resources</a></li>
+                <li><a href="#backstory">Backstory</a> - Found many interesting mechanical keyboards on Reddit and Massdrop; decided to build my own.</li>
+                <li><a href="#design">Design</a> - Desided on layout and then picked PCB's, switches, keycaps, and microcontroller.</li>
+                <li><a href="#construction">Construction</a> - Soldered components and such.</li>
+                <li><a href="#programming">Programming</a> - Built logic in C++ within the Adruino IDE.</li>
+                <li><a href="#code">Code</a> - Links to code on Github.</li>
+                <li><a href="#future">Future of Project</a> - What I still would like to do.</li>
+                <li><a href="#resources">Resources</a> - Links to valuable information.</li>
                 <li><a href="#update1">Update 1</a> - Acrylic Case & RGB LEDs</li>
             </ol>
             <h3 id="backstory">BACKSTORY</h3>
@@ -125,14 +125,23 @@
             <p>After using it for a while I wasn’t satisfied with the performance of the space bar using 2 switches and no stabilizers. It teters and presses one switch or the other depending on which thumb you use, but occasionally I would hit both switches giving me a double-space. The space bar is 6.25u long, so using the keycaps I already had, I used both the regular shift keys, one being 2.75u and the other 2.25u, as well as one of the unused bottom row modifier keys at 1.25u. I took the two switches out from the space and replaced them with 3 switches correctly spaced out for the key sizes. The split space bar works great now! The two larger keys making up the slit space and the other 1.25u key giving me another function key.</p>
 
             <p>So this is the current state of the project. Some things I would still like to accomplish in the future:</p>
-            <ol>
+            <ul>
                 <li>Setting up one or two function layers to get all of the keys from a 104-key layout on there.</li>
-                <li>Getting a proper case for it, I am looking at acrylic ones online</li>
-                <li>Setting up some RGB LEDs underneath to shine through the acrylic case</li>
-            </ol>
+                <li>Getting a proper case for it, I am looking at acrylic ones online.</li>
+                <li>Setting up some RGB LEDs underneath to shine through the acrylic case.</li>
+            </ul>
 
             <h3 id="resources">RESOURCES</h3>
-            <p>Coming soon.</p>
+            <ul>
+                <li><a href="https://www.pjrc.com/teensy/td_keyboard.html">Teensyduino USB Keyboard Guide</a></li>
+                <li><a href="https://learn.sparkfun.com/tutorials/cherry-mx-switch-breakout-hookup-guide?_ga=1.126752654.2098460655.1477285277">Sparkfun Cherry MX Breakout Guide</a></li>
+                <li><a href="http://gizmodo.com/i-built-a-keyboard-from-scratch-1649325860">Keyboard from Scratch</a> by Dave Cooper</li>
+                <li><a href="http://www.instructables.com/id/Make-Any-Vintage-Keyboard-Work-With-a-Modern-PC/?ALLSTEPS">Make any vintage keyboard work with a modern PC</a> by alpinedelta</li>
+                <li><a href="https://forum.pjrc.com/threads/34074-Keyboard-Media-Keys-now-(hopefully)-Windows-compatible">Teensy Keyboard Media Keys</a> by PaulStoffregen</li>
+                <li><a href="http://www.wasdkeyboards.com">WASD Keyboards</a> - Custom Keycaps</li>
+                <li><a href="http://playground.arduino.cc/Code/Keypad">Keypad.h Library</a></li>
+            </ul>
+
             <h3 id="update1">UPDATE 1 | ACRYLIC CASE & RGB LEDS</h3>
             <p>From eBay seller <a href="http://www.ebay.ca/usr/sennin32?_trksid=p2057872.m2749.l2754">sennin32</a> I purchased a <a href="http://www.ebay.ca/itm/272482123610?_trksid=p2060353.m1438.l2649&ssPageName=STRK%3AMEBIDX%3AIT">generic 60% frosted acrylic case</a> made for the Pok3r and other equivalent keyboards. I repositioned the Teensy controller so it aligned with the USB port hole on the case. I had to Dremel one of the standoffs off of the case for the controller to fit. I need to figure out a way to properly affix the board to the case as none of the mounting holes line up. I also took this opportunity to add some RGB LEDs to the bottom that I had around the house. The LEDs are strips of 16 from Adafruit (I have some strange rounded ones but I would recommend something </a href="https://www.adafruit.com/product/1426">like this</a>, or a cheap equivalent from China). The LEDs are designed to run off 5v logic but i thought i would give them a try with the Teensy’s 3.3v and they seem to work fine. I haven’t tried and animations just solid colours. The acrylic case diffuses the light very well.</p>
 
@@ -145,12 +154,13 @@
             </div>
 
             <p>Some things I would still like to accomplish:</p>
-            <ol>
+            <ul>
                 <li>Properly affix the board to the case with the use of a steel plate</li>
                 <li>Build logic for function layers</li>
                 <li>Perhaps paint the board black as the red PCB doesn’t look that appealing</li>
-            </ol>
-
+            </ul>
+        </section>
+        <section class="comments">
             <div id="disqus_thread"></div>
             <script>
                /**
@@ -168,11 +178,15 @@
                })();
             </script>
             <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-
         </section>
+        <footer>
+            <ul>
+                <li><a href="mailto:tyrel.hiebert@gmail.com"><img class="footerIcon" src="../img/mail.svg" alt="email link"/></a></li>
+                <li><a href="https://github.com/tyrelh"><img class="footerIcon" src="../img/github.svg" alt="github link"/></a></li>
+            </ul>
+       </footer>
     </div>
-    <footer>
-    </footer>
+
    <script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
@@ -180,6 +194,6 @@
    ga('create', 'UA-100582262-1', 'auto');
    ga('send', 'pageview');
    </script>
-   <script id="dsq-count-scr" src="//tyrelh.disqus.com/count.js" async></script>
+   <!--<script id="dsq-count-scr" src="//tyrelh.disqus.com/count.js" async></script>-->
 </body>
 </html>

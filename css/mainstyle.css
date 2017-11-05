@@ -11,6 +11,7 @@ $orange: #ff7a30;
 
 font-family: 'Slabo 27px', serif;
 font-family: 'Khula', sans-serif;
+font-family: 'Ubuntu Mono', monospace;
 
 *******************************
 GENERAL
@@ -22,7 +23,7 @@ html {
 body {
   background-color:#181820;
   color:#eee;
-  font-family: 'Slabo 27px', serif;
+  font-family: 'Ubuntu Mono', monospace;
   font-weight:300;
 }
 a {
@@ -110,7 +111,7 @@ section {
   width:99%;
   max-width: 1200px;
   margin:0 auto;
-  font-family: 'Slabo 27px', serif;
+  font-family: 'Ubuntu Mono', monospace;
   font-size: 1.4em;
 }
 .profilePic {

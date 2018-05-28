@@ -2,7 +2,7 @@
 let damage_rate = 20;
 let damage_amount = 20;
 
-function Ship(layer,start_state) {
+function Ship(layer) {
     // ship parameters
     this.r = 15;
     this.pos = createVector(width/2,height/2);
@@ -13,7 +13,7 @@ function Ship(layer,start_state) {
     this.acc = 0;
     this.drag = 0.98;
     this.turn_rate = 0.13;
-    this.state = start_state;
+    this.state = "moveState";
     this.visible = true;
     this.update_check = true;
 
@@ -23,10 +23,11 @@ function Ship(layer,start_state) {
     for (var i = 0; i < 4; i++) {
         this.pos_history.push(this.pos);
     }
-    
 
     // add to draw layer
-    layer.children.push(this);
+    if (layer) {
+        layer.children.push(this);
+    }
 
     // draw to canvas
     this.draw = function() {
@@ -106,6 +107,7 @@ function Ship(layer,start_state) {
             }
         }
         
+        this.checkHealth();
     }
 
     this.idleState = function() {
@@ -146,6 +148,12 @@ function Ship(layer,start_state) {
             this.pos.y = -this.r;
         } else if (this.pos.y < -this.r) {
             this.pos.y = height + this.r;
+        }
+    }
+
+    this.checkHealth = function() {
+        if (this.health <= 0) {
+            gameOver();
         }
     }
 }

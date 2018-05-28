@@ -4,6 +4,8 @@ var min_asteroids = 5;
 
 function Asteroids(layer) {
     this.asteroids = [];
+    this.visible = true;
+    this.update_check = true;
 
     for (var i = 0; i < initial_asteroids; i++) {
         this.asteroids.push(new Asteroid());

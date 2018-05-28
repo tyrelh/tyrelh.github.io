@@ -2,28 +2,47 @@ function GUI(layer) {
     this.health = new Health();
     this.score = new Score();
     this.frame_rate = new FrameRate();
+    //this.mute_button = new MuteButton();
+    this.visible = true;
+    this.update_check = true;
 
     // add to draw layer
     layer.children.push(this);
 
     this.update = function() {
-        this.health.update();
-        this.score.update();
-        this.frame_rate.update();
+        if (this.update_check) {
+            this.health.update();
+            this.score.update();
+            this.frame_rate.update();
+            //this.mute_button.update();
+        }
     }
 
     this.draw = function() {
-        this.health.draw();
-        this.score.draw();
-        this.frame_rate.draw();
+        if (this.visible) {
+            this.health.draw();
+            this.score.draw();
+            this.frame_rate.draw();
+            //this.mute_button.draw();
+        }
     }
 }
+
+// function MuteButton() {
+//     this.update = function() {
+
+//     }
+
+//     this.draw = function() {
+
+//     }
+// }
 
 function FrameRate() {
     this.frame_rate = 0;
     this.text_size = height / 15;
-    this.x = (width / 70) * 65;
-    this.y = (height / 10) * 9;
+    this.x = (width / 70) * 69;
+    this.y = (height / 11) * 10;
 
     this.update = function() {
         if (frameCount % 8 == 0) {
@@ -44,8 +63,8 @@ function FrameRate() {
 
 function Score() {
     this.text_size = height / 10;
-    this.x = (width / 70) * 65;
-    this.y = height / 10;
+    this.x = (width / 70) * 69;
+    this.y = height / 11;
     this.score = 0;
     this.score_history = [];
     for (let i = 0; i < 10; i++) {

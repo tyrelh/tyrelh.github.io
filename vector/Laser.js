@@ -1,5 +1,5 @@
 
-var fire_rate = 20;
+var fire_rate = 10;
 
 function Lasers(layer) {
     this.lasers = [];
@@ -46,25 +46,33 @@ function Laser(start, angle) {
     for (var i = 0; i < 4; i++) {
         this.pos_history.push(this.pos);
     }
+    LASER_SOUND_1.setVolume(0.5);
+    LASER_SOUND_1.play()
 
     this.draw = function() {
 
         push();
-        stroke(color(0,0,255,200));
+        stroke(GLITCH_COLOR_1);
+        strokeWeight(this.r);
+        point(this.pos_history[0].x, this.pos_history[0].y);
+        pop();
+
+        push();
+        stroke(GLITCH_COLOR_3);
+        strokeWeight(this.r);
+        point(this.pos_history[3].x, this.pos_history[3].y);
+        pop();
+
+        push();
+        stroke(GLITCH_COLOR_2);
         strokeWeight(this.r);
         point(this.pos_history[2].x, this.pos_history[2].y);
         pop();
 
         push();
-        stroke(color(255,0,0,255));
+        stroke(MAIN_COLOR);
         strokeWeight(this.r);
         point(this.pos_history[1].x, this.pos_history[1].y);
-        pop();
-
-        push();
-        stroke(255);
-        strokeWeight(this.r);
-        point(this.pos.x, this.pos.y);
         pop();
     }
 
@@ -76,7 +84,8 @@ function Laser(start, angle) {
                     var new_asteroids = asteroids.asteroids[i].breakup();
                     asteroids.asteroids.push(new_asteroids[0]);
                     asteroids.asteroids.push(new_asteroids[1]);
-                } 
+                }
+                gui.score.score += Math.floor(asteroids.asteroids[i].r);
                 asteroids.asteroids.splice(i,1);
                 this.spent = true;
                 break;

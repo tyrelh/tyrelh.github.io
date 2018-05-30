@@ -1,6 +1,4 @@
 
-var fire_rate = 10;
-
 function Lasers(layer) {
     this.lasers = [];
     this.prev_laser = 0;
@@ -21,7 +19,7 @@ function Lasers(layer) {
     this.update = function() {
         if (this.update_check) {
             if (keyIsDown(SHIFT)) {
-                if (frameCount - this.prev_laser > fire_rate) {
+                if (frameCount - this.prev_laser > FIRE_RATE) {
                     this.newLaser(ship.pos, ship.direction);
                     this.prev_laser = frameCount;
                 }
@@ -49,31 +47,28 @@ function Laser(start, angle) {
     }
     //LASER_SOUND_1.setVolume(0.5);
     //LASER_SOUND_1.play()
+    // color shift amounts
+    this.white_shift = this.v.copy();
+    this.white_shift = this.white_shift.mult(0.8);
+    this.green_shift = this.v.copy();
+    this.green_shift = this.green_shift.mult(0.8);
+    this.blue_shift = this.v.copy();
+    this.blue_shift = this.blue_shift.mult(-3*0.8);
 
     this.draw = function() {
-
         push();
-        stroke(GLITCH_COLOR_1);
-        strokeWeight(this.r);
-        point(this.pos_history[0].x, this.pos_history[0].y);
-        pop();
+            stroke(GLITCH_COLOR_1);
+            strokeWeight(this.r);
+            point(this.pos_history[0].x, this.pos_history[0].y);
 
-        push();
-        stroke(GLITCH_COLOR_3);
-        strokeWeight(this.r);
-        point(this.pos_history[3].x, this.pos_history[3].y);
-        pop();
+            stroke(GLITCH_COLOR_3);
+            point(this.pos_history[3].x, this.pos_history[3].y);
 
-        push();
-        stroke(GLITCH_COLOR_2);
-        strokeWeight(this.r);
-        point(this.pos_history[2].x, this.pos_history[2].y);
-        pop();
+            stroke(GLITCH_COLOR_2);
+            point(this.pos_history[2].x, this.pos_history[2].y);
 
-        push();
-        stroke(MAIN_COLOR);
-        strokeWeight(this.r);
-        point(this.pos_history[1].x, this.pos_history[1].y);
+            stroke(MAIN_COLOR);
+            point(this.pos_history[1].x, this.pos_history[1].y);
         pop();
     }
 
@@ -82,9 +77,15 @@ function Laser(start, angle) {
         for (var i = asteroids.asteroids.length - 1; i >= 0; i--) {
             if (this.hits(asteroids.asteroids[i])) {
                 if (asteroids.asteroids[i].r > 15) {
-                    var new_asteroids = asteroids.asteroids[i].breakup();
+                    let new_asteroids = asteroids.asteroids[i].breakup();
                     asteroids.asteroids.push(new_asteroids[0]);
                     asteroids.asteroids.push(new_asteroids[1]);
+                    if (Math.floor(game.getScore() / SHIELD_DROP_RATE) > item_drops.getNumShieldDrops()) {
+                        //console.log("num shields so far: " + shields.getNumShields());
+                        // console.log("score within laser hit: " + game)                                              
+                        item_drops.newShieldDrop(asteroids.asteroids[i].pos);
+                    }
+                    
                 }
                 game.increaseScore(Math.floor(asteroids.asteroids[i].r));
                 //gui.score.score += Math.floor(asteroids.asteroids[i].r);
@@ -100,7 +101,7 @@ function Laser(start, angle) {
     this.hits = function(asteroid) {
         //var d = dist(this.pos.x, this.pos.y, asteroid.pos.x, asteroid.pos.y);
         let d = calcDist(this.pos, asteroid.pos);
-        if (d < asteroid.r) {
+        if (d < asteroid.r + this.r) {
             return true;
         }
         return false;

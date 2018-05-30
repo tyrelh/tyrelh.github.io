@@ -2,6 +2,7 @@
 function Game() {
     this.base_difficulty = 5;
     this.score = 0;
+    this.high_score = 0;
     this.state = "splash_screen";
     // currently increase difficulty based on current score
     this.difficulty = this.base_difficulty + (this.score / 200);
@@ -33,6 +34,7 @@ function Game() {
             for (i = 0; i < this.game_layers.length; i++) {
                 this.game_layers[i].draw();
             }
+            //noLoop();
         } else if (this.state == "splash_screen") {
             for (i = 0; i < this.splash_layers.length; i++) {
                 this.splash_layers[i].draw();
@@ -94,6 +96,7 @@ function Game() {
     // end the game
     this.endGame = function() {
         this.state = "game_over";
+        if (this.score > this.high_score) {this.high_score = this.score;}
         let i;
         for (i = 0; i < this.game_layers.length; i++) {
             this.game_layers[i].setVisible(false);
@@ -104,10 +107,6 @@ function Game() {
             this.game_over_layers[i].setUpdate(true);
         }
     }
-    // getters
-    this.getDifficulty = function() {return this.base_difficulty + Math.floor((this.score / 100));}
-    this.getScore = function() {return this.score;}
-    this.getState = function() {return this.state;}
     this.trackNewLayer = function(layer, state) {
         if (state == "game") {
             this.game_layers.push(layer);
@@ -119,11 +118,15 @@ function Game() {
             this.wtf_layers.push(layer);
         }
     }
+    // getters
+    this.getDifficulty = function() {return this.base_difficulty + Math.floor((this.score / 50));}
+    this.getScore = function() {return this.score;}
+    this.getHighScore = function() {return this.high_score;}
+    this.getState = function() {return this.state;}
 }
-
 // input
 function keyPressed() {
-    //console.log(keypressed);
+    //console.log(keyCode);
     if (keyCode === 32) {
         if (game.getState() == "splash_screen" || game.getState() == "game_over") {
             game.startGame();
@@ -134,4 +137,10 @@ function keyPressed() {
             ship.jump();
         }
     }
+    // debugging
+    // if (keyCode === 68) {
+    //     if (game.getState() == "in_progress") {
+    //         shields.newShield();
+    //     }
+    // }
 }

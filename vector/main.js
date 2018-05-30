@@ -1,6 +1,6 @@
 
-var layer_splash_screen, layer_gui, layer_ship, layer_asteroids, layer_lasers, layer_game_over;
-var game, splash_screen, gui, ship, asteroids, lasers, game_over;
+var layer_splash_screen, layer_gui, layer_ship, layer_drops, layer_asteroids, layer_lasers, layer_game_over;
+var game, splash_screen, gui, ship, shields, item_drops, asteroids, lasers, game_over;
 
 function setup() {
     // inital canvas setup
@@ -9,6 +9,7 @@ function setup() {
     frameRate(60);
     //createCanvas(600,400)
     background(20,20,22);
+    noStroke();
     // game state
     game = new Game();
     
@@ -18,17 +19,22 @@ function setup() {
     splash_screen = new SplashScreen(layer_splash_screen);
     game.trackNewLayer(layer_splash_screen, "splash");
 
+    layer_lasers = new ObjectLayer();
+    lasers = new Lasers(layer_lasers);
+    game.trackNewLayer(layer_lasers, "game");
+
     layer_ship = new ObjectLayer();
     ship = new Ship(layer_ship);
+    shields = new Shields(layer_ship);
     game.trackNewLayer(layer_ship, "game");
+
+    layer_drops = new ObjectLayer();
+    item_drops = new  ItemDrops(layer_drops);
+    game.trackNewLayer(layer_drops, "game");
 
     layer_asteroids = new ObjectLayer();
     asteroids = new Asteroids(layer_asteroids);
     game.trackNewLayer(layer_asteroids, "game");
-
-    layer_lasers = new ObjectLayer();
-    lasers = new Lasers(layer_lasers);
-    game.trackNewLayer(layer_lasers, "game");
 
     layer_gui = new ObjectLayer();
     gui = new GUI(layer_gui);
@@ -49,25 +55,25 @@ function draw() {
     game.update();
     game.draw();
 }
-// game logic update
-function update() {
-    console.log(layer_gui);
-    layer_lasers.update();
-    layer_ship.update();
-    layer_astroids.update();
-    layer_gui.update();
-    layer_title.update();
-    layer_game_over.update();
-}
-// game graphics update
-function render() {
-    layer_lasers.draw();
-    layer_ship.draw();
-    layer_asteroids.draw();
-    layer_gui.draw();
-    layer_title.draw();
-    layer_game_over.draw();
-}
+// // game logic update
+// function update() {
+//     console.log(layer_gui);
+//     layer_lasers.update();
+//     layer_ship.update();
+//     layer_astroids.update();
+//     layer_gui.update();
+//     layer_title.update();
+//     layer_game_over.update();
+// }
+// // game graphics update
+// function render() {
+//     layer_lasers.draw();
+//     layer_ship.draw();
+//     layer_asteroids.draw();
+//     layer_gui.draw();
+//     layer_title.draw();
+//     layer_game_over.draw();
+// }
 // update static things
 function staticRender() {
     background(2,2,4);

@@ -115,7 +115,7 @@ function Health() {
     this.x = width / 70;
     this.y = height / 17;
     this.text_size = height / 15;
-    this.bar_w = width / 5;
+    this.bar_w = width / 4;
     this.bar_h = height / 20;
     this.map_val = this.bar_w / 100;
 
@@ -132,31 +132,17 @@ function Health() {
             textSize(this.text_size);
             textFont(MAIN_FONT);
             text(this.health_text, this.x+1, this.y+1);
-        pop();
         // draw bar bg
-        push();
             fill(HEALTH_BG_COLOR);
-            noStroke();
             rect(this.x, this.y, this.bar_w, this.bar_h);
-        pop();
         // draw bar glitch effect
-        push();
             fill(GLITCH_COLOR_3);
-            noStroke();
-            //rect(this.x, this.y , map(this.health_history[8], 0, 100, 0, this.bar_w), this.bar_h);
             rect(this.x, this.y , this.health_history[8] * this.map_val, this.bar_h);
-        pop();
-        push();
+
             fill(GLITCH_COLOR_2);
-            noStroke();
-            //rect(this.x, this.y , map(this.health_history[4], 0, 100, 0, this.bar_w), this.bar_h);
             rect(this.x, this.y , this.health_history[4] * this.map_val, this.bar_h);
-        pop();
         // draw current health bar
-        push();
             fill(MAIN_COLOR);
-            noStroke();
-            //rect(this.x-1, this.y-1, map(this.health_amount, 0, 100, 0, this.bar_w)+2, this.bar_h+2);
             rect(this.x, this.y , (this.health_amount * this.map_val) + 2, this.bar_h + 2);
         pop();
     }

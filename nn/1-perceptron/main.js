@@ -2,12 +2,13 @@
 p5.disableFriendlyErrors = true;
 // colors
 var ORANGE_LIGHT = "#F38630";
-var ORANGE_DARK = "#F96800";
+var ORANGE_DARK = "#FA5C00ED";
 var BLUE_LIGHT = "#00A4CC";
-var BLUE_DARK = "#007CBE";
-var PINK_DARK = "#F000D5";
+var BLUE_DARK = "#007CBEED";
+var PINK_DARK = "#EF00D4ED";
 
-var DOT_SIZE = 8;
+var DOT_SIZE = 10;
+var NUM_SAMPLES = 200;
 
 var brain, inputs;
 
@@ -16,11 +17,11 @@ var training_index = 0;
 
 function setup() {
     createCanvas(window.innerWidth, window.innerHeight);
-    background(20, 22, 25);
+    background(18, 18, 22);
 
     brain = new Perceptron(3);
 
-    for (let i = 0; i < 200; i++) {
+    for (let i = 0; i < NUM_SAMPLES; i++) {
         points.push(new Point());
     }
 
@@ -31,7 +32,7 @@ function setup() {
 
 function draw() {
     background(20, 22, 25);
-    stroke(100);
+    stroke(80);
     // line(0,height,width,0);
     let p1 = new Point(-1, f(-1));
     let p2 = new Point(1, f(1));
@@ -43,13 +44,14 @@ function draw() {
     line(p3.getXPixel(), p3.getYPixel(), p4.getXPixel(), p4.getYPixel());
 
     for (point of points) {
-        point.draw();
+        
         let guess = brain.guess([point.getX(), point.getY(), point.getBias()]);
         if (guess != point.getLabel()) {
             fill(ORANGE_DARK);
             noStroke();
             ellipse(point.getXPixel(), point.getYPixel(), DOT_SIZE);
         }
+        else {point.draw();}
     }
 
     let training = points[training_index];

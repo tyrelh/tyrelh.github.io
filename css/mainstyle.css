@@ -9,6 +9,8 @@ $grey_dark: darken($grey_light, 60%);
 $yellow: #ffb817;
 $orange: #ff7a30;
 
+background from vscode config #1a1d24
+
 font-family: 'Slabo 27px', serif;
 font-family: 'Khula', sans-serif;
 font-family: 'Ubuntu Mono', monospace;
@@ -21,7 +23,7 @@ html {
     min-height: 100%;
 }
 body {
-  background-color:#202020;
+  background-color:#1a1d24;
   color:#eee;
   font-family: 'Ubuntu Mono', monospace;
   font-weight:300;
@@ -162,4 +164,7 @@ footer ul {
 footer li {
   display:inline-block;
   padding: 0 0.5em;
+}
+.love {
+  color:#cc4ff1;
 }

@@ -24,8 +24,8 @@ html {
 }
 body {
   background-color:#1a1d24;
-  color:#eee;
-  font-family: 'Ubuntu Mono', monospace;
+  color:#ddd;
+  font-family: 'Slabo 27px', serif;
   font-weight:300;
 }
 a {
@@ -113,8 +113,8 @@ section {
   width:99%;
   max-width: 1200px;
   margin:0 auto;
-  font-family: 'Ubuntu Mono', monospace;
-  font-size: 1.2em;
+  font-family: 'Slabo 27px', serif;
+  font-size: 1.45em;
 }
 .profilePic {
   border-radius:100%;

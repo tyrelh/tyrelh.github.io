@@ -10,6 +10,7 @@ $yellow: #ffb817;
 $orange: #ff7a30;
 
 background from vscode config #1a1d24
+#191d22
 
 font-family: 'Slabo 27px', serif;
 font-family: 'Khula', sans-serif;
@@ -23,10 +24,10 @@ html {
     min-height: 100%;
 }
 body {
-  background-color:#1a1d24;
-  color:#ddd;
-  font-family: 'Lato', sans-serif;
-  font-weight:300;
+  background-color:#13181E; /*13191E 191d22*/
+  color:#eee;
+  font-family: 'Titillium Web', sans-serif;
+  /* font-weight:300; */
 }
 a {
   text-decoration:none;
@@ -113,8 +114,9 @@ section {
   width:99%;
   max-width: 1200px;
   margin:0 auto;
-  font-family: 'Lato', sans-serif;
-  font-size: 1.3em;
+  /* font-family: 'Lato', sans-serif; */
+  font-size: 1.2em;
+  font-weight: 300;
 }
 .profilePic {
   border-radius:100%;

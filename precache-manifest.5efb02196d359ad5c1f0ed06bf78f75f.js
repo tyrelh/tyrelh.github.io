@@ -1,31 +1,27 @@
 self.__precacheManifest = [
   {
-    "revision": "adb55620c95e1a65e3afc157b89539e9",
-    "url": "/static/media/test.adb55620.jpg"
+    "revision": "5e015ab5563b0ee65d90eae35940b41b",
+    "url": "/static/media/pcb1.5e015ab5.jpg"
   },
   {
-    "revision": "1d527e89f8d790319dcf",
-    "url": "/static/css/main.7508ea57.chunk.css"
+    "revision": "9c26533bef4d71074f70",
+    "url": "/static/css/main.ff885e00.chunk.css"
   },
   {
     "revision": "42ac5946195a7306e2a5",
     "url": "/static/js/runtime~main.a8a9905a.js"
   },
   {
-    "revision": "0d1e30ade4cc7f887b0bec45168a3679",
-    "url": "/static/media/stars-small.0d1e30ad.svg"
+    "revision": "7ea776dded3c337ecc0d58d89de9364f",
+    "url": "/static/media/battlesnake-splash.7ea776dd.png"
   },
   {
-    "revision": "7ec5a0f8b29956951d9a",
-    "url": "/static/js/2.c600d5a7.chunk.js"
+    "revision": "5ad27ee13bf23e8de5af",
+    "url": "/static/js/2.07f68f8f.chunk.js"
   },
   {
     "revision": "a6fda341bde0fed27dc11ddd4611cb87",
     "url": "/static/media/battlesnake-2018.a6fda341.jpg"
-  },
-  {
-    "revision": "7ea776dded3c337ecc0d58d89de9364f",
-    "url": "/static/media/battlesnake-splash.7ea776dd.png"
   },
   {
     "revision": "8b1675156067f221bcfac4fbf35d5db9",
@@ -48,12 +44,12 @@ self.__precacheManifest = [
     "url": "/static/media/keycaps.b76e2c1d.jpg"
   },
   {
-    "revision": "1d527e89f8d790319dcf",
-    "url": "/static/js/main.3a4effd9.chunk.js"
+    "revision": "adb55620c95e1a65e3afc157b89539e9",
+    "url": "/static/media/test.adb55620.jpg"
   },
   {
-    "revision": "5e015ab5563b0ee65d90eae35940b41b",
-    "url": "/static/media/pcb1.5e015ab5.jpg"
+    "revision": "9c26533bef4d71074f70",
+    "url": "/static/js/main.04430a62.chunk.js"
   },
   {
     "revision": "41f29c16d9bf40ced52087026122be3b",
@@ -92,11 +88,15 @@ self.__precacheManifest = [
     "url": "/static/media/stars-large.181c8014.svg"
   },
   {
-    "revision": "7ec5a0f8b29956951d9a",
+    "revision": "0d1e30ade4cc7f887b0bec45168a3679",
+    "url": "/static/media/stars-small.0d1e30ad.svg"
+  },
+  {
+    "revision": "5ad27ee13bf23e8de5af",
     "url": "/static/css/2.67df71cd.chunk.css"
   },
   {
-    "revision": "885c34c8a17bdcad60829c917b9cb79a",
+    "revision": "7336fb2dd5b79bb9bcc8e3b419242a87",
     "url": "/index.html"
   }
 ];

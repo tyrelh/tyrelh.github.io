@@ -4,8 +4,8 @@ self.__precacheManifest = [
     "url": "/static/media/pcb1.5e015ab5.jpg"
   },
   {
-    "revision": "9c26533bef4d71074f70",
-    "url": "/static/css/main.ff885e00.chunk.css"
+    "revision": "6ab7f34e5ccc483f8868",
+    "url": "/static/css/main.d06e1d70.chunk.css"
   },
   {
     "revision": "42ac5946195a7306e2a5",
@@ -16,8 +16,8 @@ self.__precacheManifest = [
     "url": "/static/media/battlesnake-splash.7ea776dd.png"
   },
   {
-    "revision": "5ad27ee13bf23e8de5af",
-    "url": "/static/js/2.07f68f8f.chunk.js"
+    "revision": "a578629aaf1b104f1a88",
+    "url": "/static/js/2.3bdd7556.chunk.js"
   },
   {
     "revision": "a6fda341bde0fed27dc11ddd4611cb87",
@@ -48,8 +48,8 @@ self.__precacheManifest = [
     "url": "/static/media/test.adb55620.jpg"
   },
   {
-    "revision": "9c26533bef4d71074f70",
-    "url": "/static/js/main.04430a62.chunk.js"
+    "revision": "6ab7f34e5ccc483f8868",
+    "url": "/static/js/main.66412232.chunk.js"
   },
   {
     "revision": "41f29c16d9bf40ced52087026122be3b",
@@ -92,11 +92,11 @@ self.__precacheManifest = [
     "url": "/static/media/stars-small.0d1e30ad.svg"
   },
   {
-    "revision": "5ad27ee13bf23e8de5af",
+    "revision": "a578629aaf1b104f1a88",
     "url": "/static/css/2.67df71cd.chunk.css"
   },
   {
-    "revision": "7336fb2dd5b79bb9bcc8e3b419242a87",
+    "revision": "78fc4f35659236b5ef628b4695459469",
     "url": "/index.html"
   }
 ];

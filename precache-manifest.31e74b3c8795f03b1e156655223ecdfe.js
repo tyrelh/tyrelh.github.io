@@ -1,27 +1,31 @@
 self.__precacheManifest = [
   {
-    "revision": "03350a2dd18f778615c4",
-    "url": "/static/css/main.2ce05d7b.chunk.css"
+    "revision": "6b5b05fc841fa99919c3",
+    "url": "/static/css/main.11797e4a.chunk.css"
   },
   {
-    "revision": "03350a2dd18f778615c4",
-    "url": "/static/js/main.d2adaded.chunk.js"
+    "revision": "6b5b05fc841fa99919c3",
+    "url": "/static/js/main.822bf29f.chunk.js"
   },
   {
     "revision": "42ac5946195a7306e2a5",
     "url": "/static/js/runtime~main.a8a9905a.js"
   },
   {
-    "revision": "68bbaafa4aa85b68e1eb",
-    "url": "/static/css/2.f727d26b.chunk.css"
+    "revision": "544c9eeb6e0b1c7e50d0",
+    "url": "/static/css/2.26e0e2df.chunk.css"
   },
   {
-    "revision": "68bbaafa4aa85b68e1eb",
-    "url": "/static/js/2.aaad76e4.chunk.js"
+    "revision": "544c9eeb6e0b1c7e50d0",
+    "url": "/static/js/2.92f74405.chunk.js"
   },
   {
     "revision": "a6fda341bde0fed27dc11ddd4611cb87",
     "url": "/static/media/battlesnake-2018.a6fda341.jpg"
+  },
+  {
+    "revision": "b60085cd5c8845e5e08b4858feca7129",
+    "url": "/static/media/grailsLogo.b60085cd.svg"
   },
   {
     "revision": "8b1675156067f221bcfac4fbf35d5db9",
@@ -84,7 +88,7 @@ self.__precacheManifest = [
     "url": "/static/media/case2.67812fb1.jpg"
   },
   {
-    "revision": "e170f1ba4d08cb703fc71d4111a31971",
+    "revision": "55d95dc68ea316afa4c83a890aed464f",
     "url": "/index.html"
   }
 ];

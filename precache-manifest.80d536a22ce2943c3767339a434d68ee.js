@@ -1,39 +1,35 @@
 self.__precacheManifest = [
   {
-    "revision": "6b5b05fc841fa99919c3",
-    "url": "/static/css/main.11797e4a.chunk.css"
+    "revision": "a0b87f93ee906cecc562",
+    "url": "/static/css/main.1da5c9d1.chunk.css"
   },
   {
-    "revision": "6b5b05fc841fa99919c3",
-    "url": "/static/js/main.822bf29f.chunk.js"
+    "revision": "a0b87f93ee906cecc562",
+    "url": "/static/js/main.95e65fec.chunk.js"
   },
   {
     "revision": "42ac5946195a7306e2a5",
     "url": "/static/js/runtime~main.a8a9905a.js"
   },
   {
-    "revision": "544c9eeb6e0b1c7e50d0",
+    "revision": "2c640a8c8cbf8b4df9ca",
     "url": "/static/css/2.26e0e2df.chunk.css"
   },
   {
-    "revision": "544c9eeb6e0b1c7e50d0",
-    "url": "/static/js/2.92f74405.chunk.js"
+    "revision": "2c640a8c8cbf8b4df9ca",
+    "url": "/static/js/2.f1fdee66.chunk.js"
   },
   {
     "revision": "a6fda341bde0fed27dc11ddd4611cb87",
-    "url": "/static/media/battlesnake-2018.a6fda341.jpg"
+    "url": "/static/media/Battlesnake2018-1.a6fda341.jpg"
   },
   {
     "revision": "b60085cd5c8845e5e08b4858feca7129",
-    "url": "/static/media/grailsLogo.b60085cd.svg"
+    "url": "/static/media/GrailsAssetMigration.b60085cd.svg"
   },
   {
-    "revision": "8b1675156067f221bcfac4fbf35d5db9",
-    "url": "/static/media/mechkey.8b167515.jpg"
-  },
-  {
-    "revision": "8c23a17a9af109bc35984735fa88a3f6",
-    "url": "/static/media/event1-2018.8c23a17a.jpg"
+    "revision": "df1718b458ba311c1f0faf6914c2b0d2",
+    "url": "/static/media/darkModeToggle.df1718b4.svg"
   },
   {
     "revision": "db1325110449e819ef4493c6919a6aa9",
@@ -88,7 +84,35 @@ self.__precacheManifest = [
     "url": "/static/media/case2.67812fb1.jpg"
   },
   {
-    "revision": "55d95dc68ea316afa4c83a890aed464f",
+    "revision": "8b1675156067f221bcfac4fbf35d5db9",
+    "url": "/static/media/mechkey.8b167515.jpg"
+  },
+  {
+    "revision": "8c23a17a9af109bc35984735fa88a3f6",
+    "url": "/static/media/Battlesnake2018-2.8c23a17a.jpg"
+  },
+  {
+    "revision": "6b126ad4545f8d01f4c8f8f9f2b4f5e1",
+    "url": "/static/media/Battlesnake2018.6b126ad4.md"
+  },
+  {
+    "revision": "bc25842ab0adda3e2b34cc9dd9ca86ce",
+    "url": "/static/media/DarkModeToggle.bc25842a.md"
+  },
+  {
+    "revision": "df1718b458ba311c1f0faf6914c2b0d2",
+    "url": "/static/media/DarkModeToggle.df1718b4.svg"
+  },
+  {
+    "revision": "6ef3200497d5540554c490bea977e736",
+    "url": "/static/media/GrailsAssetMigration.6ef32004.md"
+  },
+  {
+    "revision": "a8210b5ab7a400e81b0ffdcf24ae594b",
+    "url": "/static/media/article.a8210b5a.md"
+  },
+  {
+    "revision": "f16edaf69df51ea7be52ad91bcd2e146",
     "url": "/index.html"
   }
 ];

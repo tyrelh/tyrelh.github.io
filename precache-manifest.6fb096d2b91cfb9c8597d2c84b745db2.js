@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "4122784385a18dc5f29b",
+    "revision": "6306cd1a416f2d4866bf",
     "url": "/static/css/main.1da5c9d1.chunk.css"
   },
   {
-    "revision": "4122784385a18dc5f29b",
-    "url": "/static/js/main.822e4b50.chunk.js"
+    "revision": "6306cd1a416f2d4866bf",
+    "url": "/static/js/main.d7a6b418.chunk.js"
   },
   {
     "revision": "42ac5946195a7306e2a5",
@@ -96,12 +96,12 @@ self.__precacheManifest = [
     "url": "/static/media/Battlesnake2018.6b126ad4.md"
   },
   {
-    "revision": "bc25842ab0adda3e2b34cc9dd9ca86ce",
-    "url": "/static/media/DarkModeToggle.bc25842a.md"
+    "revision": "df1718b458ba311c1f0faf6914c2b0d2",
+    "url": "/static/media/DarkModeToggle-1.df1718b4.svg"
   },
   {
-    "revision": "df1718b458ba311c1f0faf6914c2b0d2",
-    "url": "/static/media/DarkModeToggle.df1718b4.svg"
+    "revision": "72582e7ed46d529b92a5d29fb61585c1",
+    "url": "/static/media/DarkModeToggle.72582e7e.md"
   },
   {
     "revision": "6ef3200497d5540554c490bea977e736",
@@ -112,7 +112,7 @@ self.__precacheManifest = [
     "url": "/static/media/article.a8210b5a.md"
   },
   {
-    "revision": "9b37616a6348a7bd0769592e76ab4188",
+    "revision": "573236f4e103d683e02c150820788b71",
     "url": "/index.html"
   }
 ];

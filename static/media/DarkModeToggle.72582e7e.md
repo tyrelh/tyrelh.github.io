@@ -1,6 +1,8 @@
 # Dark Mode React Toggle
 I developed a dark and light theme for this site and built a toggle to switch between them. Also I used media queries to set the default theme to match the visitors operating system choice.
 
+![Sun and moon icons](./DarkModeToggle-1.svg)
+
 ## TL;DR
 * [Introduction](#introduction): I am dark mode obsessed. Every app I use I attempt to make it dark themed. 😎
 * [Theme Switch](#theme-switch): I built a switch to allow a visitor to toggle between light and dark theme.
@@ -8,8 +10,6 @@ I developed a dark and light theme for this site and built a toggle to switch be
 * [Media Query](#media-query): You can set the theme based on the visitor's operating system choice!
 * [React Component](#react-component): Bundling everything up into a nice component.
 * [Github Repo](#github-repo): You can roll your own dark theme using my toggle.
-
-![Sun and moon icons](./DarkModeToggle.svg)
 
 ## Introduction
 I've been obsessed with dark themes for a while now. To the point were I will essentially boycott an app or service if I cannot find a way to theme it dark. Just the thought of staring into a blinding white screen is giving me a headache right now.

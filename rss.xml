@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0">
+    <channel>
+        <title>Tyrel Hiebert</title>
+        <link>https://tyrelh.github.io/</link>
+        <description>Tyrel Hiebert is a software engineer constantly learning new skills and technologies.</description>
+
+        <item>
+            <title>Dark Mode React Toggle</title>
+            <link>https://tyrelh.github.io/dark-mode-react-toggle-2020</link>
+            <guid>https://tyrelh.github.io/dark-mode-react-toggle-2020</guid>
+            <pubDate>Tue, 28 Jan 2020 00:00:00 GMT</pubDate>
+            <description>I developed a dark and light theme for this site and built a toggle to switch between them. Also I used media queries to set the default theme to match the visitors operating system choice.</description>
+        </item>
+
+        <item>
+            <title>Dark Mode React Toggle</title>
+            <link>https://tyrelh.github.io/dark-mode-react-toggle-2020</link>
+            <guid>https://tyrelh.github.io/dark-mode-react-toggle-2020</guid>
+            <pubDate>Tue, 28 Jan 2020 00:00:00 GMT</pubDate>
+            <description>I developed a dark and light theme for this site and built a toggle to switch between them. Also I used media queries to set the default theme to match the visitors operating system choice.</description>
+        </item>
+
+    </channel>
+</rss>

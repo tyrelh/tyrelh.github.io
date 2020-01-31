@@ -1,6 +1,6 @@
 # Building a Mechanical Keyboard from Scratch
 
-## TL;DR
+## Tl;dr
 
 * [Backstory](#backstory): I found many interesting mechanical keyboards on Reddit and Massdrop; decided to build my own.
 * [Design](#design): Decided on a layout and then picked PCB's, switches, keycaps, and microcontroller.

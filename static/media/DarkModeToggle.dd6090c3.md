@@ -3,7 +3,7 @@ I developed a dark and light theme for this site and built a toggle to switch be
 
 ![Sun and moon icons](./DarkModeToggle-1.svg)
 
-## TL;DR
+## Tl;dr
 * [Introduction](#introduction): I am dark mode obsessed. Every app I use I attempt to make it dark themed. 😎
 * [Theme Switch](#theme-switch): I built a switch to allow a visitor to toggle between light and dark theme.
 * [Styles](#styles): I nested the styles for both light and dark theme together. You may want to separate them so that you can selectively download.

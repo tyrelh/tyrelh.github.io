@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "761ba64818e73cc80b15",
-    "url": "/static/css/main.c29b4964.chunk.css"
+    "revision": "924adc34aec981244107",
+    "url": "/static/css/main.eea6437f.chunk.css"
   },
   {
-    "revision": "761ba64818e73cc80b15",
-    "url": "/static/js/main.1ae4fe8d.chunk.js"
+    "revision": "924adc34aec981244107",
+    "url": "/static/js/main.15ea95ea.chunk.js"
   },
   {
     "revision": "42ac5946195a7306e2a5",
@@ -40,20 +40,20 @@ self.__precacheManifest = [
     "url": "/static/media/Battlesnake2018-2.8c23a17a.jpg"
   },
   {
-    "revision": "6b126ad4545f8d01f4c8f8f9f2b4f5e1",
-    "url": "/static/media/Battlesnake2018.6b126ad4.md"
+    "revision": "1a4f1733af50681c7a2c898043e344ff",
+    "url": "/static/media/Battlesnake2018.1a4f1733.md"
   },
   {
     "revision": "df1718b458ba311c1f0faf6914c2b0d2",
     "url": "/static/media/DarkModeToggle-1.df1718b4.svg"
   },
   {
-    "revision": "72582e7ed46d529b92a5d29fb61585c1",
-    "url": "/static/media/DarkModeToggle.72582e7e.md"
+    "revision": "dd6090c36564e973329f74c34e0cc3c8",
+    "url": "/static/media/DarkModeToggle.dd6090c3.md"
   },
   {
-    "revision": "6ef3200497d5540554c490bea977e736",
-    "url": "/static/media/GrailsAssetMigration.6ef32004.md"
+    "revision": "488d2d93aa851fd6618b1a21da33c389",
+    "url": "/static/media/GrailsAssetMigration.488d2d93.md"
   },
   {
     "revision": "db1325110449e819ef4493c6919a6aa9",
@@ -108,15 +108,15 @@ self.__precacheManifest = [
     "url": "/static/media/MechanicalKeyboard-9.692de312.jpg"
   },
   {
-    "revision": "ddd09e10b9f3c630e00caaf9bad67b05",
-    "url": "/static/media/MechanicalKeyboard.ddd09e10.md"
+    "revision": "ecbe21c6f659225f0a18bf32893a91c4",
+    "url": "/static/media/MechanicalKeyboard.ecbe21c6.md"
   },
   {
     "revision": "a8210b5ab7a400e81b0ffdcf24ae594b",
     "url": "/static/media/article.a8210b5a.md"
   },
   {
-    "revision": "d245b20e377c3beb46af3d8342862655",
+    "revision": "1cc1160b749c199b30a78353f7ae070f",
     "url": "/index.html"
   }
 ];

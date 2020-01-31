@@ -2,7 +2,7 @@
 
 Upgrading our application from Grails 2 to Grails 3 has been a long process. This is just one piece of that process.
 
-## TL;DR
+## Tl;dr
 
 * [Asset-Pipeline Plugin](#asset-pipeline-plugin): Grails 3 uses a new plugin by default to render static assets within GSPs.
 * [Frontend Modules](#frontend-modules): Frontend module structure has changed between the old Resources plugin and the new Asset-Pipeline plugin.

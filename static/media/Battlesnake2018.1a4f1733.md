@@ -2,7 +2,7 @@
 
 ![Battle snake logo on purple background](./Battlesnake2018-1.jpg)
 
-## TL;DR
+## Tl;dr
 * [Background](#background): Battlesnake is a programming competition where students and industry professionals develop an AI to play a multiplayer version of the classic game Snake.
 * [First Year Competing](#first-year-competing): I was very excited to discover this competition and thought it would be a great way to learn Python.
 * [Getting Started](#getting-started): Set up a basic "starter snake" provided by sendwithus.

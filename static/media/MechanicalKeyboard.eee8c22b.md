@@ -1,5 +1,7 @@
 # Building a Mechanical Keyboard from Scratch
 
+![Top view of keyboard with acrylic case and purple glowing LEDs](./MechanicalKeyboard-12.jpg)
+
 ## Tl;dr
 
 * [Backstory](#backstory): I found many interesting mechanical keyboards on Reddit and Massdrop; decided to build my own.

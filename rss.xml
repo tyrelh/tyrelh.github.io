@@ -14,11 +14,11 @@
         </item>
 
         <item>
-            <title>Dark Mode React Toggle</title>
-            <link>https://tyrelh.github.io/dark-mode-react-toggle-2020</link>
-            <guid>https://tyrelh.github.io/dark-mode-react-toggle-2020</guid>
-            <pubDate>Tue, 28 Jan 2020 00:00:00 GMT</pubDate>
-            <description>I developed a dark and light theme for this site and built a toggle to switch between them. Also I used media queries to set the default theme to match the visitors operating system choice.</description>
+            <title>Migrating Frontend Assets During Grails 2 → 3 Upgrade</title>
+            <link>https://tyrelh.github.io/grails-frontend-asset-migration-2019</link>
+            <guid>https://tyrelh.github.io/grails-frontend-asset-migration-2019</guid>
+            <pubDate>Sun, 15 Dec 2019 00:00:00 GMT</pubDate>
+            <description>Upgrading our application from Grails 2 to Grails 3 has been a long process. This is just one piece of that process.</description>
         </item>
 
     </channel>

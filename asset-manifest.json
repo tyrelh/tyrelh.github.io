@@ -1,14 +1,14 @@
 {
   "main.css": "/static/css/main.6c106a5d.chunk.css",
-  "main.js": "/static/js/main.7ac228c7.chunk.js",
-  "main.js.map": "/static/js/main.7ac228c7.chunk.js.map",
+  "main.js": "/static/js/main.83173872.chunk.js",
+  "main.js.map": "/static/js/main.83173872.chunk.js.map",
   "runtime~main.js": "/static/js/runtime~main.a8a9905a.js",
   "runtime~main.js.map": "/static/js/runtime~main.a8a9905a.js.map",
   "static/css/2.26e0e2df.chunk.css": "/static/css/2.26e0e2df.chunk.css",
   "static/js/2.c67c3129.chunk.js": "/static/js/2.c67c3129.chunk.js",
   "static/js/2.c67c3129.chunk.js.map": "/static/js/2.c67c3129.chunk.js.map",
   "index.html": "/index.html",
-  "precache-manifest.a2c06e94fe40503b7bdcd67d5f95ca5c.js": "/precache-manifest.a2c06e94fe40503b7bdcd67d5f95ca5c.js",
+  "precache-manifest.70ca2f7cdb34d6a1d6ae3e0d6c2315cf.js": "/precache-manifest.70ca2f7cdb34d6a1d6ae3e0d6c2315cf.js",
   "service-worker.js": "/service-worker.js",
   "static/css/2.26e0e2df.chunk.css.map": "/static/css/2.26e0e2df.chunk.css.map",
   "static/css/main.6c106a5d.chunk.css.map": "/static/css/main.6c106a5d.chunk.css.map",
@@ -36,6 +36,6 @@
   "static/media/article.md": "/static/media/article.a8210b5a.md",
   "static/media/darkModeToggle.svg": "/static/media/darkModeToggle.df1718b4.svg",
   "static/media/lightshift-game-2.png": "/static/media/lightshift-game-2.138ec35e.png",
-  "static/media/lightshift-game.md": "/static/media/lightshift-game.dd04c461.md",
+  "static/media/lightshift-game.md": "/static/media/lightshift-game.64a23613.md",
   "static/media/mechkey.jpg": "/static/media/mechkey.8b167515.jpg"
 }

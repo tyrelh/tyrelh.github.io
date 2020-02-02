@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "a050557c63d3ccefbf29",
+    "revision": "4f5e0ddd1003f6e40b71",
     "url": "/static/css/main.6c106a5d.chunk.css"
   },
   {
-    "revision": "a050557c63d3ccefbf29",
-    "url": "/static/js/main.7ac228c7.chunk.js"
+    "revision": "4f5e0ddd1003f6e40b71",
+    "url": "/static/js/main.83173872.chunk.js"
   },
   {
     "revision": "42ac5946195a7306e2a5",
@@ -120,11 +120,11 @@ self.__precacheManifest = [
     "url": "/static/media/article.a8210b5a.md"
   },
   {
-    "revision": "dd04c461286e5ab935b177886e79876e",
-    "url": "/static/media/lightshift-game.dd04c461.md"
+    "revision": "64a236131146907db674c8bdef116df0",
+    "url": "/static/media/lightshift-game.64a23613.md"
   },
   {
-    "revision": "2588ffec50ce485dee336e0aa2ea5533",
+    "revision": "c6828d3816b84d821bd863baf19e9122",
     "url": "/index.html"
   }
 ];

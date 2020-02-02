@@ -1,23 +1,23 @@
 self.__precacheManifest = [
   {
-    "revision": "f63b11dcdca3dd1d2e36",
-    "url": "/static/css/main.5517fc31.chunk.css"
+    "revision": "0a5f4bbf47bc08392c1a",
+    "url": "/static/css/main.6c106a5d.chunk.css"
   },
   {
-    "revision": "f63b11dcdca3dd1d2e36",
-    "url": "/static/js/main.76a9b9c3.chunk.js"
+    "revision": "0a5f4bbf47bc08392c1a",
+    "url": "/static/js/main.7c70f28d.chunk.js"
   },
   {
     "revision": "42ac5946195a7306e2a5",
     "url": "/static/js/runtime~main.a8a9905a.js"
   },
   {
-    "revision": "cea595feed1e35cf535e",
+    "revision": "0a68147317abc39afb65",
     "url": "/static/css/2.26e0e2df.chunk.css"
   },
   {
-    "revision": "cea595feed1e35cf535e",
-    "url": "/static/js/2.b9d20d3d.chunk.js"
+    "revision": "0a68147317abc39afb65",
+    "url": "/static/js/2.c67c3129.chunk.js"
   },
   {
     "revision": "a6fda341bde0fed27dc11ddd4611cb87",
@@ -26,6 +26,10 @@ self.__precacheManifest = [
   {
     "revision": "b60085cd5c8845e5e08b4858feca7129",
     "url": "/static/media/GrailsAssetMigration.b60085cd.svg"
+  },
+  {
+    "revision": "138ec35edc7b342e6f17d73a6648c57d",
+    "url": "/static/media/lightshift-game-2.138ec35e.png"
   },
   {
     "revision": "8b1675156067f221bcfac4fbf35d5db9",
@@ -116,7 +120,11 @@ self.__precacheManifest = [
     "url": "/static/media/article.a8210b5a.md"
   },
   {
-    "revision": "1f30fb21a3ff5a07db04a8c0d5d81cc0",
+    "revision": "6e581823728c4ce703e626ba743d55b7",
+    "url": "/static/media/lightshift-game.6e581823.md"
+  },
+  {
+    "revision": "af5eed2ac61ebf8153c94488f8146f90",
     "url": "/index.html"
   }
 ];

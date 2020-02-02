@@ -4,7 +4,7 @@ I sharted this project in 2018 to help teach myself better object-oriented progr
 
 Implemented using the P5.js framework for the draw loop and canvas drawing functionality with nothing else but vanilla JavaScript.
 
-[![Screenshot of game with triangle representing the ship in the center and white asteroids all around](./lightshift-game-1.png)](https://tyrelh.github.io/lightshift-game/)
+[![Screenshot of game with triangle representing the ship in the center and white asteroids all around](./lightshift-game-2.png)](https://tyrelh.github.io/lightshift-game/)
 
 You can [play the game](https://tyrelh.github.io/lightshift-game/)!
 

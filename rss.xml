@@ -6,17 +6,25 @@
         <description>Tyrel Hiebert is a software engineer constantly learning new skills and technologies.</description>
 
         <item>
+            <title>Lightshift Game</title>
+            <link>https://tyrelh.github.io/blog/2020/lightshift-game</link>
+            <guid>https://tyrelh.github.io/blog/2020/lightshift-game</guid>
+            <pubDate>Sat, 01 Feb 2020 00:00:00 GMT</pubDate>
+            <description>I started this project in 2018 to help teach myself better object-oriented programming structure, game update/draw loops, and JavaScript in general. Implemented using the P5.js framework for the draw loop and canvas drawing functionality with nothing else but vanilla JavaScript.</description>
+        </item>
+
+        <item>
             <title>Dark Mode React Toggle</title>
-            <link>https://tyrelh.github.io/dark-mode-react-toggle-2020</link>
-            <guid>https://tyrelh.github.io/dark-mode-react-toggle-2020</guid>
+            <link>https://tyrelh.github.io/blog/2020/dark-mode-react-toggle</link>
+            <guid>https://tyrelh.github.io/blog/2020/dark-mode-react-toggle</guid>
             <pubDate>Tue, 28 Jan 2020 00:00:00 GMT</pubDate>
             <description>I developed a dark and light theme for this site and built a toggle to switch between them. Also I used media queries to set the default theme to match the visitors operating system choice.</description>
         </item>
 
         <item>
             <title>Migrating Frontend Assets During Grails 2 → 3 Upgrade</title>
-            <link>https://tyrelh.github.io/grails-frontend-asset-migration-2019</link>
-            <guid>https://tyrelh.github.io/grails-frontend-asset-migration-2019</guid>
+            <link>https://tyrelh.github.io/blog/2019/grails-frontend-asset-migration</link>
+            <guid>https://tyrelh.github.io/blog/2019/grails-frontend-asset-migration</guid>
             <pubDate>Sun, 15 Dec 2019 00:00:00 GMT</pubDate>
             <description>Upgrading our application from Grails 2 to Grails 3 has been a long process. This is just one piece of that process.</description>
         </item>

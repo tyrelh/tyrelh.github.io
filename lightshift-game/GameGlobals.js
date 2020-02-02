@@ -20,7 +20,7 @@ var MAIN_FONT;
 function preload() {
     // Marvin Visions font used under free license
     // https://www.readvisions.com/marvin
-    MAIN_FONT = loadFont("static/MarvinVisions-Bold.otf");
+    MAIN_FONT = loadFont("static/MarvinVisionsBig-Bold.woff2");
     // BG_MUSIC_1 = loadSound('static/Azureflux_-_02_-_Waves.mp3');
     //LASER_SOUND_1 = loadSound('static/Laser_Shoot7.wav');
 }

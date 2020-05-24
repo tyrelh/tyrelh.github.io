@@ -1,23 +1,23 @@
 self.__precacheManifest = [
   {
-    "revision": "4f5e0ddd1003f6e40b71",
-    "url": "/static/css/main.6c106a5d.chunk.css"
+    "revision": "d3a6997718fb4fe1287f",
+    "url": "/static/css/main.8c8a7bd3.chunk.css"
   },
   {
-    "revision": "4f5e0ddd1003f6e40b71",
-    "url": "/static/js/main.83173872.chunk.js"
+    "revision": "d3a6997718fb4fe1287f",
+    "url": "/static/js/main.b7abc953.chunk.js"
   },
   {
     "revision": "42ac5946195a7306e2a5",
     "url": "/static/js/runtime~main.a8a9905a.js"
   },
   {
-    "revision": "0a68147317abc39afb65",
-    "url": "/static/css/2.26e0e2df.chunk.css"
+    "revision": "811874d3b39b0b37bea7",
+    "url": "/static/css/2.68abcadc.chunk.css"
   },
   {
-    "revision": "0a68147317abc39afb65",
-    "url": "/static/js/2.c67c3129.chunk.js"
+    "revision": "811874d3b39b0b37bea7",
+    "url": "/static/js/2.55509044.chunk.js"
   },
   {
     "revision": "a6fda341bde0fed27dc11ddd4611cb87",
@@ -30,6 +30,10 @@ self.__precacheManifest = [
   {
     "revision": "138ec35edc7b342e6f17d73a6648c57d",
     "url": "/static/media/lightshift-game-2.138ec35e.png"
+  },
+  {
+    "revision": "37c822c4be136e274d8c49e290c11390",
+    "url": "/static/media/DenoTestsAndGithubActionsCI.37c822c4.png"
   },
   {
     "revision": "8b1675156067f221bcfac4fbf35d5db9",
@@ -54,6 +58,18 @@ self.__precacheManifest = [
   {
     "revision": "dd6090c36564e973329f74c34e0cc3c8",
     "url": "/static/media/DarkModeToggle.dd6090c3.md"
+  },
+  {
+    "revision": "9b2658c46308351f2514beaf9d0ad2bf",
+    "url": "/static/media/DenoAndGithubActions-get-started-with-github-actions.9b2658c4.png"
+  },
+  {
+    "revision": "42ece7aec7398ddc12e6548bc637d3ed",
+    "url": "/static/media/DenoAndGithubActions-github-actions.42ece7ae.png"
+  },
+  {
+    "revision": "b9677c76080d86f929baf69de5b339d8",
+    "url": "/static/media/DenoAndGithubActions.b9677c76.md"
   },
   {
     "revision": "488d2d93aa851fd6618b1a21da33c389",
@@ -120,11 +136,11 @@ self.__precacheManifest = [
     "url": "/static/media/article.a8210b5a.md"
   },
   {
-    "revision": "64a236131146907db674c8bdef116df0",
-    "url": "/static/media/lightshift-game.64a23613.md"
+    "revision": "93bea876d7c0d2ec65f9810fa6f6b2fd",
+    "url": "/static/media/lightshift-game.93bea876.md"
   },
   {
-    "revision": "c6828d3816b84d821bd863baf19e9122",
+    "revision": "bf8577e7308a83588a30a5a1c2a0774d",
     "url": "/index.html"
   }
 ];

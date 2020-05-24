@@ -1,4 +1,4 @@
-# Lightshift Game.
+# Lightshift Game
 
 I started this project in 2018 to help teach myself better object-oriented programming structure, game update/draw loops, and JavaScript in general.
 

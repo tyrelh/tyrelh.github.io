@@ -1,10 +1,10 @@
 self.__precacheManifest = [
   {
-    "revision": "d95ce5109c1351887aa9",
-    "url": "/static/css/main.0f9a6a12.chunk.css"
+    "revision": "12ecd77b3cd784bc847b",
+    "url": "/static/css/main.4588064e.chunk.css"
   },
   {
-    "revision": "d95ce5109c1351887aa9",
+    "revision": "12ecd77b3cd784bc847b",
     "url": "/static/js/main.b7abc953.chunk.js"
   },
   {
@@ -140,7 +140,7 @@ self.__precacheManifest = [
     "url": "/static/media/lightshift-game.93bea876.md"
   },
   {
-    "revision": "f38ae0c186db94c8d34c94e7b1835713",
+    "revision": "eab779f9f8878b51676a3aec4a99d78f",
     "url": "/index.html"
   }
 ];

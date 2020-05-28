@@ -1,16 +1,18 @@
 # Deno Tests and Github Actions CI
 During a recent project to convert my JavaScript & Node [Battlesnake](https://play.battlesnake.com/) over to TypeScript & [Deno](https://deno.land/), I decided I would also create a more robust suite of tests for it.
 
+![Deno and Github logos with an addition symbol between them](./DenoTestsAndGithubActionsCI.png)
+
 If you are unfamiliar with [Battlesnake](https://play.battlesnake.com/), it is an online and in-person programming competition where you build a AI in the form of a REST API that can play a multiplayer version of the classic game [Snake](https://en.wikipedia.org/wiki/Snake_(video_game_genre). You can check out details on their [website](https://play.battlesnake.com/) to learn more, and even watch some past events on their [Twitch channel](https://www.twitch.tv/BattlesnakeOfficial).
 
 ## Tl;dr
 * [Deno Tests](#deno-tests): Deno includes a very simple test runner framework.
 * [Github Actions](#github-actions): Github actions allow you to automate tasks based on triggers within your Github repo.
 * [Create the workflow](#create-the-workflow): A .yml file describes a series of actions you would like to perform based on a trigger.
-* [Automate Deno tests](#automate-deno-tests):
+* [Automate Deno tests](#automate-deno-tests): Just add a `run: deno test` command to your workflow .yml.
 
 ## Deno Tests
-[Deno](https://deno.land/) includes a simple test runner for tests in js, ts, jsx, or tsx files. It can be run with
+[Deno](https://deno.land/) includes a simple test runner for tests in js, ts, jsx, or tsx files. It can be run with:
 
 ```bash
 deno test
@@ -18,7 +20,7 @@ deno test
 
 To create tests, all you need to use is use the `Deno.test()` method included with Deno within files ending in *test* (`{*_,}test.{js,ts,jsx,tsx}`) anywhere in your project structure. I put mine in *tests/*.
 
-Example of a basic test
+Example of a basic test:
 
 ```typescript
 import { assert } from "https://deno.land/std/testing/asserts.ts";
@@ -64,7 +66,7 @@ If you click the Actions tab within the repo you want to create the Action you w
 
 ![Get started with Github Actions](./DenoAndGithubActions-get-started-with-github-actions.png)
 
-This plops you into a web editor and gives you a basic example workflow .yml file to start with. It looks something like this
+This plops you into a web editor and gives you a basic example workflow .yml file to start with. It looks something like this:
 
 ```yaml
 # This is a basic workflow to help you get started with Actions
@@ -118,7 +120,7 @@ I found [this repo](https://github.com/denolib/setup-deno) from [denolib](https:
 
 Really all you need to do is add the `uses` line pointing to this repo to your workflow .yml file under the `steps` section. You can also include the Deno version you prefer. Then within the `run` section you now have access to `deno` and all of its functions.
 
-So now my workflow .yml file looks like this
+So now my workflow .yml file looks like this:
 
 ```yaml
 name: CI
@@ -149,7 +151,7 @@ One really cool feature of Deno is that you can run scripts from the web right i
 
 You can run this and then look within your Github Actions for the console output from this example *welcome.ts* file.
 
-So now to run my tests, all I needed to do was change that `deno run` command to `deno test`. My final .yml workflow looks something like this
+So now to run my tests, all I needed to do was change that `deno run` command to `deno test`. My final .yml workflow looks something like this:
 
 ```yaml
 name: CI

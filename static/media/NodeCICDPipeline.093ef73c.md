@@ -46,6 +46,7 @@ Beyond automating testing when pushing to my master branch I decided to give the
 Now I have fully automated the whole process!
 
 Using Github Actions, whenever I push to my master branch I have 3 jobs that run:
+
 1. The repo is tested with my suite of tests using Mocha
 2. If the tests pass, the project is built, zipped, and pushed to AWS S3
 3. If the tests and build are successful, the zip is deployed to AWS Elastic Beanstalk.

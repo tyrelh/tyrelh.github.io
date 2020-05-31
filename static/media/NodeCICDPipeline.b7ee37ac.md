@@ -1,10 +1,11 @@
 # Node CI/CD Pipeline using Github Actions and AWS Elastic Beanstalk
-Here is my journey into creating an automated continuous integration and continuous deployment workflow for a project using Github Actions.
+#### May 30, 2020
+Here is my journey into creating an automated workflow to test, build, and deploy a project I have been working on using Github Actions and Elastic Beanstalk.
 
 ![Github Actions logo with colourful background and text that says GitHub Actions now with built-in CI/CD](./node-cicd-pipeline-hero.png)
 
 ## Tl;dr
-* [Background](#background-on-the-project): I was converting a JavaScript project to TypeScript and I decided at the same time to set up continuous integration and continuous deployment at the same time using Github Actions.
+* [Background](#background-on-the-project): I was converting a JavaScript project to TypeScript and I decided to set up continuous integration and continuous deployment at the same time using [Github Actions](https://github.com/features/actions).
 * [Testing](#testing): I am using [Mocha](https://mochajs.org/) for the first time to run my TypeScript tests.
 * [Automation](#automation): The intention is to create a Github workflow that will test my code, build my project, and deploy it to Elastic Beanstalk automatically whenever I push to the master branch. 
 * [Create a new IAM user](#create-a-new-iam-user): First step is to create a new AWS IAM User to automate interactions with AWS.

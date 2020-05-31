@@ -1,23 +1,23 @@
 self.__precacheManifest = [
   {
-    "revision": "3467889fcabb54e5d572",
-    "url": "/static/css/main.232c727a.chunk.css"
+    "revision": "34bf1253af6792a4e0e9",
+    "url": "/static/css/main.9dd79ad8.chunk.css"
   },
   {
-    "revision": "3467889fcabb54e5d572",
-    "url": "/static/js/main.83f5048a.chunk.js"
+    "revision": "34bf1253af6792a4e0e9",
+    "url": "/static/js/main.06925c82.chunk.js"
   },
   {
     "revision": "42ac5946195a7306e2a5",
     "url": "/static/js/runtime~main.a8a9905a.js"
   },
   {
-    "revision": "811874d3b39b0b37bea7",
+    "revision": "c9f397f2b1cd15e5a75a",
     "url": "/static/css/2.68abcadc.chunk.css"
   },
   {
-    "revision": "811874d3b39b0b37bea7",
-    "url": "/static/js/2.55509044.chunk.js"
+    "revision": "c9f397f2b1cd15e5a75a",
+    "url": "/static/js/2.f2ac7a9a.chunk.js"
   },
   {
     "revision": "a6fda341bde0fed27dc11ddd4611cb87",
@@ -34,6 +34,10 @@ self.__precacheManifest = [
   {
     "revision": "37c822c4be136e274d8c49e290c11390",
     "url": "/static/media/DenoTestsAndGithubActionsCI.37c822c4.png"
+  },
+  {
+    "revision": "2f849ff722bc62db5c6499cde6efdab5",
+    "url": "/static/media/node-cicd-pipeline-hero.2f849ff7.png"
   },
   {
     "revision": "8b1675156067f221bcfac4fbf35d5db9",
@@ -132,6 +136,10 @@ self.__precacheManifest = [
     "url": "/static/media/MechanicalKeyboard.eee8c22b.md"
   },
   {
+    "revision": "5f11231328209ba02f041f8ed3ee39eb",
+    "url": "/static/media/NodeCICDPipeline.5f112313.md"
+  },
+  {
     "revision": "a8210b5ab7a400e81b0ffdcf24ae594b",
     "url": "/static/media/article.a8210b5a.md"
   },
@@ -140,7 +148,59 @@ self.__precacheManifest = [
     "url": "/static/media/lightshift-game.93bea876.md"
   },
   {
-    "revision": "bbff830e56b057643f879bee0807a5d3",
+    "revision": "06212ccdaf457a972fcc384c6ef225b0",
+    "url": "/static/media/node-cicd-pipeline-eb-environment-creation.06212ccd.png"
+  },
+  {
+    "revision": "b2e338499a74e7b266b3a201bc93e8d7",
+    "url": "/static/media/node-cicd-pipeline-eb-running-environment.b2e33849.png"
+  },
+  {
+    "revision": "4ccafe439ba05687dcb0b3eb45366f43",
+    "url": "/static/media/node-cicd-pipeline-github-actions-getting-started.4ccafe43.png"
+  },
+  {
+    "revision": "89f9d443a6ac316579ea27cb86614073",
+    "url": "/static/media/node-cicd-pipeline-github-running-actions.89f9d443.png"
+  },
+  {
+    "revision": "97e2d5cad2799eea5b2a7064d3a88539",
+    "url": "/static/media/node-cicd-pipeline-github-secret-creation.97e2d5ca.png"
+  },
+  {
+    "revision": "af44ac1f8eb0a8eba5a56f34e467ac9f",
+    "url": "/static/media/node-cicd-pipeline-github-secrets.af44ac1f.png"
+  },
+  {
+    "revision": "e0ff057d501d447c12ae29dade26cdb2",
+    "url": "/static/media/node-cicd-pipeline-github-workflow-success.e0ff057d.png"
+  },
+  {
+    "revision": "cdb9d875bf528b30f1ce9995fd3f68c4",
+    "url": "/static/media/node-cicd-pipeline-iam-1.cdb9d875.png"
+  },
+  {
+    "revision": "61b1d44be7775db7eb24826599a8fc4c",
+    "url": "/static/media/node-cicd-pipeline-iam-2.61b1d44b.png"
+  },
+  {
+    "revision": "dd4827e5804ccb05afc695d5701de092",
+    "url": "/static/media/node-cicd-pipeline-iam-3.dd4827e5.png"
+  },
+  {
+    "revision": "0e43cf110b584fd2945ef60e08b31c4f",
+    "url": "/static/media/node-cicd-pipeline-iam-4.0e43cf11.png"
+  },
+  {
+    "revision": "c4695d54f87d09c6d07f7212871279b2",
+    "url": "/static/media/node-cicd-pipeline-s3-uploaded-files.c4695d54.png"
+  },
+  {
+    "revision": "f15bc0de0dcd6778453966eeac2ef5f6",
+    "url": "/static/media/node-cicd-pipeline-s3.f15bc0de.png"
+  },
+  {
+    "revision": "77037dc01bc579d22daef01d7919a229",
     "url": "/index.html"
   }
 ];

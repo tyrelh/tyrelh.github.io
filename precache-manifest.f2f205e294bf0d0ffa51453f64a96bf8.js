@@ -1,10 +1,10 @@
 self.__precacheManifest = [
   {
-    "revision": "7547415ff29acd33d683",
-    "url": "/static/css/main.9dd79ad8.chunk.css"
+    "revision": "9d77f4a1ba518a2d4e94",
+    "url": "/static/css/main.65d85520.chunk.css"
   },
   {
-    "revision": "7547415ff29acd33d683",
+    "revision": "9d77f4a1ba518a2d4e94",
     "url": "/static/js/main.9f3aa00b.chunk.js"
   },
   {
@@ -200,7 +200,7 @@ self.__precacheManifest = [
     "url": "/static/media/node-cicd-pipeline-s3.f15bc0de.png"
   },
   {
-    "revision": "357bd3cc84fb4b50574f29da37564017",
+    "revision": "98c9f00dc100cb2b727012b37fdd2030",
     "url": "/index.html"
   }
 ];

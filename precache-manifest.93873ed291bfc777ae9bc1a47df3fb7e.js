@@ -1,23 +1,23 @@
 self.__precacheManifest = [
   {
-    "revision": "240255b0846836a186c2",
-    "url": "/static/css/main.059c4441.chunk.css"
+    "revision": "642cb8825e399dd02291",
+    "url": "/static/css/main.dd1a8070.chunk.css"
   },
   {
-    "revision": "240255b0846836a186c2",
-    "url": "/static/js/main.fbdd8aa7.chunk.js"
+    "revision": "642cb8825e399dd02291",
+    "url": "/static/js/main.244f28ab.chunk.js"
   },
   {
     "revision": "42ac5946195a7306e2a5",
     "url": "/static/js/runtime~main.a8a9905a.js"
   },
   {
-    "revision": "00a0da9e80d40300955d",
+    "revision": "5fe8fb2f09fd7f6b93be",
     "url": "/static/css/2.68abcadc.chunk.css"
   },
   {
-    "revision": "00a0da9e80d40300955d",
-    "url": "/static/js/2.1ba080f6.chunk.js"
+    "revision": "5fe8fb2f09fd7f6b93be",
+    "url": "/static/js/2.c20aae68.chunk.js"
   },
   {
     "revision": "a6fda341bde0fed27dc11ddd4611cb87",
@@ -38,6 +38,10 @@ self.__precacheManifest = [
   {
     "revision": "2f849ff722bc62db5c6499cde6efdab5",
     "url": "/static/media/node-cicd-pipeline-hero.2f849ff7.png"
+  },
+  {
+    "revision": "4c258acb574db90189717aa235d0b7e0",
+    "url": "/static/media/sff-pc-part-1-5.4c258acb.jpg"
   },
   {
     "revision": "8b1675156067f221bcfac4fbf35d5db9",
@@ -200,7 +204,59 @@ self.__precacheManifest = [
     "url": "/static/media/node-cicd-pipeline-s3.f15bc0de.png"
   },
   {
-    "revision": "f30ef520477f6f69d11a0cd085dc6991",
+    "revision": "7203f1fad85daef0699a3ab95483d2ab",
+    "url": "/static/media/sff-pc-part-1-1.7203f1fa.jpg"
+  },
+  {
+    "revision": "afc609976751bf4e29aec519515dbf4e",
+    "url": "/static/media/sff-pc-part-1-10.afc60997.jpg"
+  },
+  {
+    "revision": "b91645de5cc7d11dc155c006f36bf247",
+    "url": "/static/media/sff-pc-part-1-11.b91645de.jpg"
+  },
+  {
+    "revision": "4e2992f1f4e9bbfc716ffcfadf1dafed",
+    "url": "/static/media/sff-pc-part-1-12.4e2992f1.jpg"
+  },
+  {
+    "revision": "8f8f8e42eda237e356d87839ca4fff81",
+    "url": "/static/media/sff-pc-part-1-13.8f8f8e42.jpg"
+  },
+  {
+    "revision": "dcf08a55bf9403dcba8b7ee12a62a907",
+    "url": "/static/media/sff-pc-part-1-14.dcf08a55.jpg"
+  },
+  {
+    "revision": "e39cc4edfb15eb2455d33a844515d216",
+    "url": "/static/media/sff-pc-part-1-2.e39cc4ed.jpg"
+  },
+  {
+    "revision": "b9569d0a49d9dd9aead563e11b861568",
+    "url": "/static/media/sff-pc-part-1-3.b9569d0a.jpg"
+  },
+  {
+    "revision": "0ce77ee46e583846b0cfad79c18ba323",
+    "url": "/static/media/sff-pc-part-1-4.0ce77ee4.jpg"
+  },
+  {
+    "revision": "fbf5f60cc1ab9c0cae048a97307cc2f1",
+    "url": "/static/media/sff-pc-part-1-6.fbf5f60c.jpg"
+  },
+  {
+    "revision": "51a900f185f2d7608eda481565cb07bb",
+    "url": "/static/media/sff-pc-part-1-7.51a900f1.jpg"
+  },
+  {
+    "revision": "818ce4ff25ac52c05762c53e2477422a",
+    "url": "/static/media/sff-pc-part-1-8.818ce4ff.jpg"
+  },
+  {
+    "revision": "4f11f8846821733abb3a769a03926ff5",
+    "url": "/static/media/sff-pc-part-1.4f11f884.md"
+  },
+  {
+    "revision": "e40a4ae1a7dd74f6e05443f0d6bb3197",
     "url": "/index.html"
   }
 ];

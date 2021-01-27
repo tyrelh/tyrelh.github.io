@@ -1,6 +1,6 @@
 # Small Form Factor PC Part 2 - Water Cooling
 #### Jan 25, 2021
-This is a continuation of my small form factor PC build. Part 1 was getting the major components installed and the computer running, and part 2 is adding water cooling for the CPU and GPU.
+This is a continuation of my small form factor PC build. [Part 1 was getting the major components installed and the computer running](https://tyrelh.github.io/#/blog/2021/sff-pc-part-1), and part 2 is adding water cooling for the CPU and GPU. You can add to the discussion if you like on [Reddit](https://www.reddit.com/r/sffpc/comments/l56xdr/metalfish_s5_5800x_3080_barrow_pumpblock_first/).
 
 ![Wide picture of entire desk showing my monitor, pc, keyboard, mouse, and speakers. There is a window behind the monitor and plants on either side.](./sff-pc-part-2-3.jpeg)
 
@@ -247,4 +247,4 @@ Some things I may try to do in the future are:
 * • Get PWM control of the pump working and get rid of the manual dial
 * • Get a fluid temperature sensor and a fan controller with temperature sensor input so that I can control the fans based on the fluid temperature rather than the CPU temperature
 
-I am very happy with how it turned out overall. If you have any questions about the build feel free to comment on the corresponding reddit post I made. Also thanks if you made it this far! Sorry this turned into 5000+ words!
+I am very happy with how it turned out overall. If you have any questions about the build feel free to comment on the [corresponding reddit post](https://www.reddit.com/r/sffpc/comments/l56xdr/metalfish_s5_5800x_3080_barrow_pumpblock_first/). Also thanks if you made it this far! Sorry this turned into 5000+ words!

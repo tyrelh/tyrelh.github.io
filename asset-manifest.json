@@ -1,17 +1,17 @@
 {
-  "main.css": "/static/css/main.f4c3887d.chunk.css",
-  "main.js": "/static/js/main.00072eaf.chunk.js",
-  "main.js.map": "/static/js/main.00072eaf.chunk.js.map",
+  "main.css": "/static/css/main.179c6415.chunk.css",
+  "main.js": "/static/js/main.d4e07dbc.chunk.js",
+  "main.js.map": "/static/js/main.d4e07dbc.chunk.js.map",
   "runtime~main.js": "/static/js/runtime~main.a8a9905a.js",
   "runtime~main.js.map": "/static/js/runtime~main.a8a9905a.js.map",
   "static/css/2.68abcadc.chunk.css": "/static/css/2.68abcadc.chunk.css",
-  "static/js/2.29f07324.chunk.js": "/static/js/2.29f07324.chunk.js",
-  "static/js/2.29f07324.chunk.js.map": "/static/js/2.29f07324.chunk.js.map",
+  "static/js/2.634a1582.chunk.js": "/static/js/2.634a1582.chunk.js",
+  "static/js/2.634a1582.chunk.js.map": "/static/js/2.634a1582.chunk.js.map",
   "index.html": "/index.html",
-  "precache-manifest.110744c2d4f3990c1098978e20c0e6a6.js": "/precache-manifest.110744c2d4f3990c1098978e20c0e6a6.js",
+  "precache-manifest.02ed8677bea3454f2bfb4a6740bce952.js": "/precache-manifest.02ed8677bea3454f2bfb4a6740bce952.js",
   "service-worker.js": "/service-worker.js",
   "static/css/2.68abcadc.chunk.css.map": "/static/css/2.68abcadc.chunk.css.map",
-  "static/css/main.f4c3887d.chunk.css.map": "/static/css/main.f4c3887d.chunk.css.map",
+  "static/css/main.179c6415.chunk.css.map": "/static/css/main.179c6415.chunk.css.map",
   "static/media/Battlesnake2018-1.jpg": "/static/media/Battlesnake2018-1.a6fda341.jpg",
   "static/media/Battlesnake2018-2.jpg": "/static/media/Battlesnake2018-2.8c23a17a.jpg",
   "static/media/Battlesnake2018.md": "/static/media/Battlesnake2018.1a4f1733.md",
@@ -87,5 +87,5 @@
   "static/media/sff-pc-part-2-6.jpeg": "/static/media/sff-pc-part-2-6.969d0520.jpeg",
   "static/media/sff-pc-part-2-7.jpeg": "/static/media/sff-pc-part-2-7.ae98a0cc.jpeg",
   "static/media/sff-pc-part-2-8.jpeg": "/static/media/sff-pc-part-2-8.54729d53.jpeg",
-  "static/media/sff-pc-part-2.md": "/static/media/sff-pc-part-2.ffcda4f2.md"
+  "static/media/sff-pc-part-2.md": "/static/media/sff-pc-part-2.650c4ec0.md"
 }

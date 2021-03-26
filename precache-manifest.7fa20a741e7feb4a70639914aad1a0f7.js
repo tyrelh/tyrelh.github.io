@@ -1,23 +1,23 @@
 self.__precacheManifest = [
   {
-    "revision": "9c57e2e54e55b7b0a8b3",
+    "revision": "0607d38642bc9f90b099",
     "url": "/static/css/main.179c6415.chunk.css"
   },
   {
-    "revision": "9c57e2e54e55b7b0a8b3",
-    "url": "/static/js/main.d4e07dbc.chunk.js"
+    "revision": "0607d38642bc9f90b099",
+    "url": "/static/js/main.6b184ff3.chunk.js"
   },
   {
     "revision": "42ac5946195a7306e2a5",
     "url": "/static/js/runtime~main.a8a9905a.js"
   },
   {
-    "revision": "4a21e156f4630e5e3da6",
+    "revision": "cbcc2c13361d6ff22a21",
     "url": "/static/css/2.68abcadc.chunk.css"
   },
   {
-    "revision": "4a21e156f4630e5e3da6",
-    "url": "/static/js/2.634a1582.chunk.js"
+    "revision": "cbcc2c13361d6ff22a21",
+    "url": "/static/js/2.867f08f8.chunk.js"
   },
   {
     "revision": "a6fda341bde0fed27dc11ddd4611cb87",
@@ -46,6 +46,10 @@ self.__precacheManifest = [
   {
     "revision": "c24389d757a7e2c67eef01147fcc3bcb",
     "url": "/static/media/sff-pc-part-2-17.c24389d7.jpeg"
+  },
+  {
+    "revision": "a3c0fabe9d083c0c3f5e3bb35ba2e63a",
+    "url": "/static/media/game-dev-godot.a3c0fabe.jpg"
   },
   {
     "revision": "8b1675156067f221bcfac4fbf35d5db9",
@@ -154,6 +158,26 @@ self.__precacheManifest = [
   {
     "revision": "8e0c8034384475bd5c1921846528705e",
     "url": "/static/media/cyberpunk-1.8e0c8034.png"
+  },
+  {
+    "revision": "f6e5c9ac62d4a373e7caae013c724df3",
+    "url": "/static/media/game-dev-aseprite.f6e5c9ac.jpg"
+  },
+  {
+    "revision": "357215003e7d670c1ba45a0703b40f80",
+    "url": "/static/media/game-dev-gdscript.35721500.jpg"
+  },
+  {
+    "revision": "493df81fd8408616c3622e6bfcdb913d",
+    "url": "/static/media/game-dev-journey.493df81f.md"
+  },
+  {
+    "revision": "56da036dcb08c8e856a6026284ef516f",
+    "url": "/static/media/game-dev-pixaki.56da036d.jpg"
+  },
+  {
+    "revision": "a01512e781128150ae4d4c30435d8697",
+    "url": "/static/media/game-dev-unity-godot-title-card.a01512e7.jpg"
   },
   {
     "revision": "93bea876d7c0d2ec65f9810fa6f6b2fd",
@@ -324,7 +348,7 @@ self.__precacheManifest = [
     "url": "/static/media/sff-pc-part-2.650c4ec0.md"
   },
   {
-    "revision": "5531420441597f2755c8cc4e2cd7467b",
+    "revision": "a1e566192c376dae553f8d30aafc9680",
     "url": "/index.html"
   }
 ];

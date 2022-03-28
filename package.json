@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "next build && next exportnpm ",
     "start": "next start",
     "lint": "next lint"
   },
@@ -19,6 +19,7 @@
     "next": "12.1.1",
     "react": "17.0.2",
     "react-dom": "17.0.2",
+    "sass": "^1.49.9",
     "typescript": "^4.6.3"
   },
   "devDependencies": {

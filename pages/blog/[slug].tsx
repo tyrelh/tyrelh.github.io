@@ -10,11 +10,14 @@ import {
     GetStaticPropsResult
 } from "next/types"
 import { PostData, PostMetadataList } from "../../dtos/PostData"
+import HeadW from "../../components/layout/HeadW"
 
 export default function PostPage(post: PostData) {
 
 
     return (<>
+        <HeadW title={post.title}/>
+
         <Link href="/">
             back
         </Link>

@@ -1,0 +1,12 @@
+
+$font-ubuntu: 'Ubuntu', sans-serif;
+@font-face {
+  font-family: "Canela-Black";
+  src: url("https://cdn.decrypt.co/wp-content/themes/decrypt-media/assets/fonts/Canela-Black-Web.woff2") format("woff2")
+}
+$font-canela: "Canela-Black", serif;
+$font-system: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+
+$font-body: $font-system;
+$font-header: $font-canela;
+$font-code: $font-ubuntu;

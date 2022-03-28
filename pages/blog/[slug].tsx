@@ -25,7 +25,7 @@ export default function PostPage(post: PostData) {
         <div>{post.date}</div>
         <img src={post.hero} alt="" />
         <div>
-            <div dangerouslySetInnerHTML={{ __html: marked(post.content)}}></div>
+            <div dangerouslySetInnerHTML={{ __html: marked(post.content) }}></div>
         </div>
     </>)
 }

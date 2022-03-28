@@ -2,18 +2,25 @@ import fs from "fs"
 import path from "path"
 import matter from "gray-matter"
 import { GetStaticProps, GetStaticPropsResult } from 'next'
-import Head from 'next/head'
 import { PostMetadata, PostMetadataList } from "../dtos/PostData"
 import PostPreview from "../components/PostPreview"
 import { sortPostsByDate } from "../utils/dateUtils"
+import HeadW from "../components/layout/HeadW"
+import Anchor from "../components/elements/Anchor"
+
 
 export default function Home({ posts }) {
   return (
     <>
-      <Head>
-        <title>superflux</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+      <HeadW title="superflux"/>
+
+      <h1>
+        Hi, I'm Tyrel.
+      </h1>
+
+      <p>
+        A software engineer constantly learning new skills and technologies. I work for <Anchor href="https://www.giftbit.com">Giftbit</Anchor> building great web services. You can see some of my work below as well as on my Github.
+      </p>
 
       <div>
         {posts.map((post: PostMetadata, index: number) => (
@@ -26,6 +33,7 @@ export default function Home({ posts }) {
     </>
   )
 }
+
 
 export const getStaticProps: GetStaticProps = async (context): Promise<GetStaticPropsResult<PostMetadataList>>  => {
   // get files from posts dir
@@ -50,8 +58,6 @@ export const getStaticProps: GetStaticProps = async (context): Promise<GetStatic
     }
     return metadata
   })
-
-
 
   return {
     props: {

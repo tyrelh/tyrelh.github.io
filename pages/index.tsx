@@ -4,7 +4,7 @@ import matter from "gray-matter"
 import { GetStaticProps, GetStaticPropsResult } from 'next'
 import Head from 'next/head'
 import { PostMetadata, PostMetadataList } from "../dtos/PostMetadata"
-import Post from "../components/PostPreview"
+import PostPreview from "../components/PostPreview"
 
 export default function Home({ posts }) {
   return (
@@ -19,7 +19,7 @@ export default function Home({ posts }) {
           <div key={`post${index}`}>
           
           <h3>{post?.title}</h3>
-          <Post post={post} />
+          <PostPreview post={post} />
           </div>
         ))}
       </div>

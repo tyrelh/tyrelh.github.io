@@ -6,6 +6,14 @@ export interface PostMetadata {
     hero: string;
 }
 
+export interface PostData extends PostMetadata {
+    content: string
+}
+
 export interface PostMetadataList {
     posts: PostMetadata[]
+}
+
+export interface PostDataList {
+    posts: PostData[]
 }

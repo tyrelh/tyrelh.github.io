@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { PostMetadata } from "../dtos/PostMetadata"
+import { PostMetadata } from "../dtos/PostData"
 import { Card } from "antd"
 import Meta from "antd/lib/card/Meta"
 
@@ -14,7 +14,10 @@ export default function PostPreview(props: Props) {
         <Link href={`/blog/${post.slug}`}>
             <Card
                 hoverable
-                style={{width: 340}}
+                style={{
+                    width: 340,
+                    margin: "20px"
+                }}
                 cover={<img src={post.hero} alt="" />}
             >
                 <Meta title={post.title} description={post.excerpt}/>

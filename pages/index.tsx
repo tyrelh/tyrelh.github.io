@@ -3,8 +3,9 @@ import path from "path"
 import matter from "gray-matter"
 import { GetStaticProps, GetStaticPropsResult } from 'next'
 import Head from 'next/head'
-import { PostMetadata, PostMetadataList } from "../dtos/PostMetadata"
+import { PostMetadata, PostMetadataList } from "../dtos/PostData"
 import PostPreview from "../components/PostPreview"
+import { sortPostsByDate } from "../utils/dateUtils"
 
 export default function Home({ posts }) {
   return (
@@ -17,9 +18,7 @@ export default function Home({ posts }) {
       <div>
         {posts.map((post: PostMetadata, index: number) => (
           <div key={`post${index}`}>
-          
-          <h3>{post?.title}</h3>
-          <PostPreview post={post} />
+            <PostPreview post={post} />
           </div>
         ))}
       </div>
@@ -56,7 +55,7 @@ export const getStaticProps: GetStaticProps = async (context): Promise<GetStatic
 
   return {
     props: {
-      posts: posts
+      posts: posts.sort(sortPostsByDate)
     }
   }
 }

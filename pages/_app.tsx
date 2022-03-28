@@ -9,8 +9,8 @@ const { Content } = Layout;
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     
-    <Layout className="app" style={{ minHeight: "100vh" }}>
-      <Content>
+    <Layout className="app">
+      <Content className="fadeIn">
         <Component {...pageProps} />
         <Footer/>
       </Content>

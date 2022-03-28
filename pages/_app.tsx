@@ -1,17 +1,20 @@
-import "./app.scss";
+import "../styles/app.scss";
 import { Layout } from "antd";
 import { AppProps } from "next/app";
 import HeaderW from "../components/layout/HeaderW";
+import Footer from "../components/layout/Footer";
 
-const { Header, Footer, Sider, Content } = Layout;
+const { Content } = Layout;
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
+    
     <Layout className="app" style={{ minHeight: "100vh" }}>
       <Content>
         <Component {...pageProps} />
+        <Footer/>
       </Content>
-      <Footer>Footer</Footer>
+      
     </Layout>
   );
 }

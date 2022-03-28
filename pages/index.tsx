@@ -7,13 +7,15 @@ import PostPreview from "../components/PostPreview";
 import { sortPostsByDate } from "../utils/dateUtils";
 import HeadW from "../components/layout/HeadW";
 import Anchor from "../components/elements/Anchor";
+import Title from "../components/elements/Title";
+import SectionHeading from "../components/elements/SectionHeading";
 
 export default function Home({ posts }) {
   return (
     <>
       <HeadW title="superflux" />
 
-      <h1>Hi, I'm Tyrel.</h1>
+      <Title>Hi, I'm Tyrel.</Title>
 
       <p>
         A software engineer constantly learning new skills and technologies. I
@@ -22,6 +24,10 @@ export default function Home({ posts }) {
         as on my <Anchor href="https://github.com/tyrelh">Github</Anchor>.
       </p>
 
+      <SectionHeading>
+        Articles
+      </SectionHeading>
+
       <div>
         {posts.map((post: PostMetadata, index: number) => (
           <div key={`post${index}`}>
@@ -29,6 +35,14 @@ export default function Home({ posts }) {
           </div>
         ))}
       </div>
+
+      <SectionHeading>
+        Get in touch
+      </SectionHeading>
+
+      <p>
+        Feel free to contact me via <Anchor href="https://twitter.com/tyrelhiebert">Twitter</Anchor>!
+      </p>
     </>
   );
 }

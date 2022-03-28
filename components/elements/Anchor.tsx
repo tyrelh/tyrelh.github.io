@@ -1,6 +1,5 @@
 import React, { PropsWithChildren } from "react";
 import Link from "next/link";
-import "./Anchor.module.scss";
 
 export interface Props extends PropsWithChildren<any> {
   href: string;

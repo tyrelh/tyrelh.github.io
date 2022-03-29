@@ -29,14 +29,6 @@ export default function Home({ posts }) {
         Articles
       </SectionHeading>
 
-      {/* <div>
-        {posts.map((post: PostMetadata, index: number) => (
-          <div key={`post${index}`}>
-            <PostPreview post={post} />
-          </div>
-        ))}
-      </div> */}
-
       <ArticlePreviewList articleMetadataList={posts} />
 
       <SectionHeading>
@@ -50,6 +42,7 @@ export default function Home({ posts }) {
   );
 }
 
+// GET POST METADATA FROM MARKDOWN ARTICLES
 export const getStaticProps: GetStaticProps = async (
   context
 ): Promise<GetStaticPropsResult<PostMetadataList>> => {
@@ -67,6 +60,7 @@ export const getStaticProps: GetStaticProps = async (
       "utf-8"
     );
     const { data: frontmatter } = matter(markdownWithMeta);
+    console.log(frontmatter)
 
     const metadata: PostMetadata = {
       title: frontmatter?.title,
@@ -74,6 +68,7 @@ export const getStaticProps: GetStaticProps = async (
       date: frontmatter?.date,
       hero: frontmatter?.hero,
       excerpt: frontmatter?.excerpt,
+      tags: frontmatter?.tags ? frontmatter.tags.split(" ") : null
     };
     return metadata;
   });

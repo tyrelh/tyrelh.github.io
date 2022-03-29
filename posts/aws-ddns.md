@@ -3,6 +3,7 @@ title: "AWS Dynamic DNS"
 date: "March 20, 2022"
 excerpt: "This is a Dynamic DNS system built using AWS Route53 and a Node script running on a Raspberry Pi."
 hero: "/images/posts/aws-ddns.jpg"
+tags: "aws ddns node raspberry-pi"
 ---
 # AWS Dynamic DNS
 #### March 20, 2022

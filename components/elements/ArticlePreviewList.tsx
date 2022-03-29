@@ -1,4 +1,4 @@
-import { List } from "antd"
+import { List, Tag } from "antd"
 import { CalendarFilled } from "@ant-design/icons"
 import { PostMetadata } from "../../dtos/PostData"
 
@@ -38,6 +38,14 @@ export default function ArticlePreviewList(props: Props) {
           <p className="article-preview-excerpt">
             {post.excerpt}
           </p>
+          {
+            post?.tags?.length &&
+            <p>
+              {post.tags.map((tag: string) => (
+                <Tag>{tag}</Tag>
+              ))}
+            </p>
+          }
         </List.Item>
       )}
     />

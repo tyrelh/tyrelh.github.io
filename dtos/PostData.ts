@@ -4,6 +4,7 @@ export interface PostMetadata {
     date: string;
     excerpt: string;
     hero: string;
+    tags: string[];
 }
 
 export interface PostData extends PostMetadata {

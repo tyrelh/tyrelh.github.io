@@ -14,9 +14,9 @@ export default function SectionHeading(props: Props) {
         <span className="underline">
           { props.children }
         </span>
-        <Anchor href="">
-          <LinkOutlined />
-        </Anchor>
+        {/* <Anchor href="">
+          <LinkOutlined className="headingLink" />
+        </Anchor> */}
       </h2>
     </div>
   )

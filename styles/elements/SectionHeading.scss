@@ -2,31 +2,7 @@
 @import "../_fonts.scss";
 
 .sectionHeading {
-  h2 {
-    font-family: $font-header;
-    font-size: 2.3em;
-    line-height: 1em;
-    letter-spacing: -0.01em;
-    margin: 1em 0 0.8em 0;
-    padding: 0;
-    color: $color-main-text;
-    position: relative;
-    -webkit-transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
-    transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
-
-    .anticon {
-      font-size: 0.6em;
-      position: absolute;
-      bottom: 0.1em;
-      margin-left: 10px;
-      
-      svg {
-        fill: rgba($color-main-text-disabled, 0.1);
-        -webkit-transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
-        transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
-      }
-    }
-  }
+  
 
   // h3 {
   //   font-weight: bold;
@@ -40,23 +16,36 @@
     h2 {
       font-size: 2em;
       line-height: 0.9em;
-      .anticon {
-        display: none;
-      }
+      // .anticon {
+      //   display: none;
+      // }
     }
   }
 
-  h2:hover {
-    .anticon {
-      svg {
-        fill: rgba($color-accent-first, 0.8);
-      }
-    }
-  }
+  // h2:hover {
+  //   .anticon {
+  //     svg {
+  //       fill: rgba($color-accent-first, 0.8);
+  //     }
+  //   }
+  // }
 
   //section:hover .underline {
   //  background-size: 100% 0.27em;
   //}
+}
+
+.headingLink {
+  font-size: 0.6em;
+  position: absolute;
+  bottom: 0.1em;
+  margin-left: 10px;
+  
+  // svg {
+  //   color: rgba($color-main-text-disabled, 0.1) !important;
+  //   -webkit-transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+  //   transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+  // }
 }
 
 .underline {
@@ -75,20 +64,20 @@
       color: $color-main-text-light-theme;
       //text-shadow: 3px 3px 0 rgba($color-main-bg-light-theme, 1);
       //text-shadow: 0 1px 4px rgba(white, 0.2%);
-      .anticon {
-        svg {
-          fill: $color-main-text-disabled-light-theme;
-        }
-      }
+      // .anticon {
+      //   svg {
+      //     fill: $color-main-text-disabled-light-theme;
+      //   }
+      // }
     }
 
-    .h2:hover {
-      .anticon {
-        svg {
-          fill: rgba($color-accent-first, 0.85);
-        }
-      }
-    }
+    // .h2:hover {
+    //   .anticon {
+    //     svg {
+    //       fill: rgba($color-accent-first, 0.85);
+    //     }
+    //   }
+    // }
 
     // h3 {
     //   color: $color-main-text-light-theme;

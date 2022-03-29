@@ -9,6 +9,7 @@ import HeadW from "../components/layout/HeadW";
 import Anchor from "../components/elements/Anchor";
 import Title from "../components/elements/Title";
 import SectionHeading from "../components/elements/SectionHeading";
+import ArticlePreviewList from "../components/elements/ArticlePreviewList";
 
 export default function Home({ posts }) {
   return (
@@ -28,13 +29,15 @@ export default function Home({ posts }) {
         Articles
       </SectionHeading>
 
-      <div>
+      {/* <div>
         {posts.map((post: PostMetadata, index: number) => (
           <div key={`post${index}`}>
             <PostPreview post={post} />
           </div>
         ))}
-      </div>
+      </div> */}
+
+      <ArticlePreviewList articleMetadataList={posts} />
 
       <SectionHeading>
         Get in touch

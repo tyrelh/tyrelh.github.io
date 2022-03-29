@@ -6,29 +6,29 @@ hero: "/images/posts/what-im-learning-in-2022.jpg"
 ---
 # What I'm Learning in 2022
 #### March 23, 2022
-![Logo montage of all the technologies outlined in this article](./what-im-learning-in-2022.jpg)
+![Logo montage of all the technologies outlined in this article](what-im-learning-in-2022.jpg)
 
 ## Index
 
 [Learning from scratch](#learning-from-scratch)
 
-* • [Docker](#docker)
-* • [Vim/NeoVim](#vimneovim)
+* [Docker](#docker)
+* [Vim/NeoVim](#vimneovim)
 
 [Learning more of](#learning-more-of)
 
-* • [Github Actions](#github-actions)
-* • [AWS DynamoDB](#aws-dynamodb)
-* • [AWS Client VPN, VPNs in general, and SSO](#aws-client-vpn-vpns-in-general-and-sso)
-* • [SSH](#ssh)
-* • [HTTPS/SSL](#httpsssl)
-* • [Raspberry Pi](#raspberry-pi)
-* • [Home Network](#home-network)
+* [Github Actions](#github-actions)
+* [AWS DynamoDB](#aws-dynamodb)
+* [AWS Client VPN, VPNs in general, and SSO](#aws-client-vpn-vpns-in-general-and-sso)
+* [SSH](#ssh)
+* [HTTPS/SSL](#httpsssl)
+* [Raspberry Pi](#raspberry-pi)
+* [Home Network](#home-network)
 
 [Things I'm interested in but might not get to this year](#things-im-interested-in-but-might-not-get-to-this-year)
 
-* • [A better static site generator / CMS](#a-better-static-site-generator--cms)
-* • [Webhooks](#webhooks)
+* [A better static site generator / CMS](#a-better-static-site-generator--cms)
+* [Webhooks](#webhooks)
 
 ## Learning from scratch
 

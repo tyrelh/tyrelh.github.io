@@ -3,7 +3,6 @@ import path from "path";
 import matter from "gray-matter";
 import { GetStaticProps, GetStaticPropsResult } from "next";
 import { PostMetadata, PostMetadataList } from "../dtos/PostData";
-import PostPreview from "../components/PostPreview";
 import { sortPostsByDate } from "../utils/dateUtils";
 import HeadW from "../components/layout/HeadW";
 import Anchor from "../components/elements/Anchor";

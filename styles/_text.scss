@@ -38,7 +38,7 @@ h1 {
 h2 {
   font-family: $font-header;
   font-size: 3.6rem;
-  line-height: 4rem;
+  line-height: 8rem;
   // margin: 1rem 0 1rem 0;
   color: $color-main-text;
   -webkit-transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
@@ -79,6 +79,22 @@ h3 {
     color: $color-main-text-light-theme;
   }
 }
+
+
+h4 {
+  color: darken($color-main-text, 40%);
+  font-size: 1.1rem !important;
+  .anticon {
+    margin-right: 0.4rem;
+  }
+}
+
+.light-mode {
+  h4 {
+    color: darken($color-main-text, 20%);
+  }
+}
+
 
 .underline {
   background-image: linear-gradient(120deg, rgba($color-accent-first, 0.85) 0%, rgba($color-accent-second, 0.85) 100%);

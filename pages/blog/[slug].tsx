@@ -12,19 +12,25 @@ import {
 import { PostData, PostMetadataList } from "../../dtos/PostData";
 import HeadW from "../../components/layout/HeadW";
 import Anchor from "../../components/elements/Anchor";
+import { getOptions, renderer } from "../../utils/markedUtils"
+import Breadcrumbs from "../../components/elements/Breadcrumbs";
+
+marked.setOptions(getOptions())
+marked.use({ renderer })
 
 export default function PostPage(post: PostData) {
   return (
     <>
       <HeadW title={post.title} />
 
-      <Anchor href="/">back</Anchor>
-      <h2>{post.title}</h2>
-      <div>{post.date}</div>
-      <img src={post.hero} alt="" />
-      <div>
-        <div dangerouslySetInnerHTML={{ __html: marked(post.content) }}></div>
-      </div>
+      <Breadcrumbs/>
+
+      {/* <h2>{post.title}</h2>
+      <div>{post.date}</div> */}
+      {/* <img src={post.hero} alt="" /> */}
+      {/* <div> */}
+        <div dangerouslySetInnerHTML={{ __html: marked.parse(post.content) }}></div>
+      {/* </div> */}
     </>
   );
 }
@@ -61,6 +67,7 @@ export const getStaticProps: GetStaticProps = async ({
     date: frontmatter?.date,
     excerpt: frontmatter?.excerpt,
     hero: frontmatter?.hero,
+    tags: frontmatter?.tags ? frontmatter.tags.split(" ") : null,
     content: content,
   };
 

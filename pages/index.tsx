@@ -59,7 +59,6 @@ export const getStaticProps: GetStaticProps = async (
       "utf-8"
     );
     const { data: frontmatter } = matter(markdownWithMeta);
-    console.log(frontmatter)
 
     const metadata: PostMetadata = {
       title: frontmatter?.title,

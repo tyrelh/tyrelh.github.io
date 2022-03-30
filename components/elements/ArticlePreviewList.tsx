@@ -21,6 +21,7 @@ export default function ArticlePreviewList(props: Props) {
       renderItem={ (post: PostMetadata) => (
         <Anchor href={`/blog/${post.slug}`}>
           <List.Item
+            key={post.slug}
             extra={
               <img
                 className="article-preview-image"

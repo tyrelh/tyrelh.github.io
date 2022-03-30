@@ -3,7 +3,12 @@
 body {
   color: $color-main-text;
   font-family: $font-body;
-  letter-spacing: -0.04rem;
+  letter-spacing: -0.045rem;
+  font-size: 0.7rem;
+}
+
+body, p {
+  font-feature-settings: "ss02" on,"ss01" on;
 }
 
 

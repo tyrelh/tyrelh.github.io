@@ -6,9 +6,9 @@
 @import "./_images.scss";
 
 @import "./elements/Anchor.scss";
-@import "./elements/SectionHeading.scss";
 @import "./elements/Title.scss";
 @import "./elements/ArticlePreviewList.scss";
+@import "./elements/ThemeToggle.scss";
 
 @import "./layout/Footer.scss";
 
@@ -26,9 +26,6 @@ body {
   height: 100%;
   width: 100%;
   background-color: darken($color-main-bg, 1.5%);
-  // color: $color-main-text;
-  // font-family: $font-body;
-  // letter-spacing: -0.03rem;
 }
 
 .app {

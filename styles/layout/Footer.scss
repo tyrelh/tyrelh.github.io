@@ -5,7 +5,9 @@
   padding: 50px 0 0 0;
   line-height: 1.8em;
   color: $color-main-text;
-  background-color: $color-main-bg !important;
+  background-color: transparent;
+  -webkit-transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
 
   p {
     font-size: 1.3em;
@@ -21,9 +23,8 @@
   }
 }
 
-.lightmode {
-  .ant-layout-footer {
+.light-mode {
+  footer {
     color: $color-main-text-light-theme;
-    background-color: $color-main-bg-light-theme !important;
   }
-}
+} 

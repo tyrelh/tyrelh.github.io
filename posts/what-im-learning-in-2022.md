@@ -3,6 +3,7 @@ title: "What I'm Learning in 2022"
 date: "March 23, 2022"
 excerpt: "Here are some things that I'd like to learn more about in 2022."
 hero: "/images/posts/what-im-learning-in-2022.jpg"
+tags: "docker github-actions neovim vpn synology ssl static-site-generators"
 ---
 # What I'm Learning in 2022
 #### March 23, 2022

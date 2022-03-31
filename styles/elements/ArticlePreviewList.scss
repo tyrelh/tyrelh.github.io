@@ -47,20 +47,6 @@
   }
 }
 
-.article-preview-date {
-  color: darken($color-main-text, 40%);
-  font-size: 1.1rem !important;
-  .anticon {
-    margin-right: 0.4rem;
-  }
-}
-
-.light-mode {
-  .article-preview-date {
-    color: darken($color-main-text, 20%);
-  }
-}
-
 .article-preview-excerpt {
   // letter-spacing: -0.06rem;
   // margin-top: 20px;

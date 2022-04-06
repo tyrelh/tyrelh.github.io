@@ -25,12 +25,7 @@ export default function PostPage(post: PostData) {
 
       <Breadcrumbs/>
 
-      {/* <h2>{post.title}</h2>
-      <div>{post.date}</div> */}
-      {/* <img src={post.hero} alt="" /> */}
-      {/* <div> */}
-        <div dangerouslySetInnerHTML={{ __html: marked.parse(post.content) }}></div>
-      {/* </div> */}
+      <div dangerouslySetInnerHTML={{ __html: marked.parse(post.content) }}></div>
     </>
   );
 }
@@ -50,6 +45,7 @@ export const getStaticPaths: GetStaticPaths =
       fallback: false,
     };
   };
+  
 
 export const getStaticProps: GetStaticProps = async ({
   params: { slug },

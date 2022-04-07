@@ -27,20 +27,20 @@ export default function ArticlePreviewList(props: Props) {
               <img
                 className="article-preview-image" 
                 alt=""
-                src={post.hero}/>
+                src={post?.hero ? post.hero : null}/>
             }
           >
             <h3 className="article-preview-title">
-              { post.title }
+              { post?.title ? post.title : post?.slug }
             </h3>
             {
-              post.date &&
+              post?.date &&
                 <h4>
                   <CalendarFilled /> {post.date}
                 </h4>
             }
             <p className="article-preview-excerpt">
-              {post.excerpt}
+              {post?.excerpt ? post.excerpt : null}
             </p>
             {
               post?.tags?.length &&

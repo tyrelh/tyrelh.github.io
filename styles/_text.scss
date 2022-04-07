@@ -51,6 +51,7 @@ h2 {
   line-height: 3.4rem;
   margin: 5rem 0 3rem 0;
   color: $color-main-text;
+  text-shadow: 0 5px 20px rgba(black, 0.3);
   -webkit-transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
   transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
@@ -66,6 +67,8 @@ and (max-width: 812px) {
 .light-mode {
   h2 {
     color: $color-main-text-light-theme;
+    text-shadow: 0 5px 20px rgba(lighten($color-main-bg-light-theme, 5%), 0.2);
+    
   }
 }
 

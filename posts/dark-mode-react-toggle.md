@@ -7,6 +7,8 @@ hero: "/images/posts/DarkModeToggle-1.svg"
 tags: "react dark-mode"
 ---
 # Dark Mode React Toggle
+#### June 28, 2020
+
 I developed a dark and light theme for this site and built a toggle to switch between them. Also I used media queries to set the default theme to match the visitors operating system choice.
 
 ![Sun and moon icons](DarkModeToggle-1.svg)

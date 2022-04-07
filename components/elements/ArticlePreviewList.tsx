@@ -2,6 +2,7 @@ import { List, Tag } from "antd"
 import { CalendarFilled } from "@ant-design/icons"
 import { PostMetadata } from "../../dtos/PostData"
 import Link from "next/link"
+import Image from "next/image"
 import Anchor from "./Anchor"
 
 
@@ -24,10 +25,9 @@ export default function ArticlePreviewList(props: Props) {
             key={post.slug}
             extra={
               <img
-                className="article-preview-image"
-                // alt={item.alt}
-                src={post.hero}
-              />
+                className="article-preview-image" 
+                alt=""
+                src={post.hero}/>
             }
           >
             <h3 className="article-preview-title">

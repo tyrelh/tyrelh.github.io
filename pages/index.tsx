@@ -15,7 +15,7 @@ export default function Home({ posts }) {
     <>
       <HeadW title="superflux" />
 
-      <Title>Hi, I'm Tyrel.</Title>
+      <Title>Hi, I&rsquo;m Tyrel.</Title>
 
       <p>
         A software engineer constantly learning new skills and technologies. I

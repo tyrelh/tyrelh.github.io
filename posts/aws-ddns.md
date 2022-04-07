@@ -1,7 +1,8 @@
 ---
 title: "AWS Dynamic DNS"
 date: "March 20, 2022"
-excerpt: "This is a Dynamic DNS system built using AWS Route53 and a Node script running on a Raspberry Pi."
+author: "Tyrel Hiebert"
+excerpt: "A dynamic DNS is handy if you want to host something or access something on your home network but you don't have a static IP address from your ISP. I built a little dynamic DNS script for AWS Route53 using Node that runs on a Raspberry Pi."
 hero: "/images/posts/aws-ddns.jpg"
 tags: "aws ddns node raspberry-pi"
 ---

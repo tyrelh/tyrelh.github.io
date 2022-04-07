@@ -4,7 +4,7 @@ date: "June 11, 2018"
 author: "Tyrel Hiebert"
 excerpt: "Battlesnake is a programming competition where participants create an AI server that acts as the brain of a snake in the classic game Snake. Participants compete in a round-robin tournament played out live in front of an audience of roughly 1000 people. The winner takes home up to $4,000!"
 hero: "/images/posts/Battlesnake2018-1.jpg"
-tags: "programming ai events"
+tags: "python ai events"
 ---
 # Battlesnake Programming Competition 2018
 #### June 11, 2018

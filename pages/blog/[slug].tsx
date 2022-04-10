@@ -22,9 +22,6 @@ export default function PostPage(post: PostData) {
   return (
     <>
       <HeadW title={post.title} />
-
-      <Breadcrumbs/>
-
       <div dangerouslySetInnerHTML={{ __html: marked.parse(post.content) }}></div>
     </>
   );

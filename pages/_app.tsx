@@ -4,6 +4,7 @@ import { AppProps } from "next/app";
 import HeaderW from "../components/layout/HeaderW";
 import Footer from "../components/layout/Footer";
 import ThemeToggle from "../components/elements/ThemeToggle"
+import Breadcrumbs from "../components/elements/Breadcrumbs";
 
 const { Content } = Layout;
 
@@ -11,12 +12,12 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
     <ThemeToggle/>
+    <Breadcrumbs/>
     <Layout className="app">
       <Content className="fadeIn">
         <Component {...pageProps} />
         <Footer/>
       </Content>
-      
     </Layout>
     </>
   );

@@ -1,0 +1,448 @@
+<!DOCTYPE html><html><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width"/><title>Node CI/CD Pipeline using GitHub Actions &amp; AWS Elastic Beanstalk</title><link rel="icon" href="/favicon.ico"/><meta name="next-head-count" content="4"/><link rel="preload" href="/_next/static/css/3cd2b0e678fea33d.css" as="style" crossorigin=""/><link rel="stylesheet" href="/_next/static/css/3cd2b0e678fea33d.css" crossorigin="" data-n-g=""/><noscript data-n-css=""></noscript><script defer="" crossorigin="" nomodule="" src="/_next/static/chunks/polyfills-c67a75d1b6f99dc8.js"></script><script src="/_next/static/chunks/webpack-87b3a303122f2f0d.js" defer="" crossorigin=""></script><script src="/_next/static/chunks/framework-5429a50ba5373c56.js" defer="" crossorigin=""></script><script src="/_next/static/chunks/main-fe015bc011991627.js" defer="" crossorigin=""></script><script src="/_next/static/chunks/pages/_app-cd73656253599341.js" defer="" crossorigin=""></script><script src="/_next/static/chunks/273-02e7f2433784e471.js" defer="" crossorigin=""></script><script src="/_next/static/chunks/441-e71110bc98dd6c03.js" defer="" crossorigin=""></script><script src="/_next/static/chunks/pages/blog/%5Bslug%5D-9e1c8498a351a932.js" defer="" crossorigin=""></script><script src="/_next/static/VOQ65Zrreyw4vv5l458Re/_buildManifest.js" defer="" crossorigin=""></script><script src="/_next/static/VOQ65Zrreyw4vv5l458Re/_ssgManifest.js" defer="" crossorigin=""></script></head><body><div id="__next"><div class="ant-layout app css-djtmh8"><main class="ant-layout-content fadeIn css-djtmh8"><div id="sticky-header" class="sticky-header sticky-header-visible"><div class="breadcrumbs"><div class="toggle-container"><span role="img" tabindex="-1" class="anticon"><svg class="toggle-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path class="sun-icon" d="M12 2V3" stroke="#fff" stroke-width="2.2" stroke-linecap="round"></path><path class="sun-icon" d="M12 21V22" stroke="#fff" stroke-width="2.2" stroke-linecap="round"></path><path class="sun-icon" d="M22 12L21 12" stroke="#fff" stroke-width="2.2" stroke-linecap="round"></path><path class="sun-icon" d="M3 12L2 12" stroke="#fff" stroke-width="2.2" stroke-linecap="round"></path><path class="sun-icon" d="M19.0708 4.92969L18.678 5.32252" stroke="#fff" stroke-width="2.2" stroke-linecap="round"></path><path class="sun-icon" d="M5.32178 18.6777L4.92894 19.0706" stroke="#fff" stroke-width="2.2" stroke-linecap="round"></path><path class="sun-icon" d="M19.0708 19.0703L18.678 18.6775" stroke="#fff" stroke-width="2.2" stroke-linecap="round"></path><path class="sun-icon" d="M5.32178 5.32227L4.92894 4.92943" stroke="#fff" stroke-width="2.2" stroke-linecap="round"></path><path class="sun-icon" d="M6.34141 10C6.12031 10.6256 6 11.2987 6 12C6 15.3137 8.68629 18 12 18C15.3137 18 18 15.3137 18 12C18 8.68629 15.3137 6 12 6C11.2987 6 10.6256 6.12031 10 6.34141" stroke="#fff" stroke-width="2.2" stroke-linecap="round"></path></svg></span></div><span class="anchor"><a href="/">superflux.dev</a></span><span role="img" aria-label="swap-right" class="anticon anticon-swap-right"><svg viewBox="0 0 1024 1024" focusable="false" data-icon="swap-right" width="1em" height="1em" fill="currentColor" aria-hidden="true"><path d="M873.1 596.2l-164-208A32 32 0 00684 376h-64.8c-6.7 0-10.4 7.7-6.3 13l144.3 183H152c-4.4 0-8 3.6-8 8v60c0 4.4 3.6 8 8 8h695.9c26.8 0 41.7-30.8 25.2-51.8z"></path></svg></span>blog<span role="img" aria-label="swap-right" class="anticon anticon-swap-right"><svg viewBox="0 0 1024 1024" focusable="false" data-icon="swap-right" width="1em" height="1em" fill="currentColor" aria-hidden="true"><path d="M873.1 596.2l-164-208A32 32 0 00684 376h-64.8c-6.7 0-10.4 7.7-6.3 13l144.3 183H152c-4.4 0-8 3.6-8 8v60c0 4.4 3.6 8 8 8h695.9c26.8 0 41.7-30.8 25.2-51.8z"></path></svg></span>Node CI/CD Pipeline using GitHub Actions &amp; AWS Elastic Beanstalk</div></div><h1>Node CI/CD Pipeline using GitHub Actions &amp; AWS Elastic Beanstalk</h1><h4><span role="img" aria-label="calendar" class="anticon anticon-calendar"><svg viewBox="64 64 896 896" focusable="false" data-icon="calendar" width="1em" height="1em" fill="currentColor" aria-hidden="true"><path d="M880 184H712v-64c0-4.4-3.6-8-8-8h-56c-4.4 0-8 3.6-8 8v64H384v-64c0-4.4-3.6-8-8-8h-56c-4.4 0-8 3.6-8 8v64H144c-17.7 0-32 14.3-32 32v664c0 17.7 14.3 32 32 32h736c17.7 0 32-14.3 32-32V216c0-17.7-14.3-32-32-32zm-40 656H184V460h656v380zM184 392V256h128v48c0 4.4 3.6 8 8 8h56c4.4 0 8-3.6 8-8v-48h256v48c0 4.4 3.6 8 8 8h56c4.4 0 8-3.6 8-8v-48h128v136H184z"></path></svg></span> <!-- -->May 30, 2020</h4><p><span class="anchor"><a href="/blog/tags/github-actions"><span class="ant-tag css-djtmh8">#<!-- -->github-actions</span></a></span><span class="anchor"><a href="/blog/tags/cicd"><span class="ant-tag css-djtmh8">#<!-- -->cicd</span></a></span><span class="anchor"><a href="/blog/tags/typescript"><span class="ant-tag css-djtmh8">#<!-- -->typescript</span></a></span><span class="anchor"><a href="/blog/tags/aws"><span class="ant-tag css-djtmh8">#<!-- -->aws</span></a></span><span class="anchor"><a href="/blog/tags/automation"><span class="ant-tag css-djtmh8">#<!-- -->automation</span></a></span></p><div><p>Here is my journey into creating an automated workflow to test, build, and deploy a project I have been working on using Github Actions and Elastic Beanstalk.</p>
+<p>
+        <img src="/images/posts/node-cicd-pipeline-hero.png" alt="null" class="article-image" />
+    </p>
+
+          <h2 id="Tl;dr">
+            <span class="underline">Tl;dr</span>
+          </h2>
+        <ul>
+<li><a href="#background-on-the-project">Background</a>: I was converting a JavaScript project to TypeScript and I decided to set up continuous integration and continuous deployment at the same time using <a href="https://github.com/features/actions">Github Actions</a>.</li>
+<li><a href="#testing">Testing</a>: I am using <a href="https://mochajs.org/">Mocha</a> for the first time to run my TypeScript tests.</li>
+<li><a href="#automation">Automation</a>: The intention is to create a Github workflow that will test my code, build my project, and deploy it to Elastic Beanstalk automatically whenever I push to the master branch. </li>
+<li><a href="#create-a-new-iam-user">Create a new IAM user</a>: First step is to create a new AWS IAM User to automate interactions with AWS.</li>
+<li><a href="#save-aws-user-credentials-in-github">Save AWS User credentials in Github</a>: Github provides and encrypted secret store that you can use to securely access 3rd-party credentials within a Github Workflow.</li>
+<li><a href="#create-a-s3-bucket-to-store-deployment-artifacts">Create a S3 bucket to store deployment artifacts</a>: Setup a bucket to store our deployment artifacts so they can be easily deployed and archived.</li>
+<li><a href="#create-an-elastic-beanstalk-application-and-environment">Create an Elastic Beanstalk Application and Environment</a>: Create an new application and environment that we can deploy our app to.</li>
+<li><a href="#create-a-workflow-file-within-your-repo">Create a Workflow file within your repo</a>: Workflows live in your repo in the <em>.github/workflows/</em> directory.</li>
+<li><a href="#setup-the-yaml-file">Setup the yaml file</a>: Setup your workflow with a trigger and some environment variables for readability and maintainability.</li>
+<li><a href="#test-job">Test job</a>: A job that will test our project.</li>
+<li><a href="#build-job">Build job</a>: A job to build our code, bundle it in a zip, and push that to AWS S3.</li>
+<li><a href="#deploy-job">Deploy job</a>:  A job to deploy our project to Elastic Beanstalk</li>
+<li><a href="#testing-the-workflow">Testing the workflow</a>: Push this new workflow file to your master branch and see the workflow in action.</li>
+</ul>
+
+          <h2 id="Background on the project">
+            <span class="underline">Background on the project</span>
+          </h2>
+        <p>I have recently been working on converting my JavaScript <a href="https://play.battlesnake.com/">battlesnake</a> over to TypeScript. This can be done in a gradual process but I&#39;ve been finding that difficult to do, so this was more of a tear of the band-aid quickly kind of situation.</p>
+<p>I decided that I would use <a href="https://deno.land/">Deno</a> for this project rather than Node. Deno 1.0 had <a href="https://deno.land/v1">just recently come out</a> and I was all over that hype train. I really think Deno makes sense in it&#39;s core philosophy. It also happens to not only have TypeScript support by default, but the strictest possible TypeScript support is default. This encouraged me to translate my JavaScript to TypeScript properly and to fix some of the wrong design choices I had made over the last two years.</p>
+<p>Eventually I became frustrated with Deno&#39;s, frankly, lack of polish. It isn&#39;t a true 1.0 if basic features, like <code>fetch</code>, don&#39;t work correctly yet. Over the course of around two weeks of using Deno I got to the point where I decided to just take all the TypeScript I had just written and move it back to Node.</p>
+<p>Hopefully I will have by now put together a small article here about migrating a JavaScript Node project to TypeScript. If not check back soon!</p>
+
+          <h2 id="Testing">
+            <span class="underline">Testing</span>
+          </h2>
+        <p>During development of my Deno TypeScript battlesnake I actually <a href="https://superflux.dev/blog/deno-tests-and-github-actions">already set up automated testing using Github Actions</a>. That worked really well and Deno&#39;s included test runner is really simple and easy to use.</p>
+<p>Bringing my tests over to Node I used what seems like the most popular option which is <a href="https://mochajs.org/">Mocha</a>. I&#39;ve never used it before but it seems fine.</p>
+<p>I can run my tests with the following command which I entered as a <code>test</code> script within my <em>package.json</em>:</p>
+<pre><code class="language-bash">mocha -r ts-node/register src/tests/**/*-test.ts
+</code></pre>
+<p>Great. So with this in place my project is back to a place where I can run it locally, test it, and build it for deployment to AWS.</p>
+
+          <h2 id="Automation">
+            <span class="underline">Automation</span>
+          </h2>
+        <p>Beyond automating testing when pushing to my master branch I decided to give the whole CI/CD pipeline a try. I use AWS Elastic Beanstalk to host my project and up to this point I have always been manually zipping the production build and using the AWS Web Console to manually deploy that to Elastic Beanstalk.</p>
+<p>Now I have fully automated the whole process!</p>
+<p>Using Github Actions, whenever I push to my master branch I have 3 jobs that run:</p>
+<ol>
+<li>The repo is tested with my suite of tests using Mocha</li>
+<li>If the tests pass, the project is built, zipped, and pushed to AWS S3</li>
+<li>If the tests and build are successful, the zip is deployed to AWS Elastic Beanstalk.</li>
+</ol>
+<p>If this fails at any point I get an email and red warnings on Github notifying me.</p>
+<p>Github actions are powerful and you can do far more complicated things than I am doing. But if this interests you, or lines up with a project you are working on, read on and I&#39;ll go over step-by-step how I did this.</p>
+
+          <h2 id="Create a new IAM User">
+            <span class="underline">Create a new IAM User</span>
+          </h2>
+        <p>I decided to create a specific IAM User for Github Actions, and specifically this repo.</p>
+<p>Log into you AWS Console using your admin account (you created an admin account right? Try not to use you root account) and navigate to IAM.</p>
+<p>
+        <img src="/images/posts/node-cicd-pipeline-iam-1.png" alt="null" class="article-image" />
+    </p>
+<p>Click on Users and then Add User.</p>
+<p>Choose a name that makes sense to you. For example <code>github-actions-battlesnake-test</code> makes sense in my case as this user exists to authenticate Github Actions for my Battlesnake project. Be as specific as you would like, the name doesn&#39;t matter too much.</p>
+<p>Also choose <em>programmatic access</em> as the <em>access type</em>. This will allow us to generate an <em>access key ID</em> and <em>secret key</em> that we will pass to Github Actions so that we can use the AWS CLI.</p>
+<p>
+        <img src="/images/posts/node-cicd-pipeline-iam-2.png" alt="null" class="article-image" />
+    </p>
+<p>Then click <em>Next: Permissions</em>.</p>
+<p>On the next screen choose <em>Attach existing policies directly</em>. In the future you may want to to create a Group or Role to house these permissions and add this User to that Group or grant them that Role. For now, applying the permissions directly to the User will work fine.</p>
+<p>You want to grant this user permission to use S3 and Elastic Beanstalk. Search for &quot;s3&quot; and check the option called <em>AmazonS3FullAccess</em>. Next search for &quot;elasticbeanstalk&quot; and check the option for
+<em>AWSElasticBeanstalkFullAccess</em>. You can probably grant even more granular access than these for this account, but I&#39;ll let you sort that out if you like. Double check you have the correct permissions selected and then click <em>Next: Tags</em>.</p>
+<p>
+        <img src="/images/posts/node-cicd-pipeline-iam-3.png" alt="null" class="article-image" />
+    </p>
+<p>You can give this User tags if you wish, or leave it blank. Click <em>Next: Review</em>.</p>
+<p>Double check that everything looks as you expect and then click <em>Create user</em>.</p>
+<p>Important❗This page shows your new user&#39;s <em>access key ID</em> and <em>secret key</em>. This is private information that you should strive to keep private. Someone who has access to this information has access to use this user and anything you have granted it permission to use.</p>
+<p>We want to save this info as a secret on Github. I would recommend not saving this in any other way as you are likely to forget about it or mishandle it. The keys shown in this article and these screenshots have long been deactivated before this post went live.</p>
+<p>
+        <img src="/images/posts/node-cicd-pipeline-iam-4.png" alt="null" class="article-image" />
+    </p>
+<p><strong>While leaving this tab open</strong>, open a new tab and navigate to the Github repo of your project.</p>
+
+          <h2 id="Save AWS User credentials in Github">
+            <span class="underline">Save AWS User credentials in Github</span>
+          </h2>
+        <p>Next you want to save these AWS credentials as a Secret on your Github repo. This will allow you to securely access them in your Github Workflow later on.</p>
+<p>In the Github repo of the project you want to automate, click the <em>Settings</em> tab near the top right of the page. Choose <em>Secrets</em> in the left menu. Then click the <em>New Secret</em> button in the upper right.</p>
+<p>
+        <img src="/images/posts/node-cicd-pipeline-github-secret-creation.png" alt="null" class="article-image" />
+    </p>
+<p>Copy your <em>access key ID</em> from the AWS Console tab you have open into the <em>Value</em> field. Give it a name that makes sense to you such as <em>AWS_ACCESS_KEY_ID</em>. I believe this name just needs to be unique to this repo and not your Github account. Double check that you copied the <em>access key ID</em> over correctly and then click <em>Add secret</em>.</p>
+<p>Do the same for the <em>secret key</em>, naming it something like <em>AWS_SECRET_KEY</em>. Make sure you double check that you copied the <em>secret key</em> over correctly as once we are done with this process these keys are no longer accessible. If you make a mistake somewhere through this key transfer you can invalidate those keys and generate new ones.</p>
+<p>
+        <img src="/images/posts/node-cicd-pipeline-github-secrets.png" alt="null" class="article-image" />
+    </p>
+<p>Thats it for the user creation! Next we want to prepare a couple other resources in AWS.</p>
+
+          <h2 id="Create a S3 bucket to store deployment artifacts">
+            <span class="underline">Create a S3 bucket to store deployment artifacts</span>
+          </h2>
+        <p>We are going to store our deployment artifact in S3 so we can easily deploy it to Elastic Beanstalk. Let&#39;s create that bucket now.</p>
+<p>In your AWS Console, navigate to S3. Click the <em>Create bucket</em> button.</p>
+<p>You will need to choose a globally unique (or region unique? I can&#39;t remember) name for your bucket. The UI will warn you if you need to pick a different name. Call it whatever you like, and make note of the name you choose. Click <em>Create</em>.</p>
+<p>
+        <img src="/images/posts/node-cicd-pipeline-s3.png" alt="null" class="article-image" />
+    </p>
+
+          <h2 id="Create an Elastic Beanstalk Application and Environment">
+            <span class="underline">Create an Elastic Beanstalk Application and Environment</span>
+          </h2>
+        <p>Next we want to create an Elastic Beanstalk Application. In the AWS Console, navigate to Elastic Beanstalk.</p>
+<p>There are many different states your Elastic Beanstalk Console can be in so it is hard to say exactly where this option is but you want to <em>Create a new application</em>.</p>
+<p>Choose a name and click <em>Create</em>.</p>
+<p>Next you want to create an Environment within this Application. With the Application you just created selected, find the option to <em>Create a new environment</em>.</p>
+<p>Choose <em>Web server environment</em> and click <em>Select</em>.</p>
+<p>Choose a unique <em>Environment name</em> and <em>Domain</em>. I use this URL for my Battlesnake application so I choose something that is easy to use.</p>
+<p>
+        <img src="/images/posts/node-cicd-pipeline-eb-environment-creation.png" alt="null" class="article-image" />
+    </p>
+<p>In the <em>Platform</em> section choose <em>Node.js</em> as the platform and leave the other options as their defaults. This will be different if you are running a different software stack or need a specific version of Node.</p>
+<p>In the <em>Application code</em> section leave the <em>Sample application</em> selected. We will deploy our own application here in soon.</p>
+<p>Click <em>Create environment</em> after you double check your details are correct.</p>
+<p>Now we are done with the AWS setup. The last piece of this is to create a workflow in our repo that outlines the entire Github Action.</p>
+
+          <h2 id="Create a Workflow file within your repo">
+            <span class="underline">Create a Workflow file within your repo</span>
+          </h2>
+        <p>Github Actions work off of <a href="https://help.github.com/en/actions/configuring-and-managing-workflows"><em>workflows</em></a>. <em>Workflows</em> are yaml files that live within <em>.github/workflows/</em> on your master branch. These yaml files describe the series of actions you want to perform.</p>
+<p>There are a few options for creating your first workflow yaml file. The simplest is to use the Github GUI. You can click the <em>Actions</em> tab from within your repo. Find the option that says <em>Skip this and set up a workflow yourself</em>. This will present you with a web editor and a skeleton workflow file.</p>
+<p>
+        <img src="/images/posts/node-cicd-pipeline-github-actions-getting-started.png" alt="null" class="article-image" />
+    </p>
+<p>The other option is to just use whatever IDE or text editor you normally use and create a new yaml file in your repo within <em>.github/workflows/</em>.</p>
+<p>I am going to start from a blank file to describe what each piece means.</p>
+
+          <h2 id="Setup the yaml file">
+            <span class="underline">Setup the yaml file</span>
+          </h2>
+        <p>If this yaml file gets confusing at all just reference the <a href="https://help.github.com/en/actions/reference/workflow-syntax-for-github-actions">Github docs</a> for the proper syntax.</p>
+<p>The first line of your workflow file is the name of your workflow. Choose a name that describes what this workflow is doing, be as specific as you like.</p>
+<pre><code class="language-yaml">name: CICD_Pipeline
+</code></pre>
+<p>Next we are going to set up some environment variables to make the rest of this file cleaner and more maintainable. I have seven environment variables total in my workflow. These get placed in the <code>env</code> namespace.</p>
+<p>The first two are taken right from AWS Elastic Beanstalk. We want to save the Elastic Beanstalk Application name and Environment name that we created earlier. Make sure these are exactly the same as you used when setting up the Application and Environment.</p>
+<pre><code class="language-yaml">EB_APPLICATION: &quot;Battlesnake&quot;
+EB_ENVIRONMENT: &quot;Battlesnake-env&quot;
+</code></pre>
+<p>Next You want to create a variable for your S3 bucket name.</p>
+<pre><code class="language-yaml">EB_DEPLOY_ARTIFACT_S3_BUCKET: &quot;battlesnake-deployment-artifacts&quot;
+</code></pre>
+<p>Add a variable for the AWS region you are using.</p>
+<pre><code class="language-yaml">AWS_REGION: &quot;us-west-2&quot;
+</code></pre>
+<p>And lastly we will add 3 strings that we will use during the build and deploy process. These will use the the latest commit hash from our repo to create unique strings for deployment versioning. The commit hash can be accessed via <code>${{ github.sha }}</code>.</p>
+<pre><code class="language-yaml">EB_VERSION: &quot;Version-${{ github.sha }}&quot;
+EB_DESCRIPTION: &quot;CommitSHA-${{ github.sha }}&quot;
+DEPLOY_ARTIFACT: &quot;battlesnake-${{ github.sha }}.zip&quot;
+</code></pre>
+<p>So so far we have a name for our workflow and a series of environnement variables that we can use.</p>
+<p>Next we want to describe the trigger we want to use to initiate our workflow. This is one of the reasons Github Actions are so powerful as there are so many <a href="https://help.github.com/en/actions/configuring-and-managing-workflows/configuring-a-workflow#triggering-a-workflow-with-events">different triggers available</a>. We simply want to trigger this action whenever we push to our master branch. You describe your triggers in the <code>on</code> namespace like so:</p>
+<pre><code class="language-yaml">on:
+  push:
+    branches: [ master ]
+</code></pre>
+<p>So putting all this together, our yaml workflow should look something like this so far:</p>
+<pre><code class="language-yaml">name: CICD_Pipeline
+env:
+  EB_APPLICATION: &quot;Battlesnake&quot;
+  EB_ENVIRONMENT: &quot;Battlesnake-env&quot;
+  EB_DEPLOY_ARTIFACT_S3_BUCKET: &quot;battlesnake-deployment-artifacts&quot;
+  AWS_REGION: &quot;us-west-2&quot;
+  EB_VERSION: &quot;Version-${{ github.sha }}&quot;
+  EB_DESCRIPTION: &quot;CommitSHA-${{ github.sha }}&quot;
+  DEPLOY_ARTIFACT: &quot;battlesnake-${{ github.sha }}.zip&quot;
+on:
+  push:
+    branches: [ master ]
+</code></pre>
+
+          <h2 id="Test job">
+            <span class="underline">Test job</span>
+          </h2>
+        <p>With the basics of our workflow file setup we can get into the interesting bits. A workflow file can have a series of <a href="https://help.github.com/en/actions/reference/workflow-syntax-for-github-actions#jobs"><em>jobs</em></a> that Github can run in parallel or in sequence. For our purposes we are going to have 3 jobs, <em>test</em>, <em>build</em>, and <em>deploy</em>, that we want to run in sequence where each job depends on the previous job succeeding.</p>
+<p>The first job we will create is the <em>test</em> job. This will simply run our test suite and report back if tests passed or failed.</p>
+<p>Jobs are defined in the <code>jobs</code> namespace which is essentially a list of jobs, each starting with their name. You don&#39;t need to use the <code>name</code> keyword. I called this first job <code>test</code>.</p>
+<pre><code class="language-yaml">jobs:
+  test:
+</code></pre>
+<p>Now the first piece of a job describes what operating system you want to run this workflow on. <a href="https://help.github.com/en/actions/reference/workflow-syntax-for-github-actions#jobsjob_idruns-on">Github has options</a> for Ubuntu, MacOS, and Windows. We will use Ubuntu for our workflow.</p>
+<pre><code class="language-yaml">runs-on: ubuntu-latest
+</code></pre>
+<p>Next we want to describe the <a href="https://help.github.com/en/actions/reference/workflow-syntax-for-github-actions#jobsjob_idsteps"><em>steps</em></a> of this job. This is a list of steps each with a name describing what is being done. A step can be a predefined action that we reference from another repo or could be something like shell command. We can install almost any software we want and use it within our jobs via shell commands.</p>
+<pre><code class="language-yaml">steps:
+</code></pre>
+<p>The first step we want to do is to pull down our code from Github. For this we can use an action provided by Github to handle that easily. <code>actions</code> is a <a href="https://github.com/actions">Github owned organization</a>, <code>checkout</code> the <a href="https://github.com/actions/checkout">repo</a> we want to use, and <code>@v2</code> is the version tag. By adding this action we now have access to all our code in our repo.</p>
+<pre><code class="language-yaml">- name: Git clone repo
+  uses: actions/checkout@v2
+</code></pre>
+<p>Since our project uses Node, we want to install that next. We will use another <a href="https://github.com/actions/setup-node">provided action</a> called <code>setup-node</code>. We also specify the Node version that we want to use.</p>
+<pre><code class="language-yaml">- name: Install node
+  uses: actions/setup-node@v1
+  with:
+    node-version: &#39;12.x&#39;
+</code></pre>
+<p>Next let&#39;s install our project dependencies. We can use the <code>run</code> command to run <code>npm</code> as we would do on any other machine. We will use <code>npm ci</code> instead of <code>npm install</code> <a href="https://docs.npmjs.com/cli/ci">since we are in an automated environment</a>. It&#39;s effectively the same just a bit quicker and cleaner.</p>
+<pre><code class="language-yaml">- name: Install dependencies
+  run: npm ci
+</code></pre>
+<p>Lastly, lets run our tests! Our environment is set up now so all we need to do is run our test command. I have this set up as a <code>test</code> script in my <em>package.json</em> to run my Mocha tests (<code>&quot;test&quot;: &quot;mocha -r ts-node/register src/tests/**/*-test.ts&quot;</code>). So I just need to run <code>npm run test</code>. We pass an optional <code>CI: true</code> environment variable to ensure tests will fail the job if they throw warnings.</p>
+<pre><code class="language-yaml">- name: Run tests
+  run: npm run test
+  env:
+    CI: true
+</code></pre>
+<p>Putting this all together our workflow file should look like this:</p>
+<pre><code class="language-yaml">name: CICD_Pipeline
+env:
+  EB_APPLICATION: &quot;Battlesnake&quot;
+  EB_ENVIRONMENT: &quot;Battlesnake-env&quot;
+  EB_DEPLOY_ARTIFACT_S3_BUCKET: &quot;battlesnake-deployment-artifacts&quot;
+  AWS_REGION: &quot;us-west-2&quot;
+  EB_VERSION: &quot;Version-${{ github.sha }}&quot;
+  EB_DESCRIPTION: &quot;CommitSHA-${{ github.sha }}&quot;
+  DEPLOY_ARTIFACT: &quot;battlesnake-${{ github.sha }}.zip&quot;
+on:
+  push:
+    branches: [ master ]
+
+jobs:
+
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Git clone repo
+        uses: actions/checkout@v2
+
+      - name: Install node
+        uses: actions/setup-node@v1
+        with:
+          node-version: &#39;12.x&#39;
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run tests
+        run: npm run test
+        env:
+          CI: true
+</code></pre>
+<p>Great, that is our first job complete! If you are just looking to automate your tests this is all you really need. But we also want to build and deploy our app, so lets write the <code>build</code> job next.</p>
+
+          <h2 id="Build job">
+            <span class="underline">Build job</span>
+          </h2>
+        <p>I&#39;ll get to the point a little quicker this time and then describe what you are seeing.</p>
+<pre><code class="language-yaml">build:
+  runs-on: ubuntu-latest
+  needs: [test]
+  steps:
+    - name: Git clone repo
+      uses: actions/checkout@v2
+
+    - name: Install node
+      uses: actions/setup-node@v1
+      with:
+        node-version: &#39;12.x&#39;
+
+    - name: Install dependencies
+      run: npm ci
+
+    - name: Build project
+      run: npm run build
+
+    - name: Create zip deployment artifact
+      run: zip -r ${{ env.DEPLOY_ARTIFACT }} build package.json package-lock.json
+
+    - name: Configure AWS credentials
+      uses: aws-actions/configure-aws-credentials@v1
+      with:
+        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY }}
+        aws-secret-access-key: ${{ secrets.AWS_SECRET_KEY }}
+        aws-region: ${{ env.AWS_REGION }}
+
+    - name: Push deploy artifact to S3
+      run: aws s3 cp ${{ env.DEPLOY_ARTIFACT }} s3://${{ env.EB_DEPLOY_ARTIFACT_S3_BUCKET }}/
+</code></pre>
+<p>At the top of this job we use the <a href="https://help.github.com/en/actions/reference/workflow-syntax-for-github-actions#jobsjob_idneeds"><em>needs</em></a> parameter on the previous <code>test</code> job. This is what allows us to run our jobs in sequence each relying on the previous job ending successfully.</p>
+<p>Next you can see that the first three steps are identical to the previous job. We checkout our code, install Node, and install our dependencies.</p>
+<p>Then we run our build script defined in our <em>package.json</em>. Since I am using TypeScript I am using the TypeScript compiler to build my code, so my build script is <code>&quot;build&quot;: &quot;tsc -p .&quot;</code>.</p>
+<p>Next we use the zip command included with Ubuntu to package our code into a deployment artifact. <code>-r</code> in means we want to recurse into directories, <code>${{ env.DEPLOY_ARTIFACT }}</code> is the name of the file we are creating that we defined earlier as an environment variable, and lastly we pass the files we want to include. For my deployment I include everything in my <em>build/</em> directory as well as my <em>package.json</em> and <em>package-lock.json</em>. You need to include whatever files you want for your deployment.</p>
+<p>For my deployment I want to store my deploy artifact in AWS S3. In order to push this file to S3 we first need to configure our credentials that we setup earlier with our IAM User and Github Secrets.</p>
+<p>This next step uses an <a href="https://github.com/aws-actions/configure-aws-credentials">action</a> <a href="https://github.com/aws-actions">provided by AWS</a>. We pass it our <code>aws-access-key-id</code> and <code>aws-secret-access-key</code> that we stored in our repo&#39;s secrets earlier. These are accessed by <code>${{ secrets.NAME_OF_SECRET }}</code> where <code>NAME_OF_SECRET</code> is what you named it when you created it. We also need to pass the <code>aws-region</code> that we set earlier in our environment variables.</p>
+<p>Lastly, now that our AWS credentials are set up, we can push our deployment artifact up to S3. I believe as part of setting up the AWS credentials that action also installs the AWS CLI for us. So we want to copy our file to S3 using <code>aws s3 cp</code> and by passing the name of the file as <code>${{ env.DEPLOY_ARTIFACT }}</code> and the location we want to push to as <code>s3://${{ env.EB_DEPLOY_ARTIFACT_S3_BUCKET }}/</code>. Both the artifact name and bucket name we set earlier as environment variables.</p>
+
+          <h2 id="Deploy job">
+            <span class="underline">Deploy job</span>
+          </h2>
+        <p>Now we have our deployment artifact built and saved to S3. We can write our last job to deploy this package to AWS Elastic Beanstalk.</p>
+<pre><code class="language-yaml">deploy:
+  runs-on: ubuntu-latest
+  needs: [build]
+  steps:
+    - name: Configure AWS credentials
+      uses: aws-actions/configure-aws-credentials@v1
+      with:
+        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY }}
+        aws-secret-access-key: ${{ secrets.AWS_SECRET_KEY }}
+        aws-region: ${{ env.AWS_REGION }}
+
+    - name: Create new ElasticBeanstalk Application version
+      run: |
+        aws elasticbeanstalk create-application-version \
+        --application-name ${{ env.EB_APPLICATION }} \
+        --source-bundle S3Bucket=&quot;${{ env.EB_DEPLOY_ARTIFACT_S3_BUCKET }}&quot;,S3Key=&quot;${{ env.DEPLOY_ARTIFACT }}&quot; \
+        --version-label ${{ env.EB_VERSION }} \
+        --description ${{ env.EB_DESCRIPTION }}
+
+    - name: Deploy artifact to ElasticBeanstalk
+      run: |
+        aws elasticbeanstalk update-environment \
+        --environment-name ${{ env.EB_ENVIRONMENT }} \
+        --version-label ${{ env.EB_VERSION }}
+</code></pre>
+<p>You can see at the beginning of this job that it depends on the <code>build</code> job. That way it will only start once the build has completed successfully.</p>
+<p>The first step is just copied from the previous job. We are going to use the AWS CLI to deploy our app so we need to set up our credentials again.</p>
+<p>The second step uses the AWS CLI to create a fresh Application version for this deployment. You can see it uses <code>aws elasticbeanstalk create-application-version</code> with a few flags. We pass in the <code>application-name</code>, <code>version-label</code>, and <code>description</code> we set earlier as environment variables. We also pass in the <code>source-bundle</code> which is the location in S3 that we stored our deployment artifact. Both the name of the bucket and the name of the file (the key) we saved in environment variables as well.</p>
+<p>The last step is to update the environment version in Elastic Beanstalk. We use <code>aws elasticbeanstalk update-environment</code> and pass it the <code>environment-name</code> and <code>version-label</code> that we saved earlier as environment variables.</p>
+<p>And thats it! The workflow file all together should look something like this:</p>
+<pre><code class="language-yaml">name: CICD_Pipeline
+env:
+  EB_APPLICATION: &quot;Battlesnake&quot;
+  EB_ENVIRONMENT: &quot;Battlesnake-env&quot;
+  EB_DEPLOY_ARTIFACT_S3_BUCKET: &quot;battlesnake-deployment-artifacts&quot;
+  AWS_REGION: &quot;us-west-2&quot;
+  EB_VERSION: &quot;Version-${{ github.sha }}&quot;
+  EB_DESCRIPTION: &quot;CommitSHA-${{ github.sha }}&quot;
+  DEPLOY_ARTIFACT: &quot;battlesnake-${{ github.sha }}.zip&quot;
+on:
+  push:
+    branches: [ master ]
+
+jobs:
+
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Git clone repo
+        uses: actions/checkout@v2
+
+      - name: Install node
+        uses: actions/setup-node@v1
+        with:
+          node-version: &#39;12.x&#39;
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run tests
+        run: npm run test
+        env:
+          CI: true
+
+  build:
+    runs-on: ubuntu-latest
+    needs: [test]
+    steps:
+      - name: Git clone repo
+        uses: actions/checkout@v2
+
+      - name: Install node
+        uses: actions/setup-node@v1
+        with:
+          node-version: &#39;12.x&#39;
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build project
+        run: npm run build
+
+      - name: Create zip deployment artifact
+        run: zip -r ${{ env.DEPLOY_ARTIFACT }} build package.json package-lock.json
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_KEY }}
+          aws-region: ${{ env.AWS_REGION }}
+
+      - name: Push deploy artifact to S3
+        run: aws s3 cp ${{ env.DEPLOY_ARTIFACT }} s3://${{ env.EB_DEPLOY_ARTIFACT_S3_BUCKET }}/
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs: [build]
+    steps:
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_KEY }}
+          aws-region: ${{ env.AWS_REGION }}
+
+      - name: Create new ElasticBeanstalk Application version
+        run: |
+          aws elasticbeanstalk create-application-version \
+          --application-name ${{ env.EB_APPLICATION }} \
+          --source-bundle S3Bucket=&quot;${{ env.EB_DEPLOY_ARTIFACT_S3_BUCKET }}&quot;,S3Key=&quot;${{ env.DEPLOY_ARTIFACT }}&quot; \
+          --version-label ${{ env.EB_VERSION }} \
+          --description ${{ env.EB_DESCRIPTION }}
+
+      - name: Deploy artifact to ElasticBeanstalk
+        run: |
+          aws elasticbeanstalk update-environment \
+          --environment-name ${{ env.EB_ENVIRONMENT }} \
+          --version-label ${{ env.EB_VERSION }}
+</code></pre>
+
+          <h2 id="Testing the workflow">
+            <span class="underline">Testing the workflow</span>
+          </h2>
+        <p>Let&#39;s give it a try and see it in action. If you push this file to your master branch it should trigger the workflow.</p>
+<p>In these screenshots I pushed a change where I removed some logging that I had previously in my workflow since it is triggered based on pushes to master. If for some reason it doesn&#39;t trigger when you push the workflow try pushing something else to master after the workflow already exists in master.</p>
+<p>You can then navigate to the <em>Actions</em> tab of your repo to see the workflow running.</p>
+<p>
+        <img src="/images/posts/node-cicd-pipeline-github-running-actions.png" alt="null" class="article-image" />
+    </p>
+<p>You can click into the running workflow and see the console output of each job and step. If there are any errors along the way you should see some red failure symbols and console output describing what when wrong. If nothing goes wrong you should see green success messages.</p>
+<p>
+        <img src="/images/posts/node-cicd-pipeline-github-workflow-success.png" alt="null" class="article-image" />
+    </p>
+<p>If you pop over to your AWS Console you can peek into S3 and see the deployment artifact just uploaded to your bucket.</p>
+<p>
+        <img src="/images/posts/node-cicd-pipeline-s3-uploaded-files.png" alt="null" class="article-image" />
+    </p>
+<p>And if you navigate to Elastic Beanstalk you should see your application running or perhaps in start-up.</p>
+<p>
+        <img src="/images/posts/node-cicd-pipeline-eb-running-environment.png" alt="null" class="article-image" />
+    </p>
+<p>So there you go! If that all went well now you have a completely automated CI/CD pipeline. Every time you push to your master branch your repo will be tested, built, and deployed automatically. You can change the triggers if you like depending on your workflow to instead trigger on pull request or whatever else.</p>
+<p>This workflow is specific for a Node app being deployed to AWS Elastic Beanstalk but it can be adapted to basically any software stack and cloud provider. <a href="https://github.com/actions">Github has many Actions</a> you can leverage for all kinds of things, and a lot of third parties are creating their own actions for their software as well.</p>
+<p>Automate all the things!</p>
+</div><footer class="ant-layout-footer css-djtmh8"><div class="ant-space css-djtmh8 ant-space-vertical ant-space-gap-row-middle ant-space-gap-col-middle" style="display:flex"><div class="ant-space-item"><p><a href="/">Return to homepage</a></p></div><div class="ant-space-item"><p>Made with <span role="img" aria-label="thunderbolt" class="anticon anticon-thunderbolt"><svg viewBox="64 64 896 896" focusable="false" data-icon="thunderbolt" width="1em" height="1em" fill="currentColor" aria-hidden="true"><path d="M848 359.3H627.7L825.8 109c4.1-5.3.4-13-6.3-13H436c-2.8 0-5.5 1.5-6.9 4L170 547.5c-3.1 5.3.7 12 6.9 12h174.4l-89.4 357.6c-1.9 7.8 7.5 13.3 13.3 7.7L853.5 373c5.2-4.9 1.7-13.7-5.5-13.7z"></path></svg></span> by Tyrel Delaney   <span class="anchor"><a href="https://github.com/tyrelh" target="_blank" rel="noopener noreferrer"><span role="img" aria-label="github" class="anticon anticon-github"><svg viewBox="64 64 896 896" focusable="false" data-icon="github" width="1em" height="1em" fill="currentColor" aria-hidden="true"><path d="M511.6 76.3C264.3 76.2 64 276.4 64 523.5 64 718.9 189.3 885 363.8 946c23.5 5.9 19.9-10.8 19.9-22.2v-77.5c-135.7 15.9-141.2-73.9-150.3-88.9C215 726 171.5 718 184.5 703c30.9-15.9 62.4 4 98.9 57.9 26.4 39.1 77.9 32.5 104 26 5.7-23.5 17.9-44.5 34.7-60.8-140.6-25.2-199.2-111-199.2-213 0-49.5 16.3-95 48.3-131.7-20.4-60.5 1.9-112.3 4.9-120 58.1-5.2 118.5 41.6 123.2 45.3 33-8.9 70.7-13.6 112.9-13.6 42.4 0 80.2 4.9 113.5 13.9 11.3-8.6 67.3-48.8 121.3-43.9 2.9 7.7 24.7 58.3 5.5 118 32.4 36.8 48.9 82.7 48.9 132.3 0 102.2-59 188.1-200 212.9a127.5 127.5 0 0138.1 91v112.5c.8 9 0 17.9 15 17.9 177.1-59.7 304.6-227 304.6-424.1 0-247.2-200.4-447.3-447.5-447.3z"></path></svg></span></a></span>  <span class="anchor"><a href="https://www.linkedin.com/in/tyrelhiebert/" target="_blank" rel="noopener noreferrer"><span role="img" class="anticon"><svg fill="currentColor" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="-10 -10 400 400"><path d="M347.445,0H34.555C15.471,0,0,15.471,0,34.555v312.889C0,366.529,15.471,382,34.555,382h312.889 C366.529,382,382,366.529,382,347.444V34.555C382,15.471,366.529,0,347.445,0z M118.207,329.844c0,5.554-4.502,10.056-10.056,10.056 H65.345c-5.554,0-10.056-4.502-10.056-10.056V150.403c0-5.554,4.502-10.056,10.056-10.056h42.806 c5.554,0,10.056,4.502,10.056,10.056V329.844z M86.748,123.432c-22.459,0-40.666-18.207-40.666-40.666S64.289,42.1,86.748,42.1 s40.666,18.207,40.666,40.666S109.208,123.432,86.748,123.432z M341.91,330.654c0,5.106-4.14,9.246-9.246,9.246H286.73 c-5.106,0-9.246-4.14-9.246-9.246v-84.168c0-12.556,3.683-55.021-32.813-55.021c-28.309,0-34.051,29.066-35.204,42.11v97.079 c0,5.106-4.139,9.246-9.246,9.246h-44.426c-5.106,0-9.246-4.14-9.246-9.246V149.593c0-5.106,4.14-9.246,9.246-9.246h44.426 c5.106,0,9.246,4.14,9.246,9.246v15.655c10.497-15.753,26.097-27.912,59.312-27.912c73.552,0,73.131,68.716,73.131,106.472 L341.91,330.654L341.91,330.654z"></path></svg></span></a></span><br/></p></div></div><p>I use <span class="anchor"><a href="https://plausible.io/superflux.dev" target="_blank" rel="noopener noreferrer">Plausible.io</a></span> to collect privacy respecting visitor analytics.</p><p><span class="anchor"><a href="https://www.github.com/tyrelh/personal-site-nextjs/" target="_blank" rel="noopener noreferrer"><span role="img" aria-label="github" class="anticon anticon-github"><svg viewBox="64 64 896 896" focusable="false" data-icon="github" width="1em" height="1em" fill="currentColor" aria-hidden="true"><path d="M511.6 76.3C264.3 76.2 64 276.4 64 523.5 64 718.9 189.3 885 363.8 946c23.5 5.9 19.9-10.8 19.9-22.2v-77.5c-135.7 15.9-141.2-73.9-150.3-88.9C215 726 171.5 718 184.5 703c30.9-15.9 62.4 4 98.9 57.9 26.4 39.1 77.9 32.5 104 26 5.7-23.5 17.9-44.5 34.7-60.8-140.6-25.2-199.2-111-199.2-213 0-49.5 16.3-95 48.3-131.7-20.4-60.5 1.9-112.3 4.9-120 58.1-5.2 118.5 41.6 123.2 45.3 33-8.9 70.7-13.6 112.9-13.6 42.4 0 80.2 4.9 113.5 13.9 11.3-8.6 67.3-48.8 121.3-43.9 2.9 7.7 24.7 58.3 5.5 118 32.4 36.8 48.9 82.7 48.9 132.3 0 102.2-59 188.1-200 212.9a127.5 127.5 0 0138.1 91v112.5c.8 9 0 17.9 15 17.9 177.1-59.7 304.6-227 304.6-424.1 0-247.2-200.4-447.3-447.5-447.3z"></path></svg></span> View website source</a></span></p></footer></main></div></div><script id="__NEXT_DATA__" type="application/json" crossorigin="">{"props":{"pageProps":{"title":"Node CI/CD Pipeline using GitHub Actions \u0026 AWS Elastic Beanstalk","slug":"node-cicd-pipeline","date":"May 30, 2020","excerpt":"Here is my journey into creating an automated continuous integration and continuous deployment workflow for a project using GitHub Actions.","hero":"/images/posts/node-cicd-pipeline-hero.png","tags":["github-actions","cicd","typescript","aws","automation"],"content":"\nHere is my journey into creating an automated workflow to test, build, and deploy a project I have been working on using Github Actions and Elastic Beanstalk.\n\n![Github Actions logo with colourful background and text that says GitHub Actions now with built-in CI/CD](node-cicd-pipeline-hero.png)\n\n## Tl;dr\n* [Background](#background-on-the-project): I was converting a JavaScript project to TypeScript and I decided to set up continuous integration and continuous deployment at the same time using [Github Actions](https://github.com/features/actions).\n* [Testing](#testing): I am using [Mocha](https://mochajs.org/) for the first time to run my TypeScript tests.\n* [Automation](#automation): The intention is to create a Github workflow that will test my code, build my project, and deploy it to Elastic Beanstalk automatically whenever I push to the master branch. \n* [Create a new IAM user](#create-a-new-iam-user): First step is to create a new AWS IAM User to automate interactions with AWS.\n* [Save AWS User credentials in Github](#save-aws-user-credentials-in-github): Github provides and encrypted secret store that you can use to securely access 3rd-party credentials within a Github Workflow.\n* [Create a S3 bucket to store deployment artifacts](#create-a-s3-bucket-to-store-deployment-artifacts): Setup a bucket to store our deployment artifacts so they can be easily deployed and archived.\n* [Create an Elastic Beanstalk Application and Environment](#create-an-elastic-beanstalk-application-and-environment): Create an new application and environment that we can deploy our app to.\n* [Create a Workflow file within your repo](#create-a-workflow-file-within-your-repo): Workflows live in your repo in the *.github/workflows/* directory.\n* [Setup the yaml file](#setup-the-yaml-file): Setup your workflow with a trigger and some environment variables for readability and maintainability.\n* [Test job](#test-job): A job that will test our project.\n* [Build job](#build-job): A job to build our code, bundle it in a zip, and push that to AWS S3.\n* [Deploy job](#deploy-job):  A job to deploy our project to Elastic Beanstalk\n* [Testing the workflow](#testing-the-workflow): Push this new workflow file to your master branch and see the workflow in action.\n\n## Background on the project\nI have recently been working on converting my JavaScript [battlesnake](https://play.battlesnake.com/) over to TypeScript. This can be done in a gradual process but I've been finding that difficult to do, so this was more of a tear of the band-aid quickly kind of situation.\n\nI decided that I would use [Deno](https://deno.land/) for this project rather than Node. Deno 1.0 had [just recently come out](https://deno.land/v1) and I was all over that hype train. I really think Deno makes sense in it's core philosophy. It also happens to not only have TypeScript support by default, but the strictest possible TypeScript support is default. This encouraged me to translate my JavaScript to TypeScript properly and to fix some of the wrong design choices I had made over the last two years.\n\nEventually I became frustrated with Deno's, frankly, lack of polish. It isn't a true 1.0 if basic features, like `fetch`, don't work correctly yet. Over the course of around two weeks of using Deno I got to the point where I decided to just take all the TypeScript I had just written and move it back to Node.\n\nHopefully I will have by now put together a small article here about migrating a JavaScript Node project to TypeScript. If not check back soon!\n\n## Testing\nDuring development of my Deno TypeScript battlesnake I actually [already set up automated testing using Github Actions](https://superflux.dev/blog/deno-tests-and-github-actions). That worked really well and Deno's included test runner is really simple and easy to use.\n\nBringing my tests over to Node I used what seems like the most popular option which is [Mocha](https://mochajs.org/). I've never used it before but it seems fine.\n\nI can run my tests with the following command which I entered as a `test` script within my *package.json*:\n\n```bash\nmocha -r ts-node/register src/tests/**/*-test.ts\n```\n\nGreat. So with this in place my project is back to a place where I can run it locally, test it, and build it for deployment to AWS.\n\n## Automation\nBeyond automating testing when pushing to my master branch I decided to give the whole CI/CD pipeline a try. I use AWS Elastic Beanstalk to host my project and up to this point I have always been manually zipping the production build and using the AWS Web Console to manually deploy that to Elastic Beanstalk.\n\nNow I have fully automated the whole process!\n\nUsing Github Actions, whenever I push to my master branch I have 3 jobs that run:\n\n1. The repo is tested with my suite of tests using Mocha\n2. If the tests pass, the project is built, zipped, and pushed to AWS S3\n3. If the tests and build are successful, the zip is deployed to AWS Elastic Beanstalk.\n\nIf this fails at any point I get an email and red warnings on Github notifying me.\n\nGithub actions are powerful and you can do far more complicated things than I am doing. But if this interests you, or lines up with a project you are working on, read on and I'll go over step-by-step how I did this.\n\n## Create a new IAM User\nI decided to create a specific IAM User for Github Actions, and specifically this repo.\n\nLog into you AWS Console using your admin account (you created an admin account right? Try not to use you root account) and navigate to IAM.\n\n![Screenshot of the amazon web services IAM page](node-cicd-pipeline-iam-1.png)\n\nClick on Users and then Add User.\n\nChoose a name that makes sense to you. For example `github-actions-battlesnake-test` makes sense in my case as this user exists to authenticate Github Actions for my Battlesnake project. Be as specific as you would like, the name doesn't matter too much.\n\nAlso choose *programmatic access* as the *access type*. This will allow us to generate an *access key ID* and *secret key* that we will pass to Github Actions so that we can use the AWS CLI.\n\n![Screenshot of the interface for entering a user name and choosing the access type](node-cicd-pipeline-iam-2.png)\n\nThen click *Next: Permissions*.\n\nOn the next screen choose *Attach existing policies directly*. In the future you may want to to create a Group or Role to house these permissions and add this User to that Group or grant them that Role. For now, applying the permissions directly to the User will work fine.\n\nYou want to grant this user permission to use S3 and Elastic Beanstalk. Search for \"s3\" and check the option called *AmazonS3FullAccess*. Next search for \"elasticbeanstalk\" and check the option for\n*AWSElasticBeanstalkFullAccess*. You can probably grant even more granular access than these for this account, but I'll let you sort that out if you like. Double check you have the correct permissions selected and then click *Next: Tags*.\n\n![Screenshot of list of possible permissions showing two selected](node-cicd-pipeline-iam-3.png)\n\nYou can give this User tags if you wish, or leave it blank. Click *Next: Review*.\n\nDouble check that everything looks as you expect and then click *Create user*.\n\nImportant❗This page shows your new user's *access key ID* and *secret key*. This is private information that you should strive to keep private. Someone who has access to this information has access to use this user and anything you have granted it permission to use.\n\nWe want to save this info as a secret on Github. I would recommend not saving this in any other way as you are likely to forget about it or mishandle it. The keys shown in this article and these screenshots have long been deactivated before this post went live.\n\n![Screenshot of user creation success screen showing the access key ID and secret key](node-cicd-pipeline-iam-4.png)\n\n**While leaving this tab open**, open a new tab and navigate to the Github repo of your project.\n\n## Save AWS User credentials in Github\nNext you want to save these AWS credentials as a Secret on your Github repo. This will allow you to securely access them in your Github Workflow later on.\n\nIn the Github repo of the project you want to automate, click the *Settings* tab near the top right of the page. Choose *Secrets* in the left menu. Then click the *New Secret* button in the upper right.\n\n![Screenshot of Github showing the secret creation screen with text fields for the secret and the name of the secret](node-cicd-pipeline-github-secret-creation.png)\n\nCopy your *access key ID* from the AWS Console tab you have open into the *Value* field. Give it a name that makes sense to you such as *AWS_ACCESS_KEY_ID*. I believe this name just needs to be unique to this repo and not your Github account. Double check that you copied the *access key ID* over correctly and then click *Add secret*.\n\nDo the same for the *secret key*, naming it something like *AWS_SECRET_KEY*. Make sure you double check that you copied the *secret key* over correctly as once we are done with this process these keys are no longer accessible. If you make a mistake somewhere through this key transfer you can invalidate those keys and generate new ones.\n\n![Screenshot of Github showing a list of all saved secrets for this repository](node-cicd-pipeline-github-secrets.png)\n\nThats it for the user creation! Next we want to prepare a couple other resources in AWS.\n\n## Create a S3 bucket to store deployment artifacts\nWe are going to store our deployment artifact in S3 so we can easily deploy it to Elastic Beanstalk. Let's create that bucket now.\n\nIn your AWS Console, navigate to S3. Click the *Create bucket* button.\n\nYou will need to choose a globally unique (or region unique? I can't remember) name for your bucket. The UI will warn you if you need to pick a different name. Call it whatever you like, and make note of the name you choose. Click *Create*.\n\n![Screenshot of AWS console showing s3 bucket creation where you are choosing a name](node-cicd-pipeline-s3.png)\n\n## Create an Elastic Beanstalk Application and Environment\nNext we want to create an Elastic Beanstalk Application. In the AWS Console, navigate to Elastic Beanstalk.\n\nThere are many different states your Elastic Beanstalk Console can be in so it is hard to say exactly where this option is but you want to *Create a new application*.\n\nChoose a name and click *Create*.\n\nNext you want to create an Environment within this Application. With the Application you just created selected, find the option to *Create a new environment*.\n\nChoose *Web server environment* and click *Select*.\n\nChoose a unique *Environment name* and *Domain*. I use this URL for my Battlesnake application so I choose something that is easy to use.\n\n![Screenshot of AWS console showing elastic beanstalk environment creation](node-cicd-pipeline-eb-environment-creation.png)\n\nIn the *Platform* section choose *Node.js* as the platform and leave the other options as their defaults. This will be different if you are running a different software stack or need a specific version of Node.\n\nIn the *Application code* section leave the *Sample application* selected. We will deploy our own application here in soon.\n\nClick *Create environment* after you double check your details are correct.\n\nNow we are done with the AWS setup. The last piece of this is to create a workflow in our repo that outlines the entire Github Action.\n\n## Create a Workflow file within your repo\nGithub Actions work off of [*workflows*](https://help.github.com/en/actions/configuring-and-managing-workflows). *Workflows* are yaml files that live within *.github/workflows/* on your master branch. These yaml files describe the series of actions you want to perform.\n\nThere are a few options for creating your first workflow yaml file. The simplest is to use the Github GUI. You can click the *Actions* tab from within your repo. Find the option that says *Skip this and set up a workflow yourself*. This will present you with a web editor and a skeleton workflow file.\n\n![Screenshot of AWS console showing elastic beanstalk environment creation](node-cicd-pipeline-github-actions-getting-started.png)\n\nThe other option is to just use whatever IDE or text editor you normally use and create a new yaml file in your repo within *.github/workflows/*.\n\nI am going to start from a blank file to describe what each piece means.\n\n## Setup the yaml file\nIf this yaml file gets confusing at all just reference the [Github docs](https://help.github.com/en/actions/reference/workflow-syntax-for-github-actions) for the proper syntax.\n\nThe first line of your workflow file is the name of your workflow. Choose a name that describes what this workflow is doing, be as specific as you like.\n\n```yaml\nname: CICD_Pipeline\n```\n\nNext we are going to set up some environment variables to make the rest of this file cleaner and more maintainable. I have seven environment variables total in my workflow. These get placed in the `env` namespace.\n\nThe first two are taken right from AWS Elastic Beanstalk. We want to save the Elastic Beanstalk Application name and Environment name that we created earlier. Make sure these are exactly the same as you used when setting up the Application and Environment.\n\n```yaml\nEB_APPLICATION: \"Battlesnake\"\nEB_ENVIRONMENT: \"Battlesnake-env\"\n```\n\nNext You want to create a variable for your S3 bucket name.\n\n```yaml\nEB_DEPLOY_ARTIFACT_S3_BUCKET: \"battlesnake-deployment-artifacts\"\n```\n\nAdd a variable for the AWS region you are using.\n\n```yaml\nAWS_REGION: \"us-west-2\"\n```\n\nAnd lastly we will add 3 strings that we will use during the build and deploy process. These will use the the latest commit hash from our repo to create unique strings for deployment versioning. The commit hash can be accessed via `${{ github.sha }}`.\n\n```yaml\nEB_VERSION: \"Version-${{ github.sha }}\"\nEB_DESCRIPTION: \"CommitSHA-${{ github.sha }}\"\nDEPLOY_ARTIFACT: \"battlesnake-${{ github.sha }}.zip\"\n```\n\nSo so far we have a name for our workflow and a series of environnement variables that we can use.\n\nNext we want to describe the trigger we want to use to initiate our workflow. This is one of the reasons Github Actions are so powerful as there are so many [different triggers available](https://help.github.com/en/actions/configuring-and-managing-workflows/configuring-a-workflow#triggering-a-workflow-with-events). We simply want to trigger this action whenever we push to our master branch. You describe your triggers in the `on` namespace like so:\n\n```yaml\non:\n  push:\n    branches: [ master ]\n```\n\nSo putting all this together, our yaml workflow should look something like this so far:\n\n```yaml\nname: CICD_Pipeline\nenv:\n  EB_APPLICATION: \"Battlesnake\"\n  EB_ENVIRONMENT: \"Battlesnake-env\"\n  EB_DEPLOY_ARTIFACT_S3_BUCKET: \"battlesnake-deployment-artifacts\"\n  AWS_REGION: \"us-west-2\"\n  EB_VERSION: \"Version-${{ github.sha }}\"\n  EB_DESCRIPTION: \"CommitSHA-${{ github.sha }}\"\n  DEPLOY_ARTIFACT: \"battlesnake-${{ github.sha }}.zip\"\non:\n  push:\n    branches: [ master ]\n```\n\n## Test job\nWith the basics of our workflow file setup we can get into the interesting bits. A workflow file can have a series of [*jobs*](https://help.github.com/en/actions/reference/workflow-syntax-for-github-actions#jobs) that Github can run in parallel or in sequence. For our purposes we are going to have 3 jobs, *test*, *build*, and *deploy*, that we want to run in sequence where each job depends on the previous job succeeding.\n\nThe first job we will create is the *test* job. This will simply run our test suite and report back if tests passed or failed.\n\nJobs are defined in the `jobs` namespace which is essentially a list of jobs, each starting with their name. You don't need to use the `name` keyword. I called this first job `test`.\n\n```yaml\njobs:\n  test:\n```\n\nNow the first piece of a job describes what operating system you want to run this workflow on. [Github has options](https://help.github.com/en/actions/reference/workflow-syntax-for-github-actions#jobsjob_idruns-on) for Ubuntu, MacOS, and Windows. We will use Ubuntu for our workflow.\n\n```yaml\nruns-on: ubuntu-latest\n```\n\nNext we want to describe the [*steps*](https://help.github.com/en/actions/reference/workflow-syntax-for-github-actions#jobsjob_idsteps) of this job. This is a list of steps each with a name describing what is being done. A step can be a predefined action that we reference from another repo or could be something like shell command. We can install almost any software we want and use it within our jobs via shell commands.\n\n```yaml\nsteps:\n```\n\nThe first step we want to do is to pull down our code from Github. For this we can use an action provided by Github to handle that easily. `actions` is a [Github owned organization](https://github.com/actions), `checkout` the [repo](https://github.com/actions/checkout) we want to use, and `@v2` is the version tag. By adding this action we now have access to all our code in our repo.\n\n```yaml\n- name: Git clone repo\n  uses: actions/checkout@v2\n```\n\nSince our project uses Node, we want to install that next. We will use another [provided action](https://github.com/actions/setup-node) called `setup-node`. We also specify the Node version that we want to use.\n\n```yaml\n- name: Install node\n  uses: actions/setup-node@v1\n  with:\n    node-version: '12.x'\n```\n\nNext let's install our project dependencies. We can use the `run` command to run `npm` as we would do on any other machine. We will use `npm ci` instead of `npm install` [since we are in an automated environment](https://docs.npmjs.com/cli/ci). It's effectively the same just a bit quicker and cleaner.\n\n```yaml\n- name: Install dependencies\n  run: npm ci\n```\n\nLastly, lets run our tests! Our environment is set up now so all we need to do is run our test command. I have this set up as a `test` script in my *package.json* to run my Mocha tests (`\"test\": \"mocha -r ts-node/register src/tests/**/*-test.ts\"`). So I just need to run `npm run test`. We pass an optional `CI: true` environment variable to ensure tests will fail the job if they throw warnings.\n\n```yaml\n- name: Run tests\n  run: npm run test\n  env:\n    CI: true\n```\n\nPutting this all together our workflow file should look like this:\n\n```yaml\nname: CICD_Pipeline\nenv:\n  EB_APPLICATION: \"Battlesnake\"\n  EB_ENVIRONMENT: \"Battlesnake-env\"\n  EB_DEPLOY_ARTIFACT_S3_BUCKET: \"battlesnake-deployment-artifacts\"\n  AWS_REGION: \"us-west-2\"\n  EB_VERSION: \"Version-${{ github.sha }}\"\n  EB_DESCRIPTION: \"CommitSHA-${{ github.sha }}\"\n  DEPLOY_ARTIFACT: \"battlesnake-${{ github.sha }}.zip\"\non:\n  push:\n    branches: [ master ]\n\njobs:\n\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - name: Git clone repo\n        uses: actions/checkout@v2\n\n      - name: Install node\n        uses: actions/setup-node@v1\n        with:\n          node-version: '12.x'\n\n      - name: Install dependencies\n        run: npm ci\n\n      - name: Run tests\n        run: npm run test\n        env:\n          CI: true\n```\n\nGreat, that is our first job complete! If you are just looking to automate your tests this is all you really need. But we also want to build and deploy our app, so lets write the `build` job next.\n\n## Build job\nI'll get to the point a little quicker this time and then describe what you are seeing.\n\n```yaml\nbuild:\n  runs-on: ubuntu-latest\n  needs: [test]\n  steps:\n    - name: Git clone repo\n      uses: actions/checkout@v2\n\n    - name: Install node\n      uses: actions/setup-node@v1\n      with:\n        node-version: '12.x'\n\n    - name: Install dependencies\n      run: npm ci\n\n    - name: Build project\n      run: npm run build\n\n    - name: Create zip deployment artifact\n      run: zip -r ${{ env.DEPLOY_ARTIFACT }} build package.json package-lock.json\n\n    - name: Configure AWS credentials\n      uses: aws-actions/configure-aws-credentials@v1\n      with:\n        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY }}\n        aws-secret-access-key: ${{ secrets.AWS_SECRET_KEY }}\n        aws-region: ${{ env.AWS_REGION }}\n\n    - name: Push deploy artifact to S3\n      run: aws s3 cp ${{ env.DEPLOY_ARTIFACT }} s3://${{ env.EB_DEPLOY_ARTIFACT_S3_BUCKET }}/\n```\n\nAt the top of this job we use the [*needs*](https://help.github.com/en/actions/reference/workflow-syntax-for-github-actions#jobsjob_idneeds) parameter on the previous `test` job. This is what allows us to run our jobs in sequence each relying on the previous job ending successfully.\n\nNext you can see that the first three steps are identical to the previous job. We checkout our code, install Node, and install our dependencies.\n\nThen we run our build script defined in our *package.json*. Since I am using TypeScript I am using the TypeScript compiler to build my code, so my build script is `\"build\": \"tsc -p .\"`.\n\nNext we use the zip command included with Ubuntu to package our code into a deployment artifact. `-r` in means we want to recurse into directories, `${{ env.DEPLOY_ARTIFACT }}` is the name of the file we are creating that we defined earlier as an environment variable, and lastly we pass the files we want to include. For my deployment I include everything in my *build/* directory as well as my *package.json* and *package-lock.json*. You need to include whatever files you want for your deployment.\n\nFor my deployment I want to store my deploy artifact in AWS S3. In order to push this file to S3 we first need to configure our credentials that we setup earlier with our IAM User and Github Secrets.\n\nThis next step uses an [action](https://github.com/aws-actions/configure-aws-credentials) [provided by AWS](https://github.com/aws-actions). We pass it our `aws-access-key-id` and `aws-secret-access-key` that we stored in our repo's secrets earlier. These are accessed by `${{ secrets.NAME_OF_SECRET }}` where `NAME_OF_SECRET` is what you named it when you created it. We also need to pass the `aws-region` that we set earlier in our environment variables.\n\nLastly, now that our AWS credentials are set up, we can push our deployment artifact up to S3. I believe as part of setting up the AWS credentials that action also installs the AWS CLI for us. So we want to copy our file to S3 using `aws s3 cp` and by passing the name of the file as `${{ env.DEPLOY_ARTIFACT }}` and the location we want to push to as `s3://${{ env.EB_DEPLOY_ARTIFACT_S3_BUCKET }}/`. Both the artifact name and bucket name we set earlier as environment variables.\n\n## Deploy job\nNow we have our deployment artifact built and saved to S3. We can write our last job to deploy this package to AWS Elastic Beanstalk.\n\n```yaml\ndeploy:\n  runs-on: ubuntu-latest\n  needs: [build]\n  steps:\n    - name: Configure AWS credentials\n      uses: aws-actions/configure-aws-credentials@v1\n      with:\n        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY }}\n        aws-secret-access-key: ${{ secrets.AWS_SECRET_KEY }}\n        aws-region: ${{ env.AWS_REGION }}\n\n    - name: Create new ElasticBeanstalk Application version\n      run: |\n        aws elasticbeanstalk create-application-version \\\n        --application-name ${{ env.EB_APPLICATION }} \\\n        --source-bundle S3Bucket=\"${{ env.EB_DEPLOY_ARTIFACT_S3_BUCKET }}\",S3Key=\"${{ env.DEPLOY_ARTIFACT }}\" \\\n        --version-label ${{ env.EB_VERSION }} \\\n        --description ${{ env.EB_DESCRIPTION }}\n\n    - name: Deploy artifact to ElasticBeanstalk\n      run: |\n        aws elasticbeanstalk update-environment \\\n        --environment-name ${{ env.EB_ENVIRONMENT }} \\\n        --version-label ${{ env.EB_VERSION }}\n```\n\nYou can see at the beginning of this job that it depends on the `build` job. That way it will only start once the build has completed successfully.\n\nThe first step is just copied from the previous job. We are going to use the AWS CLI to deploy our app so we need to set up our credentials again.\n\nThe second step uses the AWS CLI to create a fresh Application version for this deployment. You can see it uses `aws elasticbeanstalk create-application-version` with a few flags. We pass in the `application-name`, `version-label`, and `description` we set earlier as environment variables. We also pass in the `source-bundle` which is the location in S3 that we stored our deployment artifact. Both the name of the bucket and the name of the file (the key) we saved in environment variables as well.\n\nThe last step is to update the environment version in Elastic Beanstalk. We use `aws elasticbeanstalk update-environment` and pass it the `environment-name` and `version-label` that we saved earlier as environment variables.\n\nAnd thats it! The workflow file all together should look something like this:\n\n```yaml\nname: CICD_Pipeline\nenv:\n  EB_APPLICATION: \"Battlesnake\"\n  EB_ENVIRONMENT: \"Battlesnake-env\"\n  EB_DEPLOY_ARTIFACT_S3_BUCKET: \"battlesnake-deployment-artifacts\"\n  AWS_REGION: \"us-west-2\"\n  EB_VERSION: \"Version-${{ github.sha }}\"\n  EB_DESCRIPTION: \"CommitSHA-${{ github.sha }}\"\n  DEPLOY_ARTIFACT: \"battlesnake-${{ github.sha }}.zip\"\non:\n  push:\n    branches: [ master ]\n\njobs:\n\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - name: Git clone repo\n        uses: actions/checkout@v2\n\n      - name: Install node\n        uses: actions/setup-node@v1\n        with:\n          node-version: '12.x'\n\n      - name: Install dependencies\n        run: npm ci\n\n      - name: Run tests\n        run: npm run test\n        env:\n          CI: true\n\n  build:\n    runs-on: ubuntu-latest\n    needs: [test]\n    steps:\n      - name: Git clone repo\n        uses: actions/checkout@v2\n\n      - name: Install node\n        uses: actions/setup-node@v1\n        with:\n          node-version: '12.x'\n\n      - name: Install dependencies\n        run: npm ci\n\n      - name: Build project\n        run: npm run build\n\n      - name: Create zip deployment artifact\n        run: zip -r ${{ env.DEPLOY_ARTIFACT }} build package.json package-lock.json\n\n      - name: Configure AWS credentials\n        uses: aws-actions/configure-aws-credentials@v1\n        with:\n          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY }}\n          aws-secret-access-key: ${{ secrets.AWS_SECRET_KEY }}\n          aws-region: ${{ env.AWS_REGION }}\n\n      - name: Push deploy artifact to S3\n        run: aws s3 cp ${{ env.DEPLOY_ARTIFACT }} s3://${{ env.EB_DEPLOY_ARTIFACT_S3_BUCKET }}/\n\n  deploy:\n    runs-on: ubuntu-latest\n    needs: [build]\n    steps:\n      - name: Configure AWS credentials\n        uses: aws-actions/configure-aws-credentials@v1\n        with:\n          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY }}\n          aws-secret-access-key: ${{ secrets.AWS_SECRET_KEY }}\n          aws-region: ${{ env.AWS_REGION }}\n\n      - name: Create new ElasticBeanstalk Application version\n        run: |\n          aws elasticbeanstalk create-application-version \\\n          --application-name ${{ env.EB_APPLICATION }} \\\n          --source-bundle S3Bucket=\"${{ env.EB_DEPLOY_ARTIFACT_S3_BUCKET }}\",S3Key=\"${{ env.DEPLOY_ARTIFACT }}\" \\\n          --version-label ${{ env.EB_VERSION }} \\\n          --description ${{ env.EB_DESCRIPTION }}\n\n      - name: Deploy artifact to ElasticBeanstalk\n        run: |\n          aws elasticbeanstalk update-environment \\\n          --environment-name ${{ env.EB_ENVIRONMENT }} \\\n          --version-label ${{ env.EB_VERSION }}\n```\n\n## Testing the workflow\nLet's give it a try and see it in action. If you push this file to your master branch it should trigger the workflow.\n\nIn these screenshots I pushed a change where I removed some logging that I had previously in my workflow since it is triggered based on pushes to master. If for some reason it doesn't trigger when you push the workflow try pushing something else to master after the workflow already exists in master.\n\nYou can then navigate to the *Actions* tab of your repo to see the workflow running.\n\n![Screenshot of the Github Actions interface showing past executions of workflows](node-cicd-pipeline-github-running-actions.png)\n\nYou can click into the running workflow and see the console output of each job and step. If there are any errors along the way you should see some red failure symbols and console output describing what when wrong. If nothing goes wrong you should see green success messages.\n\n![Screenshot of completed Github action showing green check marks on the three jobs indicating they completed successfully](node-cicd-pipeline-github-workflow-success.png)\n\nIf you pop over to your AWS Console you can peek into S3 and see the deployment artifact just uploaded to your bucket.\n\n![Screenshot of AWS S three bucket showing list of successfully uploaded files](node-cicd-pipeline-s3-uploaded-files.png)\n\nAnd if you navigate to Elastic Beanstalk you should see your application running or perhaps in start-up.\n\n![Screenshot of AWS elastic beanstalk showing the running environment just deployed](node-cicd-pipeline-eb-running-environment.png)\n\nSo there you go! If that all went well now you have a completely automated CI/CD pipeline. Every time you push to your master branch your repo will be tested, built, and deployed automatically. You can change the triggers if you like depending on your workflow to instead trigger on pull request or whatever else.\n\nThis workflow is specific for a Node app being deployed to AWS Elastic Beanstalk but it can be adapted to basically any software stack and cloud provider. [Github has many Actions](https://github.com/actions) you can leverage for all kinds of things, and a lot of third parties are creating their own actions for their software as well.\n\nAutomate all the things!"},"__N_SSG":true},"page":"/blog/[slug]","query":{"slug":"node-cicd-pipeline"},"buildId":"VOQ65Zrreyw4vv5l458Re","isFallback":false,"gsp":true,"scriptLoader":[]}</script></body></html>
